@@ -1,0 +1,161 @@
+// content/types.ts
+// Tokyo Decoded LP — 共通型定義
+// C-5 管理ファイル。Codex は読み取り専用。
+
+export type Locale = "ja" | "en";
+
+export type LocalizedString = {
+  readonly ja: string;
+  readonly en: string;
+};
+
+export type NavItem = {
+  readonly href: string;
+  readonly label_ja: string;
+  readonly label_en: string;
+};
+
+export type SocialAccount = {
+  readonly id: string;
+  readonly platform: "youtube" | "instagram" | "x" | "tiktok";
+  readonly locale: Locale;
+  readonly handle: string;
+  readonly url: string;
+  readonly label: string;
+};
+
+export type Category = {
+  readonly slug: string;
+  readonly label_ja: string;
+  readonly label_en: string;
+  readonly color: string;
+};
+
+export type Post = {
+  readonly slug: string;
+  readonly title_ja: string;
+  readonly title_en: string;
+  readonly category: string;
+  readonly publishedAt: string;
+  readonly thumbnail: string;
+  readonly thumbnailAlt_ja: string;
+  readonly thumbnailAlt_en: string;
+  readonly excerpt_ja: string;
+  readonly excerpt_en: string;
+  readonly body: PostBody;
+  readonly relatedToolSlug: string | null;
+  readonly affiliateLinks: readonly AffiliateLink[];
+  readonly tags_ja: readonly string[];
+  readonly tags_en: readonly string[];
+};
+
+export type PostBody = {
+  readonly hook: LocalizedString;
+  readonly data: LocalizedString;
+  readonly explanation: LocalizedString;
+  readonly practice: LocalizedString;
+  readonly cta: LocalizedString;
+};
+
+export type AffiliateLink = {
+  readonly label: string;
+  readonly url: string;
+  readonly note: string;
+};
+
+export type Tool = {
+  readonly slug: string;
+  readonly name: LocalizedString;
+  readonly category: string;
+  readonly description_ja: string;
+  readonly description_en: string;
+  readonly preview: string;
+  readonly previewAlt_ja: string;
+  readonly previewAlt_en: string;
+  readonly downloadType: "email-gate";
+};
+
+export type RecommendedCategory = {
+  readonly slug: string;
+  readonly label_ja: string;
+  readonly label_en: string;
+};
+
+export type RecommendedItem = {
+  readonly slug: string;
+  readonly name: LocalizedString;
+  readonly category: string;
+  readonly description_ja: string;
+  readonly description_en: string;
+  readonly imageUrl: string;
+  readonly imageAlt_ja: string;
+  readonly imageAlt_en: string;
+  readonly affiliateUrl: string;
+  readonly asp: string;
+  readonly prLabel_ja: string;
+  readonly prLabel_en: string;
+};
+
+export type StructuredDataWebSite = {
+  readonly "@context": "https://schema.org";
+  readonly "@type": "WebSite";
+  readonly name: string;
+  readonly url: string;
+  readonly description: string;
+  readonly inLanguage: readonly string[];
+  readonly potentialAction: {
+    readonly "@type": "SearchAction";
+    readonly target: string;
+    readonly "query-input": string;
+  };
+};
+
+export type StructuredDataOrganization = {
+  readonly "@context": "https://schema.org";
+  readonly "@type": "Organization";
+  readonly name: string;
+  readonly url: string;
+  readonly logo: string;
+  readonly description: string;
+  readonly contactPoint: {
+    readonly "@type": "ContactPoint";
+    readonly email: string;
+    readonly contactType: string;
+  };
+  readonly sameAs: readonly string[];
+};
+
+export type StructuredDataArticle = {
+  readonly "@context": "https://schema.org";
+  readonly "@type": "Article";
+  readonly headline: string;
+  readonly description: string;
+  readonly image: string;
+  readonly datePublished: string;
+  readonly dateModified: string;
+  readonly author: {
+    readonly "@type": "Organization";
+    readonly name: string;
+    readonly url: string;
+  };
+  readonly publisher: {
+    readonly "@type": "Organization";
+    readonly name: string;
+    readonly logo: {
+      readonly "@type": "ImageObject";
+      readonly url: string;
+    };
+  };
+  readonly inLanguage: string;
+};
+
+export type StructuredDataBreadcrumb = {
+  readonly "@context": "https://schema.org";
+  readonly "@type": "BreadcrumbList";
+  readonly itemListElement: readonly {
+    readonly "@type": "ListItem";
+    readonly position: number;
+    readonly name: string;
+    readonly item: string;
+  }[];
+};
