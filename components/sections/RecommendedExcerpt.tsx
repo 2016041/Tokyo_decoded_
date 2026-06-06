@@ -85,7 +85,7 @@ export function RecommendedExcerpt({
                       href={item.affiliateUrl}
                       target="_blank"
                       rel="sponsored noopener noreferrer"
-                      aria-label={`${item.name[locale]}（外部サイト・PR）`}
+                      aria-label={`${item.name[locale]}を詳しく見る（外部サイト・PR）`}
                       className="mt-5 inline-flex font-[family-name:var(--font-sans)] font-medium text-ink underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                     >
                       {content.viewAll[`label_${locale}`]}

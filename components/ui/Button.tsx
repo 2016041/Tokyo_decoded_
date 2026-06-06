@@ -17,7 +17,7 @@ type ButtonProps = {
 };
 
 const baseClass =
-  "inline-flex items-center justify-center font-[family-name:var(--font-sans)] text-sm md:text-base font-medium rounded-none px-8 py-3 md:px-10 md:py-4 transition-colors duration-[150ms] motion-reduce:transition-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+  "inline-flex items-center justify-center font-[family-name:var(--font-sans)] text-sm md:text-base font-medium rounded-none px-8 py-3 md:px-10 md:py-4 transition-colors duration-[150ms] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary: "bg-accent text-paper hover:bg-ink active:scale-95",
