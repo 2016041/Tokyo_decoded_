@@ -27,18 +27,18 @@ export function RecommendedExcerpt({
               id="recommended-heading"
               className="font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl"
             >
-              {locale === "ja" ? (
-                <>
-                  Tokyo Decoded厳選
-                  <br />
-                  推奨ツール
-                </>
-              ) : (
-                content.heading[locale]
-              )}
+              {content.heading[locale]}
             </h2>
             <p className="mt-4 max-w-2xl text-ink">
-              {content.lede[locale]}
+              {locale === "ja" ? (
+                <>
+                  編集部が実際に調査・検証したサービスやツールをカテゴリ別に紹介しています。
+                  <br />
+                  <span className="text-sm text-muted">※アフィリエイトリンクを含む場合があります（PR）。</span>
+                </>
+              ) : (
+                content.lede[locale]
+              )}
             </p>
           </div>
           <Link
