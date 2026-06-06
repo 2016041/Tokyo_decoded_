@@ -79,14 +79,13 @@
   }
 
   html {
-    font-size: 62.5%; /* 1rem = 10px */
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
 
   body {
     font-family: var(--font-jp), var(--font-sans);
-    font-size: 1.6rem;
+    font-size: 1rem;
     color: var(--color-ink);
     background-color: var(--color-paper);
     line-height: 1.7;
