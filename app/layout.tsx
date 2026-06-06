@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter, Noto_Sans_JP, Space_Grotesk } from "next/font/google";
 import CookieBanner from "@/components/CookieBanner";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/common/GoogleAnalytics";
 import Header from "@/components/Header";
 import SkipLink from "@/components/SkipLink";
 import JsonLdOrganization from "@/components/seo/JsonLdOrganization";
@@ -89,6 +91,9 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieBanner />
+        <Suspense fallback={null}>
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ""} />
+        </Suspense>
       </body>
     </html>
   );
