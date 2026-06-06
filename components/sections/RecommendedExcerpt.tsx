@@ -27,7 +27,15 @@ export function RecommendedExcerpt({
               id="recommended-heading"
               className="font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl"
             >
-              {content.heading[locale]}
+              {locale === "ja" ? (
+                <>
+                  Tokyo Decoded厳選
+                  <br />
+                  推奨ツール
+                </>
+              ) : (
+                content.heading[locale]
+              )}
             </h2>
             <p className="mt-4 max-w-2xl text-ink">
               {content.lede[locale]}
@@ -47,7 +55,17 @@ export function RecommendedExcerpt({
               {recommendedPageContent.comingSoon.heading[locale]}
             </h3>
             <p className="mt-3 max-w-2xl text-ink">
-              {recommendedPageContent.comingSoon.body[locale]}
+              {locale === "ja" ? (
+                <>
+                  現在、各ASPの審査・承認を進めています。
+                  <br />
+                  承認が完了しだい、編集部が厳選したサービスをご紹介します。
+                  <br />
+                  メールリストに登録すると、公開時にお知らせします。
+                </>
+              ) : (
+                recommendedPageContent.comingSoon.body[locale]
+              )}
             </p>
             <Button
               href={recommendedPageContent.comingSoon.cta.href}
