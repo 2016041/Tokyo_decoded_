@@ -93,7 +93,7 @@ export function PostBody({ post, locale = "ja" }: PostBodyProps) {
                 <h3 id={`post-${section.id}-heading`} className="sr-only">
                   {section.id}
                 </h3>
-                <p className="text-base md:text-lg text-ink">
+                <p className="text-base md:text-lg text-ink leading-[1.8] tracking-[0.03em]">
                   {section.content}
                 </p>
               </section>
