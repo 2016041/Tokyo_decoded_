@@ -4,6 +4,9 @@ import CookieBanner from "@/components/CookieBanner";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SkipLink from "@/components/SkipLink";
+import JsonLdOrganization from "@/components/seo/JsonLdOrganization";
+import JsonLdWebSite from "@/components/seo/JsonLdWebSite";
+import { defaultMetadata, structuredDataTemplates } from "@/content/seo";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -28,20 +31,42 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"), // FILL: 本番URL
+  metadataBase: new URL(defaultMetadata.siteUrl),
   title: {
-    default: "サイトタイトル", // FILL
-    template: "%s | サイトタイトル", // FILL
+    default: defaultMetadata.defaultTitle,
+    template: defaultMetadata.titleTemplate,
   },
-  description: "サイト説明文", // FILL
+  description: defaultMetadata.defaultDescription,
   openGraph: {
-    title: "サイトタイトル", // FILL
-    description: "サイト説明文", // FILL
+    title: defaultMetadata.defaultTitle,
+    description: defaultMetadata.defaultDescription,
+    url: defaultMetadata.siteUrl,
+    siteName: structuredDataTemplates.webSite.name,
+    images: [
+      {
+        url: defaultMetadata.defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: structuredDataTemplates.webSite.name,
+      },
+    ],
+    locale: defaultMetadata.locale,
+    alternateLocale: defaultMetadata.alternateLocale,
     type: "website",
-    url: "https://example.com/", // FILL
-    images: ["/og.jpg"],
-    siteName: "サイトタイトル", // FILL
   },
+  twitter: {
+    card: "summary_large_image",
+    site: defaultMetadata.twitterSite,
+    creator: defaultMetadata.twitterCreator,
+  },
+  alternates: {
+    canonical: defaultMetadata.siteUrl,
+    languages: {
+      "ja-JP": defaultMetadata.siteUrl,
+      "en-US": `${defaultMetadata.siteUrl}/en`,
+    },
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -55,6 +80,8 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${inter.variable} ${notoSansJP.variable}`}
         suppressHydrationWarning
       >
+        <JsonLdWebSite />
+        <JsonLdOrganization />
         <SkipLink />
         <Header />
         <main id="main-content" tabIndex={-1}>
