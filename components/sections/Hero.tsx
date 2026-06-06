@@ -21,7 +21,15 @@ export function Hero({ locale = "ja" }: HeroProps) {
             id="hero-heading"
             className="mt-6 font-[family-name:var(--font-jp)] font-black text-ink text-[clamp(2rem,5.5vw,3.75rem)] leading-[1.25] tracking-tight"
           >
-            {content.h1[locale]}
+            {locale === "ja" ? (
+              <>
+                東京から世界を読み解き、
+                <br />
+                日本を世界へ翻訳する編集部。
+              </>
+            ) : (
+              content.h1[locale]
+            )}
           </h1>
           <p className="mt-8 text-muted text-base md:text-lg leading-relaxed max-w-2xl">
             {content.subcopy[locale]}
