@@ -59,7 +59,7 @@ export function RecommendedExcerpt({
           </div>
         ) : (
           <ul role="list" className="mt-10 grid gap-6 md:grid-cols-3">
-            {excerptItems.map((item) => (
+            {excerptItems.map((item, index) => (
               <li key={item.slug}>
                 <article className="bg-paper border border-ink/10 p-6 md:p-8 shadow-[0_1px_4px_rgba(0,0,0,0.08)]">
                   <Image
@@ -71,10 +71,12 @@ export function RecommendedExcerpt({
                     className="aspect-video w-full object-cover"
                   />
                   <div className="mt-5">
-                    <Badge
-                      label={locale === "ja" ? item.prLabel_ja : item.prLabel_en}
-                      aria-hidden
-                    />
+                    {index === 0 && (
+                      <Badge
+                        label={locale === "ja" ? item.prLabel_ja : item.prLabel_en}
+                        aria-hidden
+                      />
+                    )}
                     <h3 className="mt-3 font-[family-name:var(--font-jp)] font-medium text-xl text-ink">
                       {item.name[locale]}
                     </h3>

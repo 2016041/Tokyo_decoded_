@@ -20,7 +20,7 @@ const baseClass =
   "inline-flex items-center justify-center font-[family-name:var(--font-sans)] text-sm md:text-base font-medium rounded-none px-8 py-3 md:px-10 md:py-4 transition-colors duration-[150ms] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent";
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary: "bg-accent text-paper hover:bg-ink active:scale-95",
+  primary: "bg-accent text-paper hover:bg-[#C1313D] active:scale-95",
   outline:
     "bg-transparent border border-ink text-ink hover:bg-ink hover:text-paper active:scale-95",
 };
