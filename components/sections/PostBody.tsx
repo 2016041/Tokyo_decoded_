@@ -42,109 +42,111 @@ export function PostBody({ post, locale = "ja" }: PostBodyProps) {
 
   return (
     <article aria-labelledby="post-title" className="bg-paper">
-      <div className="max-w-[1200px] mx-auto px-[5vw] lg:px-10 py-[clamp(64px,12vw,120px)]">
-        <nav aria-label="パンくず" className="mb-10">
-          <ol className="flex flex-wrap gap-2 font-[family-name:var(--font-jp)] text-sm text-ink">
-            <li>
-              <Link
-                href="/"
-                className="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
-              >
-                {locale === "ja" ? "ホーム" : "Home"}
-              </Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li>
-              <Link
-                href="/posts"
-                className="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
-              >
-                {postsPageContent.heading[locale]}
-              </Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li aria-current="page">{title}</li>
-          </ol>
-        </nav>
+      <div className="px-[5vw] lg:px-10 py-[clamp(64px,12vw,120px)]">
+        <div className="max-w-[760px] mx-auto">
+          <nav aria-label="パンくず" className="mb-10">
+            <ol className="flex flex-wrap gap-2 font-[family-name:var(--font-jp)] text-sm text-ink">
+              <li>
+                <Link
+                  href="/"
+                  className="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                >
+                  {locale === "ja" ? "ホーム" : "Home"}
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link
+                  href="/posts"
+                  className="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                >
+                  {postsPageContent.heading[locale]}
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li aria-current="page">{title}</li>
+            </ol>
+          </nav>
 
-        <header>
-          <p>
-            <span className="sr-only">カテゴリ: </span>
-            <Badge label={categoryLabel} />
-          </p>
-          <h1
-            id="post-title"
-            className="mt-5 max-w-4xl font-[family-name:var(--font-jp)] font-black text-ink text-4xl md:text-5xl"
-          >
-            {title}
-          </h1>
-          <time dateTime={post.publishedAt} className="mt-5 block text-sm text-muted">
-            {formatDate(post.publishedAt, locale)}
-          </time>
-        </header>
-
-        <section aria-labelledby="post-body-heading" className="mt-14 max-w-3xl">
-          <h2 id="post-body-heading" className="sr-only">
-            {title}
-          </h2>
-          <div className="space-y-10">
-            {bodySections.map((section) => (
-              <section key={section.id} aria-labelledby={`post-${section.id}-heading`}>
-                <h3 id={`post-${section.id}-heading`} className="sr-only">
-                  {section.id}
-                </h3>
-                <p className="text-base md:text-lg text-ink leading-[1.8] tracking-[0.03em]">
-                  {section.content}
-                </p>
-              </section>
-            ))}
-          </div>
-        </section>
-
-        {post.affiliateLinks.length > 0 ? (
-          <aside
-            aria-labelledby="affiliate-links-heading"
-            className="mt-14 border-t border-ink/20 pt-10"
-          >
-            <h2
-              id="affiliate-links-heading"
-              className="font-[family-name:var(--font-jp)] font-black text-ink text-2xl md:text-3xl"
-            >
-              {locale === "ja" ? "関連ツール・商品（PR）" : "Related Tools and Products (PR)"}
-            </h2>
-            <p className="mt-4 max-w-3xl text-ink">
-              <strong>{locale === "ja" ? "PR・広告" : "Sponsored"}</strong>
-              {locale === "ja"
-                ? "：以下のリンクはアフィリエイトリンクを含みます。"
-                : ": The links below may include affiliate links."}{" "}
-              <Link
-                href="/disclosure"
-                className="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
-              >
-                {locale === "ja" ? "詳細はこちら" : "Disclosure"}
-              </Link>
+          <header className="border-b border-ink/10 pb-10">
+            <p>
+              <span className="sr-only">カテゴリ: </span>
+              <Badge label={categoryLabel} />
             </p>
-            <ul role="list" className="mt-6 grid gap-4 md:grid-cols-2">
-              {post.affiliateLinks.map((link) => (
-                <li key={link.url}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="sponsored noopener noreferrer"
-                    aria-label={`${link.label}（外部サイト・PR）`}
-                    className="block border border-ink/20 p-5 transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
-                  >
-                    <span className="block font-[family-name:var(--font-jp)] font-medium">
-                      <Badge label="PR" aria-hidden className="mr-2" />
-                      {link.label}
-                    </span>
-                    <span className="mt-2 block text-sm">{link.note}</span>
-                  </a>
-                </li>
+            <h1
+              id="post-title"
+              className="mt-5 font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl leading-[1.35] tracking-[-0.01em]"
+            >
+              {title}
+            </h1>
+            <time dateTime={post.publishedAt} className="mt-5 block text-sm text-muted">
+              {formatDate(post.publishedAt, locale)}
+            </time>
+          </header>
+
+          <section aria-labelledby="post-body-heading" className="mt-12">
+            <h2 id="post-body-heading" className="sr-only">
+              {title}
+            </h2>
+            <div className="space-y-8">
+              {bodySections.map((section) => (
+                <section key={section.id} aria-labelledby={`post-${section.id}-heading`}>
+                  <h3 id={`post-${section.id}-heading`} className="sr-only">
+                    {section.id}
+                  </h3>
+                  <p className="text-base md:text-lg text-ink leading-[1.8] tracking-[0.03em]">
+                    {section.content}
+                  </p>
+                </section>
               ))}
-            </ul>
-          </aside>
-        ) : null}
+            </div>
+          </section>
+
+          {post.affiliateLinks.length > 0 ? (
+            <aside
+              aria-labelledby="affiliate-links-heading"
+              className="mt-14 border-t border-ink/20 pt-10"
+            >
+              <h2
+                id="affiliate-links-heading"
+                className="font-[family-name:var(--font-jp)] font-black text-ink text-2xl md:text-3xl"
+              >
+                {locale === "ja" ? "関連ツール・商品（PR）" : "Related Tools and Products (PR)"}
+              </h2>
+              <p className="mt-4 text-ink">
+                <strong>{locale === "ja" ? "PR・広告" : "Sponsored"}</strong>
+                {locale === "ja"
+                  ? "：以下のリンクはアフィリエイトリンクを含みます。"
+                  : ": The links below may include affiliate links."}{" "}
+                <Link
+                  href="/disclosure"
+                  className="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                >
+                  {locale === "ja" ? "詳細はこちら" : "Disclosure"}
+                </Link>
+              </p>
+              <ul role="list" className="mt-6 grid gap-4 md:grid-cols-2">
+                {post.affiliateLinks.map((link) => (
+                  <li key={link.url}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="sponsored noopener noreferrer"
+                      aria-label={`${link.label}（外部サイト・PR）`}
+                      className="block border border-ink/20 p-5 transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                    >
+                      <span className="block font-[family-name:var(--font-jp)] font-medium">
+                        <Badge label="PR" aria-hidden className="mr-2" />
+                        {link.label}
+                      </span>
+                      <span className="mt-2 block text-sm">{link.note}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          ) : null}
+        </div>
       </div>
     </article>
   );
