@@ -29,7 +29,7 @@ export function RecommendedExcerpt({
             >
               {content.heading[locale]}
             </h2>
-            <p className="mt-4 max-w-2xl font-[family-name:var(--font-jp)] text-ink">
+            <p className="mt-4 max-w-2xl text-ink">
               {content.lede[locale]}
             </p>
           </div>

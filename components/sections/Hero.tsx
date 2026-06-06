@@ -23,7 +23,7 @@ export function Hero({ locale = "ja" }: HeroProps) {
           >
             {content.h1[locale]}
           </h1>
-          <p className="mt-8 font-[family-name:var(--font-jp)] text-muted text-base md:text-lg leading-relaxed max-w-2xl">
+          <p className="mt-8 text-muted text-base md:text-lg leading-relaxed max-w-2xl">
             {content.subcopy[locale]}
           </p>
           <div

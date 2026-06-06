@@ -75,7 +75,7 @@ export function EditorsToolsForm({ locale = "ja" }: EditorsToolsFormProps) {
             </h2>
             <p
               id="tools-form-description"
-              className="mt-6 max-w-2xl font-[family-name:var(--font-jp)] text-base md:text-lg text-muted-light"
+              className="mt-6 max-w-2xl text-base md:text-lg text-muted-light"
             >
               {toolsContent.lede[locale]}
             </p>
@@ -89,7 +89,7 @@ export function EditorsToolsForm({ locale = "ja" }: EditorsToolsFormProps) {
                     <dt className="font-[family-name:var(--font-jp)] font-medium text-paper">
                       {pillar.label}
                     </dt>
-                    <dd className="mt-1 font-[family-name:var(--font-jp)] text-sm text-muted-light">
+                    <dd className="mt-1 text-sm text-muted-light">
                       {pillar.body}
                     </dd>
                   </div>

@@ -36,7 +36,7 @@ export default function CookieBanner() {
       className="fixed bottom-0 left-0 right-0 z-[600] bg-ink text-paper rounded-none"
     >
       <div className="mx-auto flex max-w-[1200px] flex-col gap-4 px-[5vw] py-5 sm:flex-row sm:items-center sm:justify-between lg:px-10">
-        <p className="font-[family-name:var(--font-jp)] text-sm text-paper">
+        <p className="text-sm text-paper">
           当サイトはアクセス解析のため Cookie を使用します。
         </p>
         <div className="flex flex-wrap gap-3">

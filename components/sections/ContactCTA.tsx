@@ -23,7 +23,7 @@ export function ContactCTA({ locale = "ja" }: ContactCTAProps) {
             >
               {content.heading[locale]}
             </h2>
-            <p className="mt-5 font-[family-name:var(--font-jp)] text-base md:text-lg text-muted-light leading-relaxed">
+            <p className="mt-5 text-base md:text-lg text-muted-light leading-relaxed">
               {content.body[locale]}
             </p>
           </div>

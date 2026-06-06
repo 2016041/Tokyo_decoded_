@@ -32,7 +32,7 @@ export function AboutMini({ locale = "ja" }: AboutMiniProps) {
             </Link>
           </div>
           <div className="border-l-2 border-accent pl-8 md:pl-10">
-            <p className="font-[family-name:var(--font-jp)] text-base md:text-lg text-ink leading-relaxed">
+            <p className="text-base md:text-lg text-ink leading-relaxed">
               {content.body[locale]}
             </p>
           </div>
