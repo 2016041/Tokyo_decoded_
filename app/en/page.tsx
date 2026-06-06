@@ -12,18 +12,18 @@ import { metadataForPage } from "@/lib/i18n";
 export const dynamic = "force-static";
 
 export function generateMetadata(): Metadata {
-  return metadataForPage("home", "ja");
+  return metadataForPage("home", "en");
 }
 
-export default function Home() {
+export default function EnHome() {
   return (
     <>
-      <Hero locale="ja" />
-      <AboutMini locale="ja" />
-      <LatestPosts locale="ja" items={posts} />
-      <EditorsToolsForm locale="ja" />
-      <RecommendedExcerpt locale="ja" items={recommendedItems} />
-      <ContactCTA locale="ja" />
+      <Hero locale="en" />
+      <AboutMini locale="en" />
+      <LatestPosts locale="en" items={posts} />
+      <EditorsToolsForm locale="en" />
+      <RecommendedExcerpt locale="en" items={recommendedItems} />
+      <ContactCTA locale="en" />
     </>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 
 type CookieConsent = "accepted" | "rejected";
 
@@ -8,16 +8,20 @@ const buttonClassName =
   "rounded-none border border-paper px-5 py-3 font-[family-name:var(--font-jp)] text-sm font-medium transition-colors duration-[150ms] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink focus-visible:ring-accent motion-reduce:transition-none";
 
 export default function CookieBanner() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const consent = window.localStorage.getItem("cookie-consent");
-    setIsVisible(consent !== "accepted" && consent !== "rejected");
-  }, []);
+  const consentIsMissing = useSyncExternalStore(
+    () => () => undefined,
+    () => {
+      const consent = window.localStorage.getItem("cookie-consent");
+      return consent !== "accepted" && consent !== "rejected";
+    },
+    () => false,
+  );
+  const [isDismissed, setIsDismissed] = useState(false);
+  const isVisible = consentIsMissing && !isDismissed;
 
   const handleConsent = (consent: CookieConsent) => {
     window.localStorage.setItem("cookie-consent", consent);
-    setIsVisible(false);
+    setIsDismissed(true);
   };
 
   if (!isVisible) {
