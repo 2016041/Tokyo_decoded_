@@ -11,28 +11,52 @@ export function Hero({ locale = "ja" }: HeroProps) {
 
   return (
     <section aria-labelledby="hero-heading" className="bg-paper">
-      <div className="max-w-[1200px] mx-auto px-[5vw] lg:px-10 py-[clamp(64px,12vw,120px)]">
-        <h1
-          id="hero-heading"
-          lang="en"
-          className="font-[family-name:var(--font-display)] font-bold text-ink text-[clamp(2.4rem,6vw,4rem)] leading-tight tracking-tight text-left max-w-4xl"
-        >
-          {content.h1[locale]}
-        </h1>
-        <p className="font-[family-name:var(--font-jp)] text-ink text-base md:text-lg max-w-2xl mt-6">
-          {content.subcopy[locale]}
-        </p>
-        <div
-          role="group"
-          aria-label="メインアクション"
-          className="flex flex-col sm:flex-row gap-4 mt-8"
-        >
-          <Button href={content.cta.primary.href} variant="primary">
-            {content.cta.primary[`label_${locale}`]}
-          </Button>
-          <Button href={content.cta.secondary.href} variant="outline">
-            {content.cta.secondary[`label_${locale}`]}
-          </Button>
+      <div className="max-w-[1200px] mx-auto px-[5vw] lg:px-10 py-[clamp(80px,14vw,140px)]">
+        <div className="max-w-5xl">
+          <p className="inline-flex items-center gap-3 font-[family-name:var(--font-sans)] text-xs font-semibold tracking-widest uppercase text-accent">
+            <span className="block h-px w-8 bg-accent" aria-hidden="true" />
+            Tokyo Decoded
+          </p>
+          <h1
+            id="hero-heading"
+            className="mt-6 font-[family-name:var(--font-jp)] font-black text-ink text-[clamp(2rem,5.5vw,3.75rem)] leading-[1.25] tracking-tight"
+          >
+            {content.h1[locale]}
+          </h1>
+          <p className="mt-8 font-[family-name:var(--font-jp)] text-muted text-base md:text-lg leading-relaxed max-w-2xl">
+            {content.subcopy[locale]}
+          </p>
+          <div
+            role="group"
+            aria-label="メインアクション"
+            className="flex flex-col sm:flex-row gap-4 mt-10"
+          >
+            <Button href={content.cta.primary.href} variant="primary">
+              {content.cta.primary[`label_${locale}`]}
+            </Button>
+            <Button href={content.cta.secondary.href} variant="outline">
+              {content.cta.secondary[`label_${locale}`]}
+            </Button>
+          </div>
+        </div>
+
+        <div className="mt-16 md:mt-24 grid grid-cols-3 gap-px bg-ink/10">
+          {(
+            [
+              { num: "2", label_ja: "連載ジャンル", label_en: "Topics" },
+              { num: "8", label_ja: "SNSアカウント", label_en: "Platforms" },
+              { num: "100%", label_ja: "無料コンテンツ", label_en: "Free" },
+            ] as const
+          ).map((stat) => (
+            <div key={stat.num} className="bg-paper px-4 py-8 md:px-10 md:py-10">
+              <p className="font-[family-name:var(--font-display)] font-bold text-ink text-3xl md:text-4xl">
+                {stat.num}
+              </p>
+              <p className="mt-1 font-[family-name:var(--font-jp)] text-xs md:text-sm text-muted">
+                {locale === "ja" ? stat.label_ja : stat.label_en}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

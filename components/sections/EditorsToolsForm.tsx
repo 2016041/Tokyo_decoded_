@@ -80,14 +80,19 @@ export function EditorsToolsForm({ locale = "ja" }: EditorsToolsFormProps) {
               {toolsContent.lede[locale]}
             </p>
             <dl className="mt-10 grid gap-6">
-              {toolsContent.pillars[locale].map((pillar) => (
-                <div key={pillar.label} className="border-t border-paper/20 pt-5">
-                  <dt className="font-[family-name:var(--font-jp)] font-medium text-paper">
-                    {pillar.label}
-                  </dt>
-                  <dd className="mt-2 font-[family-name:var(--font-jp)] text-muted-light">
-                    {pillar.body}
-                  </dd>
+              {toolsContent.pillars[locale].map((pillar, i) => (
+                <div key={pillar.label} className="flex gap-5 border-t border-paper/20 pt-5">
+                  <span className="font-[family-name:var(--font-display)] text-accent font-bold text-lg shrink-0 w-7">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <dt className="font-[family-name:var(--font-jp)] font-medium text-paper">
+                      {pillar.label}
+                    </dt>
+                    <dd className="mt-1 font-[family-name:var(--font-jp)] text-sm text-muted-light">
+                      {pillar.body}
+                    </dd>
+                  </div>
                 </div>
               ))}
             </dl>

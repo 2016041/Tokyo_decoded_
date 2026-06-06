@@ -38,7 +38,7 @@ export const posts = [
     title_en: "Loud Budgeting: The US Trend That's Changing How We Talk About Money",
     category: "money-ai",
     publishedAt: "2026-06-04",
-    thumbnail: "/images/posts/001-loud-budgeting.webp",
+    thumbnail: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80",
     thumbnailAlt_ja:
       "お金の管理を堂々と宣言する「Loud Budgeting」のコンセプトイラスト",
     thumbnailAlt_en:
@@ -115,7 +115,7 @@ export const posts = [
     title_en: "Soft Saving: Why 73% of Gen Z Prioritize Today Over Retirement",
     category: "money-ai",
     publishedAt: "2026-06-04",
-    thumbnail: "/images/posts/002-soft-saving.webp",
+    thumbnail: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
     thumbnailAlt_ja:
       "ガラスの瓶にコインをそっと入れるミニマルなイラスト——Soft Savingのコンセプト",
     thumbnailAlt_en:
