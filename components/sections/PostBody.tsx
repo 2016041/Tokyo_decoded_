@@ -82,6 +82,16 @@ export function PostBody({ post, locale = "ja" }: PostBodyProps) {
             <time dateTime={post.publishedAt} className="mt-5 block text-sm text-muted">
               {formatDate(post.publishedAt, locale)}
             </time>
+            {post.thumbnail && (
+              <figure className="mt-8">
+                <img
+                  src={post.thumbnail}
+                  alt={locale === "ja" ? post.thumbnailAlt_ja : post.thumbnailAlt_en}
+                  className="w-full aspect-video object-cover"
+                  loading="eager"
+                />
+              </figure>
+            )}
           </header>
 
           <section aria-labelledby="post-body-heading" className="mt-12">
