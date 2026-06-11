@@ -7,6 +7,9 @@ import { Badge } from "@/components/ui/Badge";
 type PostBodyProps = {
   post: Post;
   locale?: Locale;
+  relatedPosts?: readonly Post[];
+  prevPost?: Post | null;
+  nextPost?: Post | null;
 };
 
 function getPostTitle(post: Post, locale: Locale) {
@@ -30,7 +33,7 @@ function formatDate(date: string, locale: Locale) {
   }).format(new Date(`${date}T00:00:00`));
 }
 
-export function PostBody({ post, locale = "ja" }: PostBodyProps) {
+export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = null, nextPost = null }: PostBodyProps) {
   const title = getPostTitle(post, locale);
   const categoryLabel = getCategoryLabel(post.category, locale);
   const bodySections = [
@@ -181,6 +184,96 @@ export function PostBody({ post, locale = "ja" }: PostBodyProps) {
               </ul>
             </aside>
           ) : null}
+
+          {relatedPosts.length > 0 && (
+            <aside
+              aria-labelledby="related-posts-heading"
+              className="mt-14 border-t border-ink/20 pt-10"
+            >
+              <h2
+                id="related-posts-heading"
+                className="font-jp font-black text-ink text-2xl md:text-3xl"
+              >
+                {locale === "ja" ? "関連記事" : "Related Posts"}
+              </h2>
+              <ul role="list" className="mt-6 grid gap-6 sm:grid-cols-3">
+                {relatedPosts.map((related) => {
+                  const relatedTitle = locale === "ja" ? related.title_ja : related.title_en;
+                  const relatedCategoryLabel = getCategoryLabel(related.category, locale);
+                  const relatedHref = `${locale === "en" ? "/en" : ""}/posts/${related.slug}`;
+                  return (
+                    <li key={related.slug}>
+                      <Link
+                        href={relatedHref}
+                        className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                      >
+                        <div className="overflow-hidden">
+                          <img
+                            src={related.thumbnail}
+                            alt={locale === "ja" ? related.thumbnailAlt_ja : related.thumbnailAlt_en}
+                            className="aspect-video w-full object-cover transition-transform duration-[700ms] ease-out group-hover:scale-105 motion-reduce:transition-none"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="border border-t-0 border-ink/10 p-4 transition-colors duration-[250ms] motion-reduce:transition-none group-hover:bg-ink group-hover:text-paper">
+                          <p>
+                            <span className="sr-only">{locale === "ja" ? "カテゴリ: " : "Category: "}</span>
+                            <Badge label={relatedCategoryLabel} />
+                          </p>
+                          <h3 className="font-jp font-bold text-sm mt-2 leading-[1.5]">
+                            {relatedTitle}
+                          </h3>
+                          <time dateTime={related.publishedAt} className="block mt-2 text-xs text-muted group-hover:text-paper/70">
+                            {formatDate(related.publishedAt, locale)}
+                          </time>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </aside>
+          )}
+
+          {(prevPost || nextPost) && (
+            <nav
+              aria-label={locale === "ja" ? "前後の記事" : "Previous and next posts"}
+              className="mt-14 border-t border-ink/20 pt-10"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                {prevPost ? (
+                  <Link
+                    href={`${locale === "en" ? "/en" : ""}/posts/${prevPost.slug}`}
+                    className="group block border border-ink/20 p-5 transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                  >
+                    <span className="block text-xs text-muted mb-2 group-hover:text-paper/70">
+                      ← {locale === "ja" ? "前の記事" : "Previous"}
+                    </span>
+                    <span className="block font-jp font-medium text-sm leading-[1.5]">
+                      {locale === "ja" ? prevPost.title_ja : prevPost.title_en}
+                    </span>
+                  </Link>
+                ) : (
+                  <div />
+                )}
+                {nextPost ? (
+                  <Link
+                    href={`${locale === "en" ? "/en" : ""}/posts/${nextPost.slug}`}
+                    className="group block border border-ink/20 p-5 text-right transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                  >
+                    <span className="block text-xs text-muted mb-2 group-hover:text-paper/70">
+                      {locale === "ja" ? "次の記事" : "Next"} →
+                    </span>
+                    <span className="block font-jp font-medium text-sm leading-[1.5]">
+                      {locale === "ja" ? nextPost.title_ja : nextPost.title_en}
+                    </span>
+                  </Link>
+                ) : (
+                  <div />
+                )}
+              </div>
+            </nav>
+          )}
         </div>
       </div>
     </article>

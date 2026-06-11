@@ -32,3 +32,13 @@ export function getRelatedPosts(post: Post, count = 3): readonly Post[] {
 
   return [...sameCategory, ...fallback].slice(0, count);
 }
+
+export function getPrevNextPosts(slug: string): { prev: Post | null; next: Post | null } {
+  const sorted = listPosts(); // newest first
+  const index = sorted.findIndex((p) => p.slug === slug);
+  if (index === -1) return { prev: null, next: null };
+  return {
+    prev: (sorted[index + 1] as Post | undefined) ?? null,
+    next: (sorted[index - 1] as Post | undefined) ?? null,
+  };
+}

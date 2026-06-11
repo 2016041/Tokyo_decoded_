@@ -5,7 +5,7 @@ import { PostBody } from "@/components/sections/PostBody";
 import { postCategories, posts } from "@/content/posts";
 import { defaultMetadata, pageMetadata, structuredDataTemplates } from "@/content/seo";
 import { absoluteUrl } from "@/lib/i18n";
-import { getPostBySlug } from "@/lib/posts";
+import { getPostBySlug, getRelatedPosts, getPrevNextPosts } from "@/lib/posts";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -77,10 +77,13 @@ export default async function PostPage({ params }: Props) {
     inLanguage: "ja",
   };
 
+  const relatedPosts = getRelatedPosts(post);
+  const { prev, next } = getPrevNextPosts(post.slug);
+
   return (
     <>
       <JsonLdArticle data={articleData} />
-      <PostBody post={post} locale="ja" />
+      <PostBody post={post} locale="ja" relatedPosts={relatedPosts} prevPost={prev} nextPost={next} />
     </>
   );
 }
