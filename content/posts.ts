@@ -33,7 +33,7 @@ export const postCategories = [
 
 export const posts = [
   {
-    slug: “006-underconsumption-core-trend”,
+    slug: "006-underconsumption-core-trend",
     title_ja: "買わない美学、再来。アンダーコンサンプション・コア入門",
     title_en: "Underconsumption Core: Why Buying Less Is the New Flex",
     category: "lifestyle",
