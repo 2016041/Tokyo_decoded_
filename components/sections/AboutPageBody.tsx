@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { aboutContent } from "@/content/about";
 import { siteContent } from "@/content/site";
@@ -8,135 +9,156 @@ type AboutPageBodyProps = {
   locale?: Locale;
 };
 
-function localizedLabel(locale: Locale) {
+function externalLabel(locale: Locale) {
   return locale === "ja" ? "外部サイト" : "external site";
 }
 
+function contactHref(locale: Locale) {
+  return locale === "ja"
+    ? aboutContent.contactCta.link.href
+    : `/en${aboutContent.contactCta.link.href}`;
+}
+
 export function AboutPageBody({ locale = "ja" }: AboutPageBodyProps) {
+  const localizedSocial = siteContent.social.filter(
+    (account) => account.locale === locale,
+  );
+
   return (
-    <article className="bg-paper">
-      <div className="max-w-[1200px] mx-auto px-[5vw] lg:px-10 py-[clamp(64px,12vw,120px)]">
-        <h1 className="font-[family-name:var(--font-jp)] font-black text-ink text-4xl md:text-5xl">
-          {aboutContent.meta.heading[locale]}
-        </h1>
+    <article className="overflow-x-hidden bg-paper">
+      <section className="bg-paper">
+        <div className="mx-auto max-w-[1200px] px-[5vw] py-[clamp(64px,10vw,112px)] lg:px-10">
+          <div className="max-w-4xl">
+            <h1 className="font-display text-[clamp(3rem,5.2vw,5.4rem)] font-bold leading-none tracking-normal text-ink text-balance">
+              {aboutContent.meta.heading[locale]}
+            </h1>
+            <p className="mt-7 max-w-3xl font-jp text-lg leading-loose text-ink md:text-xl">
+              {aboutContent.mission.body[locale]}
+            </p>
+          </div>
 
-        <section aria-labelledby="mission-heading" className="mt-14">
-          <h2
-            id="mission-heading"
-            className="font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl"
-          >
-            {aboutContent.mission.heading[locale]}
-          </h2>
-          <p className="mt-5 max-w-3xl text-ink">{aboutContent.mission.body[locale]}</p>
-        </section>
+          <div className="mt-10 max-w-5xl">
+            <Image
+              src="/brand/editorial-team.png"
+              alt={`${siteContent.nameEn} ${aboutContent.meta.heading[locale]}`}
+              width={1286}
+              height={772}
+              priority
+              sizes="(min-width: 1024px) 70vw, 90vw"
+              className="h-auto w-full"
+            />
+          </div>
+        </div>
+      </section>
 
-        <hr className="my-12 border-ink/20" />
-
-        <section aria-labelledby="strategy-heading">
-          <h2
-            id="strategy-heading"
-            className="font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl"
-          >
+      <section className="bg-cream">
+        <div className="mx-auto max-w-[1200px] px-[5vw] py-[clamp(64px,9vw,104px)] lg:px-10">
+          <h2 className="max-w-3xl font-display text-[clamp(2.1rem,3vw,3.2rem)] font-bold leading-tight text-ink">
             {aboutContent.strategy.heading[locale]}
           </h2>
-          <p className="mt-5 max-w-3xl text-ink">{aboutContent.strategy.body[locale]}</p>
-        </section>
+          <p className="mt-7 max-w-4xl font-jp text-lg leading-loose text-ink md:text-xl">
+            {aboutContent.strategy.body[locale]}
+          </p>
+        </div>
+      </section>
 
-        <hr className="my-12 border-ink/20" />
-
-        <section aria-labelledby="pillars-heading">
-          <h2
-            id="pillars-heading"
-            className="font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl"
-          >
-            {locale === "ja" ? "コンテンツの3本柱" : "Three Editorial Pillars"}
+      <section className="bg-paper">
+        <div className="mx-auto max-w-[1200px] px-[5vw] py-[clamp(64px,9vw,104px)] lg:px-10">
+          <h2 className="max-w-3xl font-display text-[clamp(2.1rem,3vw,3.2rem)] font-bold leading-tight text-ink">
+            {aboutContent.pillarsHeading[locale]}
           </h2>
-          <ul role="list" className="mt-8 grid gap-6 md:grid-cols-3">
+
+          <ul role="list" className="mt-10 grid gap-px bg-ink md:grid-cols-3">
             {aboutContent.pillars.map((pillar) => (
               <li
                 key={pillar.id}
-                className="border border-ink/10 bg-cream p-6 md:p-8 shadow-[0_1px_4px_rgba(0,0,0,0.08)]"
+                className="bg-cream p-6 transition-colors duration-[250ms] hover:bg-paper motion-reduce:transition-none md:p-8"
               >
-                <h3 className="font-[family-name:var(--font-jp)] font-medium text-xl text-ink">
-                  {pillar.name[locale]}
-                </h3>
-                <p className="mt-2">
-                  <small className="font-[family-name:var(--font-sans)] text-ink">
-                    {pillar.share}
-                  </small>
-                </p>
-                <p className="mt-4 text-ink">{pillar.body[locale]}</p>
+                <div className="flex min-h-full flex-col gap-7">
+                  <div>
+                    <p className="font-display text-4xl font-bold leading-none text-accent md:text-5xl">
+                      {pillar.share}
+                    </p>
+                    <h3 className="mt-5 font-jp text-xl font-black leading-tight text-ink md:text-2xl">
+                      {pillar.name[locale]}
+                    </h3>
+                  </div>
+                  <p className="font-jp text-base leading-loose text-ink">
+                    {pillar.body[locale]}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
-        </section>
+        </div>
+      </section>
 
-        <hr className="my-12 border-ink/20" />
-
-        <section aria-labelledby="editorial-stance-heading">
-          <h2
-            id="editorial-stance-heading"
-            className="font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl"
-          >
+      <section className="bg-ink text-paper">
+        <div className="mx-auto max-w-[1200px] px-[5vw] py-[clamp(64px,9vw,104px)] lg:px-10">
+          <h2 className="font-display text-[clamp(2.1rem,3vw,3.2rem)] font-bold leading-tight text-paper">
             {aboutContent.editorialStance.heading[locale]}
           </h2>
-          <ul role="list" className="mt-8 grid gap-6 md:grid-cols-3">
+          <ul role="list" className="mt-10 grid gap-px bg-paper md:grid-cols-3">
             {aboutContent.editorialStance.points[locale].map((point) => (
-              <li key={point.label} className="border-t border-ink/20 pt-5">
-                <h3 className="font-[family-name:var(--font-jp)] font-medium text-xl text-ink">
+              <li key={point.label} className="bg-ink p-6 md:p-8">
+                <h3 className="font-jp text-xl font-black leading-tight text-paper">
                   {point.label}
                 </h3>
-                <p className="mt-3 text-ink">{point.body}</p>
+                <p className="mt-5 font-jp text-base leading-loose text-muted-light">
+                  {point.body}
+                </p>
               </li>
             ))}
           </ul>
-        </section>
+        </div>
+      </section>
 
-        <hr className="my-12 border-ink/20" />
-
-        <section aria-labelledby="sns-links-heading">
-          <h2
-            id="sns-links-heading"
-            className="font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl"
-          >
+      <section className="bg-paper">
+        <div className="mx-auto max-w-[1200px] px-[5vw] py-[clamp(64px,9vw,104px)] lg:px-10">
+          <h2 className="font-display text-[clamp(2.1rem,3vw,3.2rem)] font-bold leading-tight text-ink">
             {aboutContent.socialIntro.heading[locale]}
           </h2>
-          <p className="mt-5 max-w-3xl text-ink">{aboutContent.socialIntro.body[locale]}</p>
-          <ul role="list" className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {siteContent.social.map((account) => (
-              <li key={account.id}>
+          <p className="mt-6 max-w-3xl font-jp text-lg leading-loose text-ink">
+            {aboutContent.socialIntro.body[locale]}
+          </p>
+          <ul role="list" className="mt-10 grid gap-px bg-ink sm:grid-cols-2 lg:grid-cols-4">
+            {localizedSocial.map((account) => (
+              <li key={account.id} className="bg-paper">
                 <a
                   href={account.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${account.label}（${localizedLabel(locale)}）`}
-                  className="block border border-ink px-4 py-3 font-[family-name:var(--font-sans)] text-sm font-medium text-ink transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                  aria-label={`${account.label}（${externalLabel(locale)}）`}
+                  className="block px-5 py-5 font-sans text-sm font-medium text-ink transition-colors duration-[150ms] hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent motion-reduce:transition-none"
                 >
                   {account.label}
                 </a>
               </li>
             ))}
           </ul>
-        </section>
+        </div>
+      </section>
 
-        <hr className="my-12 border-ink/20" />
-
-        <section aria-labelledby="about-contact-heading">
-          <h2
-            id="about-contact-heading"
-            className="font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl"
-          >
-            {aboutContent.contactCta.heading[locale]}
-          </h2>
-          <p className="mt-5 max-w-3xl text-ink">{aboutContent.contactCta.body[locale]}</p>
-          <Button href={aboutContent.contactCta.link.href} className="mt-8">
-            {aboutContent.contactCta.link[`label_${locale}`]}
-          </Button>
-          <Link href="/about" className="sr-only">
+      <section className="bg-cream">
+        <div className="mx-auto max-w-[1200px] px-[5vw] py-[clamp(64px,8vw,96px)] lg:px-10">
+          <div>
+            <div>
+              <h2 className="max-w-3xl font-display text-[clamp(2.1rem,3vw,3.2rem)] font-bold leading-tight text-ink">
+                {aboutContent.contactCta.heading[locale]}
+              </h2>
+              <p className="mt-6 max-w-2xl font-jp text-lg leading-loose text-ink">
+                {aboutContent.contactCta.body[locale]}
+              </p>
+            </div>
+            <Button href={contactHref(locale)} className="mt-9">
+              {aboutContent.contactCta.link[`label_${locale}`]}
+            </Button>
+          </div>
+          <Link href={locale === "ja" ? "/about" : "/en/about"} className="sr-only">
             {aboutContent.meta.heading[locale]}
           </Link>
-        </section>
-      </div>
+        </div>
+      </section>
     </article>
   );
 }

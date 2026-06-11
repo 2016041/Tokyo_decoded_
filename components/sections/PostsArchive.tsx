@@ -31,7 +31,7 @@ export function PostsArchive({
       <div className="max-w-[1200px] mx-auto px-[5vw] lg:px-10 py-[clamp(64px,12vw,120px)]">
         <h1
           id="posts-archive-heading"
-          className="font-[family-name:var(--font-jp)] font-black text-ink text-4xl md:text-5xl"
+          className="font-jp font-black text-ink text-4xl md:text-5xl"
         >
           {postsPageContent.heading[locale]}
         </h1>

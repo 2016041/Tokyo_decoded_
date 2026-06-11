@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { AboutMini } from "@/components/sections/AboutMini";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { EditorsToolsForm } from "@/components/sections/EditorsToolsForm";
 import { Hero } from "@/components/sections/Hero";
 import { LatestPosts } from "@/components/sections/LatestPosts";
-import { RecommendedExcerpt } from "@/components/sections/RecommendedExcerpt";
 import { posts } from "@/content/posts";
-import { recommendedItems } from "@/content/recommended";
 import { metadataForPage } from "@/lib/i18n";
 
 export const dynamic = "force-static";
@@ -18,12 +17,21 @@ export function generateMetadata(): Metadata {
 export default function Home() {
   return (
     <>
-      <Hero locale="ja" />
-      <AboutMini locale="ja" />
-      <LatestPosts locale="ja" items={posts} />
-      <EditorsToolsForm locale="ja" />
-      <RecommendedExcerpt locale="ja" items={recommendedItems} />
-      <ContactCTA locale="ja" />
+      <ScrollReveal>
+        <Hero locale="ja" />
+      </ScrollReveal>
+      <ScrollReveal>
+        <AboutMini locale="ja" />
+      </ScrollReveal>
+      <ScrollReveal>
+        <LatestPosts locale="ja" items={posts} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <EditorsToolsForm locale="ja" />
+      </ScrollReveal>
+      <ScrollReveal>
+        <ContactCTA locale="ja" />
+      </ScrollReveal>
     </>
   );
 }

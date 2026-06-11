@@ -59,6 +59,7 @@
   /* ===== COLOR SYSTEM: Editorial Ink ===== */
   --color-ink:    #0F1115;   /* PRIMARY: テキスト・ロゴ・罫線 */
   --color-accent: #E63946;   /* ACCENT: 朱赤・CTA（1画面1〜2箇所まで） */
+  --color-accent-hover: #C1313D; /* CTA hover: design.md Button spec */
   --color-cream:  #F4F1EA;   /* SUB: サブ背景・カード面 */
   --color-paper:  #FFFFFF;   /* BG: メイン背景 */
   --color-muted:       #6B7280;   /* MUTED: キャプション・補足テキスト（paper 背景専用） */
@@ -114,5 +115,41 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+}
+
+@layer components {
+  @keyframes hero-cover-drift {
+    from {
+      transform: scale(1.01) translate3d(0, 0, 0);
+    }
+
+    to {
+      transform: scale(1.05) translate3d(-1%, -0.6%, 0);
+    }
+  }
+
+  .hero-cover-image {
+    animation: hero-cover-drift 24s ease-in-out infinite alternate;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-cover-image {
+      animation: none;
+    }
+  }
+}
+
+@layer utilities {
+  .font-jp {
+    font-feature-settings: "palt";
+    font-kerning: normal;
   }
 }

@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header
       role="banner"
-      className="sticky top-0 z-[200] bg-paper border-b border-ink/20"
+      className="sticky top-0 z-[200] border-b border-ink bg-paper"
     >
       <Container>
         <div className="flex min-h-20 items-center justify-between gap-6">
@@ -27,7 +27,7 @@ export default function Header() {
             />
           </Link>
 
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-8 border-l border-ink pl-8 lg:flex">
             <Navigation />
             <LangToggle />
           </div>

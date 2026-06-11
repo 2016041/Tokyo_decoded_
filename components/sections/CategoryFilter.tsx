@@ -36,8 +36,8 @@ export function CategoryFilter({
               onClick={() => onChange(category.slug)}
               className={
                 isSelected
-                  ? "border border-ink bg-ink px-4 py-2 font-[family-name:var(--font-jp)] text-sm font-medium text-paper transition-colors duration-[150ms] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
-                  : "border border-ink bg-paper px-4 py-2 font-[family-name:var(--font-jp)] text-sm font-medium text-ink transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                  ? "border border-ink bg-ink px-4 py-2 font-jp text-sm font-medium text-paper transition-colors duration-[150ms] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                  : "border border-ink bg-paper px-4 py-2 font-jp text-sm font-medium text-ink transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
               }
             >
               {getCategoryLabel(category, locale)}

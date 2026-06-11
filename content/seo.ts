@@ -103,17 +103,6 @@ export const pageMetadata = {
     canonicalPath: "/tools",
   },
 
-  recommended: {
-    title_ja: "Tokyo Decoded厳選 推奨ツール | Tokyo Decoded",
-    title_en: "Tokyo Decoded Picks — Recommended Tools | Tokyo Decoded",
-    description_ja:
-      "編集部が調査・検証したサービスとツールをカテゴリ別に紹介。家計・AI・美容・旅行など、ミレニアル世代の日常を豊かにする厳選アイテム。",
-    description_en:
-      "Curated tools and services we've researched and tested — organized by category. Money, AI, beauty, travel, and more.",
-    ogImage: "/brand/ogp-1200x630.png",
-    canonicalPath: "/recommended",
-  },
-
   privacy: {
     title_ja: "プライバシーポリシー | Tokyo Decoded",
     title_en: "Privacy Policy | Tokyo Decoded",
@@ -168,7 +157,6 @@ export const robotsPolicy = {
     "/posts": 0.9,
     "/posts/[slug]": 0.8,
     "/tools": 0.9,
-    "/recommended": 0.7,
     "/contact": 0.6,
     "/privacy": 0.3,
     "/disclosure": 0.3,

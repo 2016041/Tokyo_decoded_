@@ -18,7 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/about", key: "/about", freq: "monthly" },
     { path: "/posts", key: "/posts", freq: "daily" },
     { path: "/tools", key: "/tools", freq: "monthly" },
-    { path: "/recommended", key: "/recommended", freq: "monthly" },
     { path: "/contact", key: "/contact", freq: "yearly" },
     { path: "/privacy", key: "/privacy", freq: "yearly" },
     { path: "/disclosure", key: "/disclosure", freq: "yearly" },

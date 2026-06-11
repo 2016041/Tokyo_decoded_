@@ -13,7 +13,7 @@ export default function EnContactThanksPage() {
   return (
     <section className="bg-paper">
       <div className="mx-auto max-w-[1200px] px-[5vw] py-[clamp(64px,12vw,120px)] lg:px-10">
-        <h1 className="font-[family-name:var(--font-jp)] text-4xl font-black text-ink md:text-5xl">
+        <h1 className="font-jp text-4xl font-black text-ink md:text-5xl">
           {formsContent.contact.success.heading.en}
         </h1>
         <p className="mt-5 max-w-2xl text-ink">{formsContent.contact.success.body.en}</p>

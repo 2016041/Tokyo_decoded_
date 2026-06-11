@@ -14,7 +14,7 @@ export function ToolsList({ locale = "ja", items = tools }: ToolsListProps) {
       <div className="max-w-[1200px] mx-auto px-[5vw] lg:px-10 py-[clamp(64px,12vw,120px)]">
         <h1
           id="tools-list-heading"
-          className="font-[family-name:var(--font-display)] font-bold text-ink text-4xl md:text-5xl"
+          className="font-display font-bold text-ink text-4xl md:text-5xl"
           lang="en"
         >
           {toolsPageContent.meta.heading[locale]}
@@ -43,7 +43,7 @@ export function ToolsList({ locale = "ja", items = tools }: ToolsListProps) {
                   <div>
                     <h2
                       id={headingId}
-                      className="font-[family-name:var(--font-jp)] font-medium text-2xl md:text-3xl text-ink"
+                      className="font-jp font-medium text-2xl md:text-3xl text-ink"
                     >
                       {tool.name[locale]}
                     </h2>

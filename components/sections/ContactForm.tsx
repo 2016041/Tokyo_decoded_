@@ -107,7 +107,7 @@ export function ContactForm({ locale = "ja" }: ContactFormProps) {
       <div className="max-w-[1200px] mx-auto px-[5vw] lg:px-10 py-[clamp(64px,12vw,120px)]">
         <h1
           id="contact-form-heading"
-          className="font-[family-name:var(--font-jp)] font-black text-ink text-4xl md:text-5xl"
+          className="font-jp font-black text-ink text-4xl md:text-5xl"
         >
           {content.heading[locale]}
         </h1>
@@ -136,7 +136,7 @@ export function ContactForm({ locale = "ja" }: ContactFormProps) {
                 : "hidden"
             }
           >
-            <h2 className="font-[family-name:var(--font-jp)] font-medium text-xl text-ink">
+            <h2 className="font-jp font-medium text-xl text-ink">
               {submitState === "error"
                 ? content.error.heading[locale]
                 : content.validation.required[locale]}
@@ -163,7 +163,7 @@ export function ContactForm({ locale = "ja" }: ContactFormProps) {
 
           {submitState === "success" ? (
             <div className="mt-8 border border-ink bg-cream p-6">
-              <h2 className="font-[family-name:var(--font-jp)] font-medium text-2xl text-ink">
+              <h2 className="font-jp font-medium text-2xl text-ink">
                 {content.success.heading[locale]}
               </h2>
               <p className="mt-3 text-ink">{content.success.body[locale]}</p>
@@ -171,7 +171,7 @@ export function ContactForm({ locale = "ja" }: ContactFormProps) {
           ) : null}
 
           <fieldset className="mt-10 border-0 p-0">
-            <legend className="font-[family-name:var(--font-jp)] font-medium text-2xl text-ink">
+            <legend className="font-jp font-medium text-2xl text-ink">
               {locale === "ja" ? "お客様の情報" : "Your Information"}
             </legend>
             <div className="mt-6 grid gap-6">
@@ -234,7 +234,7 @@ export function ContactForm({ locale = "ja" }: ContactFormProps) {
           </fieldset>
 
           <fieldset className="mt-10 border-0 p-0">
-            <legend className="font-[family-name:var(--font-jp)] font-medium text-2xl text-ink">
+            <legend className="font-jp font-medium text-2xl text-ink">
               {locale === "ja" ? "お問い合わせ内容" : "Inquiry Details"}
             </legend>
             <div className="mt-6 grid gap-6">

@@ -17,7 +17,7 @@ export function Badge({
     <span
       aria-hidden={ariaHidden}
       className={cx(
-        "bg-accent text-paper text-xs font-[family-name:var(--font-sans)] font-medium px-2 py-0.5 rounded-sm inline-block",
+        "bg-accent text-paper text-xs font-sans font-medium px-2 py-0.5 rounded-sm inline-block",
         className,
       )}
     >

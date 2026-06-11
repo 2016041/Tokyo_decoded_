@@ -77,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" data-scroll-behavior="smooth">
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${notoSansJP.variable}`}
         suppressHydrationWarning
@@ -86,7 +86,11 @@ export default function RootLayout({
         <JsonLdOrganization />
         <SkipLink />
         <Header />
-        <main id="main-content" tabIndex={-1}>
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="relative w-full max-w-full"
+        >
           {children}
         </main>
         <Footer />

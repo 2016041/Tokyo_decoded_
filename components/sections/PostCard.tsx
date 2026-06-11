@@ -50,16 +50,18 @@ export function PostCard({
         href={`/posts/${post.slug}`}
         className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
       >
-        <Image
-          src={post.thumbnail}
-          alt={getPostThumbnailAlt(post, locale)}
-          width={400}
-          height={225}
-          loading={eagerLoading ? "eager" : "lazy"}
-          fetchPriority={eagerLoading ? "high" : "auto"}
-          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          className="aspect-video w-full object-cover"
-        />
+        <div className="overflow-hidden">
+          <Image
+            src={post.thumbnail}
+            alt={getPostThumbnailAlt(post, locale)}
+            width={400}
+            height={225}
+            loading={eagerLoading ? "eager" : "lazy"}
+            fetchPriority={eagerLoading ? "high" : "auto"}
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+            className="aspect-video w-full object-cover transition-transform duration-[700ms] ease-out group-hover:scale-105 motion-reduce:transition-none"
+          />
+        </div>
         <div className="bg-cream border border-ink/10 p-6 md:p-8 shadow-[0_1px_4px_rgba(0,0,0,0.08)] transition-colors duration-[250ms] motion-reduce:transition-none group-hover:bg-ink group-hover:text-paper">
           <p>
             <span className="sr-only">カテゴリ: </span>
@@ -67,7 +69,7 @@ export function PostCard({
           </p>
           <h3
             id={headingId}
-            className="font-[family-name:var(--font-jp)] font-bold text-lg md:text-xl mt-3"
+            className="font-jp font-bold text-lg md:text-xl mt-3"
           >
             {title}
           </h3>

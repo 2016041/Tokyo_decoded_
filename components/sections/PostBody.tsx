@@ -45,7 +45,7 @@ export function PostBody({ post, locale = "ja" }: PostBodyProps) {
       <div className="px-[5vw] lg:px-10 py-[clamp(64px,12vw,120px)]">
         <div className="max-w-[760px] mx-auto">
           <nav aria-label="パンくず" className="mb-10">
-            <ol className="flex flex-wrap gap-2 font-[family-name:var(--font-jp)] text-sm text-ink">
+            <ol className="flex flex-wrap gap-2 font-jp text-sm text-ink">
               <li>
                 <Link
                   href="/"
@@ -75,7 +75,7 @@ export function PostBody({ post, locale = "ja" }: PostBodyProps) {
             </p>
             <h1
               id="post-title"
-              className="mt-5 font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl leading-[1.35] tracking-[-0.01em]"
+              className="mt-5 font-jp font-black text-ink text-3xl md:text-4xl leading-[1.35] tracking-[-0.01em]"
             >
               {title}
             </h1>
@@ -109,7 +109,7 @@ export function PostBody({ post, locale = "ja" }: PostBodyProps) {
             >
               <h2
                 id="affiliate-links-heading"
-                className="font-[family-name:var(--font-jp)] font-black text-ink text-2xl md:text-3xl"
+                className="font-jp font-black text-ink text-2xl md:text-3xl"
               >
                 {locale === "ja" ? "関連ツール・商品（PR）" : "Related Tools and Products (PR)"}
               </h2>
@@ -135,7 +135,7 @@ export function PostBody({ post, locale = "ja" }: PostBodyProps) {
                       aria-label={`${link.label}（外部サイト・PR）`}
                       className="block border border-ink/20 p-5 transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                     >
-                      <span className="block font-[family-name:var(--font-jp)] font-medium">
+                      <span className="block font-jp font-medium">
                         <Badge label="PR" aria-hidden className="mr-2" />
                         {link.label}
                       </span>

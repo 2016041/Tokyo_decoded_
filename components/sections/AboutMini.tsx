@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { homeContent } from "@/content/home";
 import type { Locale } from "@/content/types";
@@ -11,33 +12,50 @@ export function AboutMini({ locale = "ja" }: AboutMiniProps) {
 
   return (
     <section aria-labelledby="about-mini-heading" className="bg-cream">
-      <div className="max-w-[1200px] mx-auto px-[5vw] lg:px-10 py-[clamp(64px,12vw,120px)]">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
+      <div className="mx-auto max-w-[1200px] px-[5vw] pt-[clamp(88px,12vw,136px)] pb-[clamp(40px,6vw,72px)] lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-[minmax(260px,0.72fr)_minmax(0,1.28fr)]">
           <div>
-            <p className="font-[family-name:var(--font-sans)] text-xs font-semibold tracking-widest uppercase text-accent">
-              About Us
-            </p>
             <h2
               id="about-mini-heading"
-              className="mt-4 font-[family-name:var(--font-jp)] font-black text-ink text-3xl md:text-4xl leading-tight"
+              className="font-display text-[clamp(2.5rem,5vw,4.6rem)] font-bold leading-none text-ink"
             >
-              {content.heading[locale]}
+              {content.heading.en}
             </h2>
+            <p className="mt-4 font-jp text-xl font-medium text-ink">
+              {content.heading[locale]}
+            </p>
             <Link
               href={content.link.href}
-              className="inline-flex items-center gap-2 mt-8 font-[family-name:var(--font-sans)] text-sm font-medium text-ink border-b border-ink pb-1 hover:text-accent hover:border-accent transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-cream focus-visible:ring-accent"
+              className="mt-10 inline-flex items-center gap-3 border-b border-ink pb-1 font-sans text-sm font-medium uppercase tracking-widest text-ink transition-colors duration-150 hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-cream focus-visible:ring-accent"
             >
               {content.link[`label_${locale}`]}
               <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <div className="border-l-2 border-accent pl-8 md:pl-10">
-            <p className="text-base md:text-lg text-ink leading-relaxed">
+
+          <div className="grid gap-8">
+            <p className="max-w-3xl font-jp text-base font-normal leading-loose text-ink md:text-lg">
               {content.body[locale]}
             </p>
+            <EditorialTeamIllustration />
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function EditorialTeamIllustration() {
+  return (
+    <div>
+      <Image
+        src="/brand/editorial-team.png"
+        alt="Tokyo Decoded編集部メンバーのイラスト"
+        width={1286}
+        height={772}
+        sizes="(min-width: 1024px) 58vw, 90vw"
+        className="h-auto w-full"
+      />
+    </div>
   );
 }

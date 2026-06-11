@@ -68,7 +68,7 @@ tokyo-decoded.com
 ├─ /posts             投稿アーカイブ
 │   └─ /posts/[slug]  個別投稿
 ├─ /tools             Editor's Tools（無料配布）
-├─ /recommended       推奨ツール（アフィリンク集）
+├─ /recommended       推奨ツール（アフィリンク集）← **削除（2026-06-11）。アフィリリンクは記事内に埋め込む運用に変更**
 ├─ /privacy           プライバシーポリシー
 ├─ /disclosure        アフィリエイト開示（ステマ規制対応）
 └─ /contact           お問い合わせ
@@ -158,12 +158,10 @@ tokyo-decoded.com
 - DLにはメアド登録必須
 - ※初期は Digital Kakeibo 1点
 
-### 5.6 `/recommended` 推奨ツール
+### 5.6 `/recommended` 推奨ツール ← **削除（2026-06-11）**
 
-- カテゴリ別商品紹介（家計 / AI / 美容 / 旅行 etc.）
-- アフィリンク（PR明示）
-- 「Tokyo Decoded厳選」表記
-- ※ASP承認後にコンテンツ追加（初期は空 or "Coming Soon"）
+> アフィリリンクは各記事（/posts/[slug]）内に埋め込む運用に変更。
+> ナビゲーションからも削除すること。
 
 ### 5.7 `/privacy` プライバシーポリシー
 - 個人情報の取扱い

@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 type Locale = "ja" | "en";
 
 const buttonBaseClassName =
-  "border border-ink px-3 py-2 font-[family-name:var(--font-sans)] text-sm font-medium transition-colors duration-[150ms] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent motion-reduce:transition-none";
+  "border border-ink px-3 py-2 font-sans text-sm font-medium transition-colors duration-[150ms] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent motion-reduce:transition-none";
 
 function getTargetPath(pathname: string, locale: Locale): string {
   const isEnglishPath = pathname === "/en" || pathname.startsWith("/en/");

@@ -188,6 +188,174 @@ export const posts = [
       "kakeibo",
     ],
   },
+  {
+    slug: "003-slow-aging",
+    title_ja: "「老けないように」は古い——韓国・中国発「Slow Aging（低速老化）」という新しい美容哲学",
+    title_en: "Slow Aging: The Korean Beauty Philosophy That's Replacing Anti-Aging",
+    category: "beauty",
+    publishedAt: "2026-06-11",
+    thumbnail: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80",
+    thumbnailAlt_ja: "ミニマルなスキンケアアイテムが並ぶ白い棚——Slow Agingのコンセプト",
+    thumbnailAlt_en: "Minimalist skincare products on a clean white shelf — representing the Slow Aging concept",
+    excerpt_ja:
+      "韓国・中国発「低速老化（Slow Aging）」がTikTokで3,800万回再生。「老化に抗う」から「老化をゆっくり重ねる」へ——日本人がすでに体現していた美容哲学をデータで読み解きます。",
+    excerpt_en:
+      "Korea named it. China made it viral. But Japan has been practicing Slow Aging for decades without the label. Here's the science behind the 38-million-view TikTok trend.",
+    body: {
+      hook: {
+        ja: "「老けないようにする」というスキンケアの常識が、静かに塗り替えられています。韓国と中国のビューティシーンで広がる「Slow Aging（低速老化）」は、アンチエイジングの概念そのものをリフレームする美容哲学です。TikTokでは#slowagingが3,800万回再生を突破し（2025年末時点）、日本ではまだほぼ語られていません。",
+        en: "The idea that skincare is about 'fighting' aging is quietly being replaced. Slow Aging — called 低速老化 (dīsù lǎohuà) in Chinese — is a beauty philosophy spreading from Korea and China that reframes the entire premise of anti-aging. The TikTok tag #slowaging passed 38 million views by late 2025. In Japan, it's barely being discussed yet.",
+      },
+      data: {
+        ja: "Slow Agingという概念は、中国の小紅書（RED）で2024年に急増し、推定5,000万インプレッションを超えるバイラルを記録しました。その後TikTokやInstagramを通じてグローバルに拡散。「アンチエイジング」というワードは2023年以降のZ世代・ミレニアル世代の美容消費において検索数が微減傾向にある一方、「preventive beauty（予防美容）」「skin health（肌の健康）」といったキーワードが急増しています（Google Trends, 2024）。",
+        en: "The concept surged on Chinese platform Xiaohongshu (RED) in 2024, generating an estimated 50 million impressions in a viral wave. It then spread globally through TikTok and Instagram. Meanwhile, searches for 'anti-aging' have been quietly declining among Gen Z and millennials since 2023, while 'preventive beauty' and 'skin health' are trending upward (Google Trends, 2024).",
+      },
+      explanation: {
+        ja: "Slow Agingのコアにある考え方は、老化を「抗うもの」ではなく「ゆっくりコントロールするもの」として捉えることです。高価な美容外科・注射に頼るのではなく、日常習慣の積み重ねで差をつける。3つの原則が広く語られています。①睡眠の質を最優先にする（22時〜2時が成長ホルモンのゴールデンタイム）、②腸活で体内から整える（腸内フローラが肌荒れ・くすみに直結）、③UVケアを1日も抜かない（紫外線ダメージは肌老化の約80%に関与・米皮膚科学会）。注目成分はレチノール×ナイアシンアミドの組み合わせで、「20代から仕込む」が韓国式の流儀とされています。",
+        en: "The core idea of Slow Aging is to stop 'fighting' aging and start 'pacing' it — using daily habits rather than expensive interventions. Three principles appear most consistently: prioritize sleep quality (growth hormone peaks between 22:00–02:00); support gut health (the gut-skin connection is well-documented in dermatology research); and commit to daily UV protection (UV exposure accounts for approximately 80% of visible skin aging, per the American Academy of Dermatology). The ingredient combination that Korean dermatologists most often recommend is retinol paired with niacinamide.",
+      },
+      practice: {
+        ja: "面白いのは、日本人がすでにSlow Agingを体現していたという逆説です。和食（発酵食品・緑茶・海藻）は腸内環境を整え、早寝早起きの文化は睡眠の質を守り、日焼け止め文化は紫外線ダメージを抑える——Slow Agingの3原則を、言語化せずに実践してきた文化です。「言葉を持つことで、習慣が意識的になる」。Slow Agingという概念を知ることで、すでにある日本の日常習慣が、より意図的なケアに変わります。まず取り入れやすいのは、朝のUV防御（SPF50+を年365日）と、就寝前のレチノール少量使用から始めることです。",
+        en: "Here's the irony: Japan has been practicing Slow Aging for decades without naming it. A traditional Japanese diet rich in fermented foods (miso, natto, tsukemono) feeds the gut microbiome. An early-to-bed culture protects sleep quality. A strong SPF culture limits UV damage. Japan has been living the three Slow Aging principles without a label for them. The value of naming a practice is that it becomes intentional. Knowing about Slow Aging turns existing Japanese habits into a deliberate system. The easiest starting points: daily SPF50+ (365 days a year, rain or shine) and a small amount of retinol in the evening routine.",
+      },
+      cta: {
+        ja: "Tokyo Decoded編集部では、Slow Aging実践のデイルーティンをまとめたガイドをEditor's Toolsで公開しています。スキンケアについては、オルビスユー ドット・ファンケル アクネケア（A8.net経由、PR）など、編集部が実際に試したアイテムもあわせてご紹介しています。",
+        en: "We've put together a practical Slow Aging starter routine in our Editor's Tools section. For skincare products, we recommend exploring Japanese drugstore brands such as Hada Labo and Kose Sekkisei — both available on Amazon (affiliate links, PR) and both built on principles that align directly with Slow Aging.",
+      },
+    },
+    relatedToolSlug: "research-brief",
+    affiliateLinks: [
+      {
+        label: "オルビスユー ドット（PR）",
+        url: "#affiliate-orbis",
+        note: "A8.net経由。当編集部はASP報酬を受け取る場合があります。",
+      },
+      {
+        label: "ファンケル アクネケア（PR）",
+        url: "#affiliate-fancl",
+        note: "A8.net経由。当編集部はASP報酬を受け取る場合があります。",
+      },
+      {
+        label: "Hada Labo — Amazon US (PR)",
+        url: "#affiliate-hadalabo",
+        note: "Via Amazon Associates. We may earn a commission from this link.",
+      },
+    ],
+    tags_ja: ["スローエイジング", "低速老化", "韓国美容", "予防美容", "レチノール", "海外トレンド"],
+    tags_en: ["slow aging", "k-beauty", "preventive beauty", "retinol", "skincare", "global trends"],
+  },
+  {
+    slug: "004-sleepmaxxing",
+    title_ja: "日本人に一番必要かもしれない——米国発「Sleepmaxxing」7原則で睡眠を科学する",
+    title_en: "Sleepmaxxing: The 80-Million-View TikTok Trend That Japan Needs Most",
+    category: "lifestyle",
+    publishedAt: "2026-06-11",
+    thumbnail: "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=800&q=80",
+    thumbnailAlt_ja: "月明かりが差し込む清潔感のある寝室——Sleepmaxxingのコンセプト",
+    thumbnailAlt_en: "A clean, minimal bedroom with soft moonlight — representing Sleepmaxxing",
+    excerpt_ja:
+      "TikTok #sleepmaxxingが8,000万回再生。睡眠を科学的に徹底最適化するムーブメントが、OECD最短レベルの睡眠時間を抱える日本人にどう響くか、7原則とデータで読み解きます。",
+    excerpt_en:
+      "Sleepmaxxing has 80 million TikTok views. Japan sleeps less than almost any developed nation. Here's the 7-principle framework — and why it matters most for Japanese millennials.",
+    body: {
+      hook: {
+        ja: "「よく寝た」を感覚で語る時代が、終わりつつあります。米国TikTokで8,000万回再生を超えた「Sleepmaxxing」は、睡眠の質・時間・環境を科学的に徹底最適化するムーブメントです。日本ではほぼ誰も話していない——でも実は、日本人に一番必要かもしれない考え方です。OECD加盟国の中でも最短クラスの平均睡眠時間（7時間22分 vs. OECD平均7時間32分）を持つ国が、この概念を最も必要としているとも言えます。",
+        en: "The era of measuring sleep by feel is ending. Sleepmaxxing — a term with over 80 million TikTok views — is the practice of optimizing every dimension of sleep through science-backed methods. Japan is barely discussing it. Yet Japan arguably needs it most: the country's average sleep duration (7h 22min) sits near the bottom of OECD rankings, behind the 7h 32min average.",
+      },
+      data: {
+        ja: "Sleepmaxxingという言葉は「Maxxing（〜を極限まで最大化する）」シリーズの一つで、2023年末〜2024年にかけて米国TikTokで急拡大しました。神経科学者Andrew Hubermanのポッドキャスト・SNS発信が火をつけた形で、#sleepmaxxingに加え#sleepgirl#sleephacksなど派生タグも急増。世界の睡眠補助グッズ市場は2030年までに1,000億ドル超に達すると予測されています（Grand View Research）。日本では「睡眠負債」「睡眠の質」への関心は高まっているものの、Sleepmaxxingというコンセプト名としての浸透はまだほぼゼロです。",
+        en: "Sleepmaxxing is part of the 'maxxing' series of TikTok trends — systematic optimization applied to a specific life area. The term exploded in late 2023 and through 2024, partly fueled by neuroscientist Andrew Huberman's widely-followed content. Related tags like #sleepgirl and #sleephacks followed. The global sleep aids market is projected to exceed $100 billion by 2030 (Grand View Research). In Japan, awareness of 'sleep debt' and 'sleep quality' has grown — but the Sleepmaxxing framework itself is essentially unknown.",
+      },
+      explanation: {
+        ja: "Sleepmaxxingの本質は、「何時間寝たか」より「どれだけ深く・質よく寝たか」を最適化することです。7原則が広く語られています。①完全遮光（わずかな光でもメラトニン分泌が低下）、②室温18〜19度（深睡眠のゴールデンゾーン・深部体温が下がることで眠気が発生）、③マウステープ（鼻呼吸を強制・口呼吸は睡眠の質を下げる）、④就寝1時間前のデジタルオフ（ブルーライトが脳に「昼間」と誤認させる）、⑤ホワイトノイズで音環境を整える、⑥マグネシウム補給（睡眠深化に関与・複数論文）、⑦Oura Ring等で睡眠スコアを数値化する（測定することで改善が加速する）。",
+        en: "Sleepmaxxing focuses on optimizing sleep quality and architecture — not just duration. Seven principles appear most consistently in the framework. Complete blackout: even dim light suppresses melatonin production. Room temperature 18–19°C: core body temperature must drop to initiate deep sleep. Mouth tape: forces nasal breathing, which improves sleep architecture. No screens one hour before bed: blue light signals 'daytime' to the brain. White noise: creates a consistent sound environment. Magnesium glycinate: linked to improved sleep depth in multiple peer-reviewed studies. Data tracking with Oura Ring or Apple Watch: measurement accelerates improvement.",
+      },
+      practice: {
+        ja: "日本には「いねむり（居眠り）」という、電車や会議中に短時間仮眠を取る文化があります。これはNASAの研究でも約26分の仮眠が認知機能を34%向上させることが示されており、Sleepmaxxingの文脈でも「パワーナップ」として再評価されています。日本人のSleepmaxxing実践として今すぐ始められるのは、遮光カーテンの導入（最も費用対効果が高い）と、就寝前のスマートフォンを別室に置くことです。Oura Ringなどのウェアラブルデバイスで数値化すると、改善の手応えが明確になります。",
+        en: "Japan has a long tradition of 'inemuri' — sleeping in short bursts on trains, in meetings, during breaks. NASA research suggests a 26-minute nap improves cognitive performance by 34%, and the practice maps directly onto what Sleepmaxxing calls 'power napping.' For Japanese millennials starting with Sleepmaxxing, the two highest-ROI first steps are blackout curtains (the most cost-effective hardware investment) and placing your phone in another room before sleep. Adding a wearable like Oura Ring makes the improvements measurable and motivating.",
+      },
+      cta: {
+        ja: "Tokyo Decoded編集部では、今夜から始められるSleepmaxxingスターターキットをEditor's Toolsにまとめています。マットレス・枕については、BRAIN SLEEP STORE・昭和西川・LIMNE（A8.net経由、PR）など、睡眠の質に直結する寝具ブランドもあわせてご紹介しています。",
+        en: "We've put together a beginner Sleepmaxxing stack — starting from free habits — in our Editor's Tools section. For sleep gear, we recommend exploring Oura Ring (affiliate link, PR) for tracking, and magnesium glycinate supplements available on Amazon (affiliate link, PR) as an accessible first step.",
+      },
+    },
+    relatedToolSlug: "research-brief",
+    affiliateLinks: [
+      {
+        label: "BRAIN SLEEP STORE（PR）",
+        url: "#affiliate-brainsleep",
+        note: "A8.net経由。当編集部はASP報酬を受け取る場合があります。",
+      },
+      {
+        label: "LIMNE マットレス（PR）",
+        url: "#affiliate-limne",
+        note: "A8.net経由。当編集部はASP報酬を受け取る場合があります。",
+      },
+      {
+        label: "Oura Ring (PR)",
+        url: "#affiliate-oura",
+        note: "Via affiliate program. We may earn a commission from this link.",
+      },
+    ],
+    tags_ja: ["スリープマキシング", "睡眠最適化", "快眠", "睡眠習慣", "バイオハッキング", "海外トレンド"],
+    tags_en: ["sleepmaxxing", "sleep optimization", "biohacking", "sleep science", "global trends", "wellness"],
+  },
+  {
+    slug: "005-underconsumption-core",
+    title_ja: "TikTok6億再生「Underconsumption Core」は、日本の「もったいない」だった",
+    title_en: "Underconsumption Core Has 600M TikTok Views. Japan Called It 'Mottainai' Centuries Ago.",
+    category: "money-ai",
+    publishedAt: "2026-06-11",
+    thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+    thumbnailAlt_ja: "整然と並んだシンプルな持ち物——Underconsumption Coreのコンセプト",
+    thumbnailAlt_en: "A few neatly organized minimal possessions — representing Underconsumption Core",
+    excerpt_ja:
+      "TikTok #underconsumptioncore が6億回再生。「買わない」「使い切る」「少なさを誇る」——この価値観は、日本が100年前から持つ「もったいない」哲学とほぼ同じでした。",
+    excerpt_en:
+      "TikTok's #underconsumptioncore has over 600 million views. The philosophy — buy less, use everything up, own less — is almost identical to Japan's 'Mottainai' concept. America discovered it in 2024.",
+    body: {
+      hook: {
+        ja: "「買う」ことを誇る時代が、終わりつつあります。米国TikTokで6億回再生を超えた「Underconsumption Core」は、「新しいものを買う」ではなく「今あるものを使い切る」を美学とするムーブメントです。TikTok Shopなどのコマース機能が加速させた過剰消費への反動として2024年夏に爆発しました。日本ではほぼ誰も話していない——でも、この価値観は日本が100年前から持っていたものとほぼ同じです。",
+        en: "The era of conspicuous consumption is quietly losing its cultural hold. Underconsumption Core — with over 600 million TikTok views — is a movement that treats 'using things up completely' as an aesthetic, rather than 'buying new things.' It exploded in the summer of 2024 as a reaction to the hyper-consumption culture accelerated by TikTok Shop and similar platforms. In Japan, it's barely being discussed. Yet the underlying values are almost identical to something Japan has held for centuries.",
+      },
+      data: {
+        ja: "Underconsumption Coreという言葉は、TikTok Shopが米国で本格展開した2024年春以降、#TikTokMadeMeBuyItという過剰消費タグへの反動として生まれました。#underconsumptioncoreのタグは2024年夏に急増し、6億回超を記録。派生タグ#slowliving#intentionalliving#nospendchallengeも同時に拡大しています。「買わない美学」「少なさを誇る」「ストックゼロ運用」が核心のキーワードとして定着しました。",
+        en: "The term emerged in spring 2024 as a direct counter to #TikTokMadeMeBuyIt — a tag celebrating impulse purchases driven by the platform's commerce features. By summer 2024, #underconsumptioncore was growing rapidly, eventually crossing 600 million views. Related tags — #slowliving, #intentionalliving, #nospendchallenge — expanded alongside it. Core concepts: stock-zero living, owning the minimum, using everything completely before replacing it.",
+      },
+      explanation: {
+        ja: "Underconsumption Coreのコアにある3姿勢は、①今あるものを全部使い切ってから次を買う（ストックゼロ運用）、②持ち物の「少なさ」を誇る、③衝動買いに乗らない——です。ここで重要なのは、日本に「もったいない（勿体無い）」という概念があることです。物・食料・時間・関係性に対して「無駄にしない」という哲学で、室町時代（14世紀）から日本文化に根付いています。2005年にはノーベル平和賞受賞者のワンガリ・マータイ氏が「MOTTAINAI」をグローバルなサステナビリティのスローガンとして国連に提唱し、正式に採用されました。",
+        en: "The three core postures of Underconsumption Core are: use everything completely before buying the next one (stock-zero living); take pride in owning less; and resist impulse buying. This maps almost exactly onto Japan's concept of Mottainai (勿体無い) — a philosophy of not wasting objects, food, time, or relationships that has been embedded in Japanese culture since the Muromachi period (14th century). In 2005, Nobel Peace Prize laureate Wangari Maathai introduced 'MOTTAINAI' as a global sustainability slogan to the United Nations, where it was formally adopted.",
+      },
+      practice: {
+        ja: "日本のミレニアル世代が今すぐ実践できる3つの方法があります。①ストックゼロ運用——シャンプー・化粧品・食料は「今あるものが空になってから次を買う」を徹底する。②24時間ルール——何かを買いたくなったら1日待つ。衝動の約70%は翌日には消えています（行動経済学の複数研究）。③年1回クローゼット監査——1年間使っていないものを手放す。これはLoud Budgeting（お金の節約宣言）のモノ版であり、両方を組み合わせると「お金も・モノも整う」状態になります。",
+        en: "Three immediately actionable practices for millennials. Stock-zero system: don't buy the next unit of anything until the current one is completely empty. 24-hour rule: wait a day before any non-essential purchase — behavioral economics research suggests roughly 70% of impulses disappear by the next day. Annual possession audit: anything untouched for 12 months gets released. This is the physical-goods equivalent of Loud Budgeting — the two practices work well together, creating order in both money and possessions simultaneously.",
+      },
+      cta: {
+        ja: "Tokyo Decoded編集部では、Underconsumption Core × もったいない の実践シートをEditor's Toolsで公開しています。家計管理ツールとしては、マネーフォワードME（A8.net経由、PR）が「使い切る」生活の可視化に役立ちます。また、整理収納・暮らし用品についてはKagg.jp（A8.net経由、PR）もあわせてご紹介しています。",
+        en: "We've published an Underconsumption Core × Mottainai practice sheet in our Editor's Tools section. For tracking your spending in a 'stock-zero' lifestyle, we recommend YNAB (via Impact, PR) or Notion (affiliate link, PR) for organizing what you own and what you're choosing not to buy.",
+      },
+    },
+    relatedToolSlug: "trend-worksheet",
+    affiliateLinks: [
+      {
+        label: "マネーフォワードME プレミアム（PR）",
+        url: "#affiliate-moneyforward",
+        note: "A8.net経由。当編集部はASP報酬を受け取る場合があります。",
+      },
+      {
+        label: "Kagg.jp（PR）",
+        url: "#affiliate-kagg",
+        note: "A8.net経由。当編集部はASP報酬を受け取る場合があります。",
+      },
+      {
+        label: "YNAB — You Need A Budget (PR)",
+        url: "#affiliate-ynab",
+        note: "Via Impact. We may earn a commission from this link.",
+      },
+    ],
+    tags_ja: ["アンダーコンサンプション", "もったいない", "ミニマリスト", "買わない", "節約", "海外トレンド"],
+    tags_en: ["underconsumption core", "mottainai", "minimalism", "intentional living", "global trends", "slow living"],
+  },
 ] as const satisfies readonly Post[];
 
 export const postsPageContent = {

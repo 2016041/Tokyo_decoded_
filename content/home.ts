@@ -29,7 +29,7 @@ export const homeContent = {
   aboutMini: {
     heading: {
       ja: "私たちは何者か",
-      en: "Who We Are",
+      en: "About Us",
     },
     body: {
       ja: "Tokyo Decoded編集部は、東京を拠点とするバイリンガルのリサーチチームです。米国・中国・韓国など世界のトレンドを分析し、日本のミレニアル世代が使える言葉に翻訳して届けています。データと出典を大切にしながら、「知ってよかった」と思える情報を探し続けています。",

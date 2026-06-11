@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { siteContent } from "@/content/site";
+import type { Locale } from "@/content/types";
 import LangToggle from "./LangToggle";
 
 const focusableSelector =
@@ -11,8 +13,22 @@ const focusableSelector =
 const focusClassName =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent";
 
+function getLocale(pathname: string): Locale {
+  return pathname === "/en" || pathname.startsWith("/en/") ? "en" : "ja";
+}
+
+function getLocalizedHref(href: string, locale: Locale): string {
+  if (locale === "ja") {
+    return href;
+  }
+
+  return href === "/" ? "/en" : `/en${href}`;
+}
+
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const locale = getLocale(pathname ?? "/");
   const triggerRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
 
@@ -66,7 +82,7 @@ export default function MobileMenu() {
   }, [isOpen]);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         ref={triggerRef}
         type="button"
@@ -104,8 +120,8 @@ export default function MobileMenu() {
           aria-label="モバイルメニュー"
           className="fixed inset-0 z-[400] bg-paper text-ink"
         >
-          <div className="flex min-h-dvh flex-col px-[5vw] py-5">
-            <div className="flex items-center justify-end">
+          <div className="flex min-h-dvh flex-col px-[5vw] pb-5">
+            <div className="flex min-h-20 items-center justify-end">
               <button
                 type="button"
                 aria-label="モバイルメニューを閉じる"
@@ -137,14 +153,15 @@ export default function MobileMenu() {
                 {siteContent.nav.map((item) => (
                   <li key={item.href} className="border-b border-ink/20">
                     <Link
-                      href={item.href}
+                      href={getLocalizedHref(item.href, locale)}
                       onClick={closeMenu}
                       className={[
-                        "block py-5 font-[family-name:var(--font-jp)] text-2xl font-medium text-ink transition-colors duration-[150ms] hover:text-accent motion-reduce:transition-none",
+                        "block py-5 text-2xl font-medium text-ink transition-colors duration-[150ms] hover:text-accent motion-reduce:transition-none",
+                        locale === "ja" ? "font-jp" : "font-sans",
                         focusClassName,
                       ].join(" ")}
                     >
-                      {item.label_ja}
+                      {item[`label_${locale}`]}
                     </Link>
                   </li>
                 ))}

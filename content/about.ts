@@ -71,6 +71,17 @@ export const aboutContent = {
     },
   ],
 
+  pillarsHeading: {
+    ja: "コンテンツの3本柱",
+    en: "Three Editorial Pillars",
+  },
+
+  postsLink: {
+    label_ja: "投稿を見る",
+    label_en: "View Posts",
+    href: "/posts",
+  },
+
   editorialStance: {
     heading: {
       ja: "編集スタンス",

@@ -21,7 +21,7 @@ export default function LegalPage({
   return (
     <article className="bg-paper">
       <div className="mx-auto max-w-[1200px] px-[5vw] py-[clamp(64px,12vw,120px)] lg:px-10">
-        <h1 className="font-[family-name:var(--font-jp)] text-4xl font-black text-ink md:text-5xl">
+        <h1 className="font-jp text-4xl font-black text-ink md:text-5xl">
           {title}
         </h1>
         <p className="mt-4 text-sm text-muted">
@@ -33,7 +33,7 @@ export default function LegalPage({
             <section key={section.id} aria-labelledby={`${section.id}-heading`}>
               <h2
                 id={`${section.id}-heading`}
-                className="font-[family-name:var(--font-jp)] text-2xl font-black text-ink md:text-3xl"
+                className="font-jp text-2xl font-black text-ink md:text-3xl"
               >
                 {section.heading}
               </h2>
