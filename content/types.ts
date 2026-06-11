@@ -40,12 +40,12 @@ export type Post = {
   readonly thumbnail: string;
   readonly thumbnailAlt_ja: string;
   readonly thumbnailAlt_en: string;
-  readonly heroImage?: string;
-  readonly heroImageAlt_ja?: string;
-  readonly heroImageAlt_en?: string;
-  readonly midImage?: string;
-  readonly midImageAlt_ja?: string;
-  readonly midImageAlt_en?: string;
+  readonly bodyImage1?: string;
+  readonly bodyImage1Alt_ja?: string;
+  readonly bodyImage1Alt_en?: string;
+  readonly bodyImage2?: string;
+  readonly bodyImage2Alt_ja?: string;
+  readonly bodyImage2Alt_en?: string;
   readonly excerpt_ja: string;
   readonly excerpt_en: string;
   readonly body: PostBody;

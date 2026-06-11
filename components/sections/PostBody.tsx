@@ -110,11 +110,23 @@ export function PostBody({ post, locale = "ja" }: PostBodyProps) {
                       {section.content}
                     </p>
                   </section>
-                  {index === 2 && post.midImage && (
+                  {/* dataセクション（index=1）の後：数字・データを視覚化 */}
+                  {index === 1 && post.bodyImage1 && (
                     <figure>
                       <img
-                        src={post.midImage}
-                        alt={locale === "ja" ? (post.midImageAlt_ja ?? "") : (post.midImageAlt_en ?? "")}
+                        src={post.bodyImage1}
+                        alt={locale === "ja" ? (post.bodyImage1Alt_ja ?? "") : (post.bodyImage1Alt_en ?? "")}
+                        className="w-full aspect-video object-cover"
+                        loading="lazy"
+                      />
+                    </figure>
+                  )}
+                  {/* practiceセクション（index=3）の後：実践イメージを補強 */}
+                  {index === 3 && post.bodyImage2 && (
+                    <figure>
+                      <img
+                        src={post.bodyImage2}
+                        alt={locale === "ja" ? (post.bodyImage2Alt_ja ?? "") : (post.bodyImage2Alt_en ?? "")}
                         className="w-full aspect-video object-cover"
                         loading="lazy"
                       />
