@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import { postCategories, postsPageContent } from "@/content/posts";
 import type { Locale, Post } from "@/content/types";
@@ -99,15 +100,27 @@ export function PostBody({ post, locale = "ja" }: PostBodyProps) {
               {title}
             </h2>
             <div className="space-y-8">
-              {bodySections.map((section) => (
-                <section key={section.id} aria-labelledby={`post-${section.id}-heading`}>
-                  <h3 id={`post-${section.id}-heading`} className="sr-only">
-                    {section.id}
-                  </h3>
-                  <p className="text-base md:text-lg text-ink leading-[1.8] tracking-[0.03em]">
-                    {section.content}
-                  </p>
-                </section>
+              {bodySections.map((section, index) => (
+                <React.Fragment key={section.id}>
+                  <section aria-labelledby={`post-${section.id}-heading`}>
+                    <h3 id={`post-${section.id}-heading`} className="sr-only">
+                      {section.id}
+                    </h3>
+                    <p className="text-base md:text-lg text-ink leading-[1.8] tracking-[0.03em]">
+                      {section.content}
+                    </p>
+                  </section>
+                  {index === 2 && post.midImage && (
+                    <figure>
+                      <img
+                        src={post.midImage}
+                        alt={locale === "ja" ? (post.midImageAlt_ja ?? "") : (post.midImageAlt_en ?? "")}
+                        className="w-full aspect-video object-cover"
+                        loading="lazy"
+                      />
+                    </figure>
+                  )}
+                </React.Fragment>
               ))}
             </div>
           </section>

@@ -41,6 +41,12 @@ export const posts = [
     thumbnail: "/images/posts/006/006-thumbnail.jpg",
     thumbnailAlt_ja: "シンプルな棚と使い込んだ日用品",
     thumbnailAlt_en: "Minimal shelf with well-used everyday items",
+    heroImage: "/images/posts/006/006-hero.jpg",
+    heroImageAlt_ja: "アンダーコンサンプション・コアのライフスタイルイメージ",
+    heroImageAlt_en: "Underconsumption core lifestyle visual",
+    midImage: "/images/posts/006/006-mid.jpg",
+    midImageAlt_ja: "使い込まれた日用品と手仕事の道具",
+    midImageAlt_en: "Well-worn everyday items and handcraft tools",
     excerpt_ja: "TikTok発「買わない暮らし」が世界的トレンドに。日本の「もったいない」精神と重なる新潮流を解説。",
     excerpt_en: "TikTok's #underconsumptioncore hits 230M views. The new flex? Buying less—and Japan's been doing it forever.",
     body: {
