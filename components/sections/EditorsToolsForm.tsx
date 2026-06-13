@@ -197,7 +197,9 @@ export function EditorsToolsForm({ locale = "ja" }: EditorsToolsFormProps) {
                 >
                   {isSubmitting
                     ? formContent.submitting[locale]
-                    : formContent.submitButton[locale]}
+                    : submitState === "success"
+                      ? formContent.successButton[locale]
+                      : formContent.submitButton[locale]}
                 </Button>
               </form>
             </div>

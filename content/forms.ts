@@ -24,6 +24,10 @@ export const formsContent = {
       ja: "送信中...",
       en: "Sending...",
     },
+    successButton: {
+      ja: "再度リンクを受け取る",
+      en: "Resend the link",
+    },
     success: {
       heading: {
         ja: "送信しました！",
