@@ -38,9 +38,14 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendDownloadLinkEmail(parsed.data.email);
-    await appendSubscribeRow({ email: parsed.data.email, source: "tools" });
-    return json({ success: true }, 200);
   } catch {
     return json({ success: false, error: "Subscription failed." }, 500);
   }
+
+  // Sheets書き込みは失敗してもメール配信を妨げない
+  appendSubscribeRow({ email: parsed.data.email, source: "tools" }).catch(
+    (err) => console.error("Sheets append failed:", err),
+  );
+
+  return json({ success: true }, 200);
 }
