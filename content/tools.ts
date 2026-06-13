@@ -8,8 +8,8 @@ export const tools = [
   {
     slug: "digital-kakeibo",
     name: {
-      ja: "Digital Kakeibo — AI家計簿テンプレート",
-      en: "Digital Kakeibo — AI Budgeting Template",
+      ja: "Digital Kakebo — お金の流れを可視化する",
+      en: "Digital Kakebo — Visualise Your Money Flow",
     },
     category: "money-ai",
     description_ja:
@@ -18,9 +18,45 @@ export const tools = [
       "A budgeting template that runs on ChatGPT or Claude. We've digitized the Japanese Kakeibo method — over a century old — and built in Loud Budgeting and Soft Saving principles. Answer four questions once a month and your money habits start to clarify.",
     preview: "/images/tools/digital-kakeibo-preview.webp",
     previewAlt_ja:
-      "Digital Kakeibo テンプレートのプレビュー画像。月次レビューシートと4カテゴリの支出分類表",
+      "Digital Kakebo テンプレートのプレビュー画像。月次レビューシートと4カテゴリの支出分類表",
     previewAlt_en:
-      "Preview of the Digital Kakeibo template, showing the monthly review sheet and four spending category columns",
+      "Preview of the Digital Kakebo template, showing the monthly review sheet and four spending category columns",
+    downloadType: "email-gate",
+  },
+  {
+    slug: "research-brief",
+    name: {
+      ja: "Research Brief — 世界のデータを整理する",
+      en: "Research Brief — Organise Global Trend Data",
+    },
+    category: "trends",
+    description_ja:
+      "Tokyo Decoded編集部が実際に使っているトレンド調査フレームワークをテンプレート化。海外で兆候を掴んだトレンドを「フェーズ・日本上陸予測・ターゲット層・案件有無」の4軸で整理し、「動くべきか・見送るべきか」を素早く判断できます。",
+    description_en:
+      "The trend research framework Tokyo Decoded actually uses, turned into a template. Evaluate each overseas trend across four axes — phase, Japan arrival estimate, target audience, and monetisation potential — so you can decide fast whether to act or pass.",
+    preview: "/images/tools/research-brief-preview.webp",
+    previewAlt_ja:
+      "Research Brief テンプレートのプレビュー画像。トレンド情報カードと月次サマリーシート",
+    previewAlt_en:
+      "Preview of the Research Brief template, showing the trend information card and monthly summary sheet",
+    downloadType: "email-gate",
+  },
+  {
+    slug: "trend-worksheet",
+    name: {
+      ja: "Trend Worksheet — トレンドを日常に落とし込む",
+      en: "Trend Worksheet — Apply Trends to Your Life",
+    },
+    category: "trends",
+    description_ja:
+      "「海外でバズっているものを見ても、自分に関係あるかわからない」を解消する5ステップのワークシート。キャッチ・接点発見・日本語変換・試す・発信まで、トレンドを情報収集で終わらせず行動につなげるフレームです。",
+    description_en:
+      "A five-step worksheet that turns \"I saw this trending abroad, but so what?\" into action. From catching the signal to finding your personal angle, adapting it for Japan, testing it, and sharing — it keeps a trend from being just a note.",
+    preview: "/images/tools/trend-worksheet-preview.webp",
+    previewAlt_ja:
+      "Trend Worksheet のプレビュー画像。5ステップの記入欄と日本語変換セクション",
+    previewAlt_en:
+      "Preview of the Trend Worksheet, showing the five-step input fields and Japan adaptation section",
     downloadType: "email-gate",
   },
 ] as const satisfies readonly Tool[];
