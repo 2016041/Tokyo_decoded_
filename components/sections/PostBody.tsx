@@ -171,7 +171,7 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
                       target="_blank"
                       rel="sponsored noopener noreferrer"
                       aria-label={`${link.label}（外部サイト・PR）`}
-                      className="block border border-ink/20 p-5 transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                      className="block h-full border border-ink/20 p-5 transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                     >
                       <span className="block font-jp font-medium">
                         <Badge label="PR" aria-hidden className="mr-2" />
