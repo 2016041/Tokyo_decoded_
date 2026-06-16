@@ -66,7 +66,7 @@ export type PostBody = {
 export type AffiliateLink = {
   readonly label: string;
   readonly url: string;
-  readonly note: string;
+  readonly note?: string;
 };
 
 export type Tool = {

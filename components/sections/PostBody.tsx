@@ -177,7 +177,9 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
                         <Badge label="PR" aria-hidden className="mr-2" />
                         {link.label}
                       </span>
-                      <span className="mt-2 block text-sm">{link.note}</span>
+                      {link.note ? (
+                        <span className="mt-2 block text-sm">{link.note}</span>
+                      ) : null}
                     </a>
                   </li>
                 ))}

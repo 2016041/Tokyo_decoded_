@@ -57,7 +57,20 @@ export const posts = [
       cta:         { ja: "『買わない美学』を深めたいなら、まずは日本の知恵に立ち返ってみませんか。土井善晴さんの『一汁一菜でよいという提案』は、暮らし全体の引き算を教えてくれる名著。金継ぎを家で気軽に始められる『つぐキット』も、Amazonで手に入ります。そして毎日の記録には、長く使える上質なノートを一冊。MDノートやトラベラーズノートのような、使い込むほど味が出る相棒を選んでみてください。新しいものを買うのではなく、すでに持っているものとの関係を深める——それがTokyo Decoded流のアンダーコンサンプション・コアです。今日から、あなたの『長年の愛用品』を一つ、SNSで誇ってみませんか？", en: "Want to go deeper? Start with Japanese wisdom. Yoshiharu Doi's Ichiju-Issai: A Proposal for Simple Eating (English edition available) reframes minimalism as nourishment. Beginner kintsugi kits—available on Amazon—let you repair broken ceramics at home with food-safe lacquer and gold powder, turning waste into heirloom. For journaling your no-buy journey, invest in one well-made notebook like the Midori MD or Traveler's Notebook—objects designed to age beautifully with use. The point isn't to buy these things instead of others; it's to choose tools that deepen your relationship with what you already own. That's the Tokyo Decoded take on Underconsumption Core. Your challenge for this week: post one well-worn item you've loved for years. Caption it proudly. That's the new flex." },
     },
     relatedToolSlug: null,
-    affiliateLinks: [],
+    affiliateLinks: [
+      {
+        label: "「一汁一菜でよいという提案」（土井善晴）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14493019%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18221973%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "つぐつぐ 金継ぎキット（家庭用・初心者向け）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00ttdhn.kll75cf7.g00ttdhn.kll76ad7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkintsugi%2Fkintsugi-goldsilver%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkintsugi%2Fi%2F10000004%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "MDノート A5（ミドリ）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00qm7tn.kll75521.g00qm7tn.kll76eae/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-youstyle%2Fmdr49360006%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-youstyle%2Fi%2F10060899%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+    ],
     tags_ja: ["アンダーコンサンプション", "もったいない", "ミニマリズム", "Z世代", "サステナブル"],
     tags_en: ["underconsumption", "mottainai", "minimalism", "gen-z", "sustainability"],
   },
@@ -90,7 +103,7 @@ export const posts = [
         en: "Three steps to start Cash Stuffing today. First, begin with three envelopes only — don't try to build a perfect system immediately. Start with food, dining out, and personal spending. Three envelopes, three weeks. Second, make payday stuffing a ritual — on the day income arrives, withdraw your allocated cash and divide it immediately. One monthly ritual replaces ongoing willpower. Third, learn from which envelope empties first — rather than immediately replenishing it, observe. The category that runs out earliest is where your money is actually going. That information, made physical and visible, is more motivating than any pie chart in a budgeting app.",
       },
       cta: {
-        ja: "家計管理の全体像を学ぶなら、横山光昭著『年収200万円からの貯金生活宣言』は、日本のリアルな家計管理を徹底解説した名著です。今月から、まず3つの封筒（または手帳の3つの仕切り）を作って、Cash Stuffingを試してみてください。「袋が空になる瞬間」に、家計への解像度が一段上がるはずです。",
+        ja: "家計管理の全体像を学ぶなら、横山光昭著『年収200万円からの貯金生活宣言 正しいお金の使い方編』は、日本のリアルな家計管理を徹底解説したシリーズの定番です。今月から、まず3つの封筒（または手帳の3つの仕切り）を作って、Cash Stuffingを試してみてください。「袋が空になる瞬間」に、家計への解像度が一段上がるはずです。",
         en: "For a structured approach to household finance, Mitsuaki Yokoyama's books on Japanese envelope-style budgeting remain practical references. This month's challenge: create three spending envelopes (or three sections in a notebook), fill them on your next payday, and watch what happens when the first one empties. The moment an envelope runs out is the moment your financial awareness sharpens.",
       },
     },
@@ -128,12 +141,21 @@ export const posts = [
         en: "Three ways to practice Quiet Luxury without a major wardrobe overhaul. First, invest in material, not design — rather than chasing seasonal silhouettes or trend colors, put your budget into excellent fabric basics. A 100% cotton white shirt, premium denim, cashmere-blend knitwear: these work five years from now as well as today. Second, remove wardrobe noise — honestly release anything you're keeping because you 'might wear it next month.' The Quiet Luxury wardrobe contains only things you actively love and return to. Third, develop care practices — quality materials respond to maintenance. Shoe trees, hand-washing knitwear, ironing cotton. The practice of caring for what you own shifts your relationship from consumer to custodian.",
       },
       cta: {
-        ja: "Quiet Luxuryを深めるなら、柳宗悦著『民藝とは何か』は、日本が100年前から育ててきた「質の高い無名の美」の哲学を知る最良の入口です。海外では、Anuschka Rees著『The Curated Closet』が、Quiet Luxury的なワードローブ構築を実践的に解説しています。今週、クローゼットを見て「ブランドロゴで選んだもの」と「素材・シルエットで選んだもの」を仕分けてみてください。その比率が、あなたのQuiet Luxuryへの距離感を教えてくれます。",
+        ja: "Quiet Luxuryを深めるなら、柳宗悦著『民藝とは何か』は、日本が100年前から育ててきた「質の高い無名の美」の哲学を知る最良の入口です。実践派には、大草直子著『トレンドよりも、似合うが最強！ 大草直子の“考えるおしゃれ”』が、Quiet Luxuryに通じる「素材とシルエットで選ぶ」考え方を体系化した一冊です。今週、クローゼットを見て「ブランドロゴで選んだもの」と「素材・シルエットで選んだもの」を仕分けてみてください。その比率が、あなたのQuiet Luxuryへの距離感を教えてくれます。",
         en: "To understand the philosophy behind Quiet Luxury from a Japanese perspective, Yanagi Soetsu's 'The Unknown Craftsman' is the foundational text — a century-old argument for the beauty of anonymous, quality-made objects. For practical wardrobe building, Anuschka Rees' 'The Curated Closet' offers a structured methodology. One exercise: sort your closet into 'things chosen for their logo' versus 'things chosen for their material or silhouette.' The ratio will tell you where you are on the Quiet Luxury spectrum.",
       },
     },
     relatedToolSlug: null,
-    affiliateLinks: [],
+    affiliateLinks: [
+      {
+        label: "「民藝とは何か」（柳宗悦）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F4127068%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F11904142%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "「トレンドよりも、似合うが最強！ 大草直子の“考えるおしゃれ”」（大草直子）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F11416297%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F15620256%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+    ],
     tags_ja: ["クワイエットラグジュアリー", "オールドマネー", "ミニマルファッション", "無印良品", "カプセルワードローブ", "海外トレンド"],
     tags_en: ["quiet luxury", "old money aesthetic", "minimal fashion", "muji", "capsule wardrobe", "global trends"],
   },
@@ -166,12 +188,17 @@ export const posts = [
         en: "Three distinctions for healthy Bed Rotting practice. First: chosen rest versus avoidant rest — the former is a deliberate decision to recover; the latter is using horizontal inactivity to avoid commitments. The first is restorative; the second compounds anxiety. Second, set a time boundary — 'I'm Bed Rotting for two hours this afternoon' reduces guilt and actually improves focus once you return to activity. Third, include some device-free intervals — five to ten minutes of just lying there, listening, not consuming content. This is the practice most aligned with DMN activation and the kind of unfocused mind-state linked to creative insight. Once a week, schedule it deliberately. Name it. Protect it.",
       },
       cta: {
-        ja: "休息の科学を深く知りたいなら、Saundra Dalton-Smith著『Sacred Rest』は、「回復」には7種類の休息（肉体的・感情的・精神的・社会的・感覚的・創造的・スピリチュアル）があることを論じた名著です。今週末、スマホを横において2時間だけ、何もしない時間を意識的に作ってみてください。その「何もしない」が、実は脳の最も深い仕事時間かもしれません。",
+        ja: "休息の科学を深く知りたいなら、久賀谷亮著『世界のエリートがやっている 最高の休息法』は、脳科学とマインドフルネスの観点から「最も深く休む方法」を体系化した、100万部超のベストセラーです。今週末、スマホを横において2時間だけ、何もしない時間を意識的に作ってみてください。その「何もしない」が、実は脳の最も深い仕事時間かもしれません。",
         en: "For the science of rest, Saundra Dalton-Smith's 'Sacred Rest' categorizes seven distinct types of recovery — physical, mental, emotional, social, sensory, creative, and spiritual — and argues that most chronic exhaustion comes from deficits in non-physical rest. One challenge: this weekend, put your phone face-down, set a two-hour timer, and do nothing intentionally. That deliberate nothing is the practice.",
       },
     },
     relatedToolSlug: null,
-    affiliateLinks: [],
+    affiliateLinks: [
+      {
+        label: "「世界のエリートがやっている 最高の休息法」（久賀谷亮）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14285231%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18062434%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+    ],
     tags_ja: ["ベッドロッティング", "休息", "メンタルヘルス", "DMN", "Z世代", "生産性"],
     tags_en: ["bed rotting", "rest", "mental health", "default mode network", "gen-z", "productivity"],
   },
@@ -209,7 +236,12 @@ export const posts = [
       },
     },
     relatedToolSlug: null,
-    affiliateLinks: [],
+    affiliateLinks: [
+      {
+        label: "「予想どおりに不合理 行動経済学が明かす「あなたがそれを選ぶわけ」」（ダン・アリエリー）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F12402879%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F16530301%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+    ],
     tags_ja: ["ディインフルエンシング", "SNS広告疲れ", "衝動買い", "消費者行動", "インフルエンサー", "海外トレンド"],
     tags_en: ["deinfluencing", "creator economy", "impulse buying", "consumer behavior", "tiktok", "global trends"],
   },
@@ -247,7 +279,12 @@ export const posts = [
       },
     },
     relatedToolSlug: null,
-    affiliateLinks: [],
+    affiliateLinks: [
+      {
+        label: "「限りある時間の使い方」（オリバー・バークマン）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00rk0pn.kll75b92.g00rk0pn.kll76be4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbookfan%2Fbk-4761276150%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbookfan%2Fi%2F12698537%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+    ],
     tags_ja: ["ソフトライフ", "ハッスルカルチャー", "バーンアウト", "ワークライフバランス", "Z世代", "海外トレンド"],
     tags_en: ["soft life", "hustle culture", "burnout", "work-life balance", "gen-z", "global trends"],
   },
