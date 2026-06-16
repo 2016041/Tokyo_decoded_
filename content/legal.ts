@@ -131,6 +131,16 @@ export const legalContent = {
           ],
         },
       },
+      amazonNotice: {
+        heading: {
+          ja: "Amazonアソシエイト・プログラムへの参加について",
+          en: "Amazon Associates Program Participation",
+        },
+        body: {
+          ja: "Tokyo Decodedは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。当サイトに掲載されている一部のリンクはAmazonアソシエイトを含むアフィリエイト広告であり、適格販売により収入を得ています。",
+          en: "Tokyo Decoded is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.co.jp. As an Amazon Associate, we earn from qualifying purchases.",
+        },
+      },
       prLabel: {
         heading: {
           ja: "PR表記について",
