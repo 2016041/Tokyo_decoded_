@@ -43,11 +43,12 @@ export function PostCard({
   const title = getPostTitle(post, locale);
   const headingId = `post-card-title-${post.slug}`;
   const categoryLabel = getCategoryLabel(post.category, locale);
+  const localePrefix = locale === "en" ? "/en" : "";
 
   return (
     <article aria-labelledby={headingId}>
       <Link
-        href={`/posts/${post.slug}`}
+        href={`${localePrefix}/posts/${post.slug}`}
         className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
       >
         <div className="overflow-hidden">

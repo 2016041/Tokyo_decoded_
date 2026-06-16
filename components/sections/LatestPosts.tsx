@@ -11,6 +11,7 @@ type LatestPostsProps = {
 
 export function LatestPosts({ locale = "ja", items = posts }: LatestPostsProps) {
   const content = homeContent.latestPosts;
+  const localePrefix = locale === "en" ? "/en" : "";
   const latestItems = [...items]
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
     .slice(0, 3);
@@ -31,7 +32,7 @@ export function LatestPosts({ locale = "ja", items = posts }: LatestPostsProps) 
             </p>
           </div>
           <Link
-            href={content.viewAll.href}
+            href={`${localePrefix}${content.viewAll.href}`}
             className="border-b border-ink pb-1 font-sans text-sm font-medium uppercase tracking-widest text-ink hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
           >
             {content.viewAll[`label_${locale}`]}
@@ -46,7 +47,7 @@ export function LatestPosts({ locale = "ja", items = posts }: LatestPostsProps) 
                 className="bg-cream"
               >
                 <Link
-                  href={`/posts/${post.slug}`}
+                  href={`${localePrefix}/posts/${post.slug}`}
                   className="group flex h-full flex-col border border-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                 >
                   <div className="overflow-hidden border-b border-ink">

@@ -36,6 +36,8 @@ function formatDate(date: string, locale: Locale) {
 export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = null, nextPost = null }: PostBodyProps) {
   const title = getPostTitle(post, locale);
   const categoryLabel = getCategoryLabel(post.category, locale);
+  const localePrefix = locale === "en" ? "/en" : "";
+  const homeHref = localePrefix || "/";
   const bodySections = [
     { id: "hook", content: post.body.hook[locale] },
     { id: "data", content: post.body.data[locale] },
@@ -52,7 +54,7 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
             <ol className="flex flex-wrap gap-2 font-jp text-sm text-ink">
               <li>
                 <Link
-                  href="/"
+                  href={homeHref}
                   className="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                 >
                   {locale === "ja" ? "ホーム" : "Home"}
@@ -61,7 +63,7 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
               <li aria-hidden="true">/</li>
               <li>
                 <Link
-                  href="/posts"
+                  href={`${localePrefix}/posts`}
                   className="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                 >
                   {postsPageContent.heading[locale]}
@@ -157,7 +159,7 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
                   ? "：以下のリンクはアフィリエイトリンクを含みます。"
                   : ": The links below may include affiliate links."}{" "}
                 <Link
-                  href="/disclosure"
+                  href={`${localePrefix}/disclosure`}
                   className="underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                 >
                   {locale === "ja" ? "詳細はこちら" : "Disclosure"}
@@ -202,7 +204,7 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
                 {relatedPosts.map((related) => {
                   const relatedTitle = locale === "ja" ? related.title_ja : related.title_en;
                   const relatedCategoryLabel = getCategoryLabel(related.category, locale);
-                  const relatedHref = `${locale === "en" ? "/en" : ""}/posts/${related.slug}`;
+                  const relatedHref = `${localePrefix}/posts/${related.slug}`;
                   return (
                     <li key={related.slug}>
                       <Link
@@ -245,7 +247,7 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
               <div className="grid grid-cols-2 gap-4">
                 {prevPost ? (
                   <Link
-                    href={`${locale === "en" ? "/en" : ""}/posts/${prevPost.slug}`}
+                    href={`${localePrefix}/posts/${prevPost.slug}`}
                     className="group block border border-ink/20 p-5 transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                   >
                     <span className="block text-xs text-muted mb-2 group-hover:text-paper/70">
@@ -260,7 +262,7 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
                 )}
                 {nextPost ? (
                   <Link
-                    href={`${locale === "en" ? "/en" : ""}/posts/${nextPost.slug}`}
+                    href={`${localePrefix}/posts/${nextPost.slug}`}
                     className="group block border border-ink/20 p-5 text-right transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                   >
                     <span className="block text-xs text-muted mb-2 group-hover:text-paper/70">
