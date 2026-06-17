@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { tools, toolsPageContent } from "@/content/tools";
 import type { Locale, Tool } from "@/content/types";
-import { Button } from "@/components/ui/Button";
 
 type ToolsListProps = {
   locale?: Locale;
@@ -23,7 +22,6 @@ export function ToolsList({ locale = "ja", items = tools }: ToolsListProps) {
 
         <ul role="list" className="mt-10 grid gap-8">
           {items.map((tool) => {
-            const noteId = `tool-${tool.slug}-dl-note`;
             const headingId = `tool-${tool.slug}-heading`;
 
             return (
@@ -50,17 +48,6 @@ export function ToolsList({ locale = "ja", items = tools }: ToolsListProps) {
                     <p className="mt-4 text-ink">
                       {locale === "ja" ? tool.description_ja : tool.description_en}
                     </p>
-                    <p id={noteId} className="mt-4 text-sm text-ink">
-                      {toolsPageContent.downloadGate.privacyNote[locale]}
-                    </p>
-                    <Button
-                      type="button"
-                      aria-describedby={noteId}
-                      data-tool-slug={tool.slug}
-                      className="mt-6"
-                    >
-                      {toolsPageContent.downloadGate.instruction[locale]}
-                    </Button>
                   </div>
                 </article>
               </li>
