@@ -96,7 +96,7 @@ export const posts = [
     slug: "007-sleepmaxxing",
     title_ja: "Sleepmaxxing入門。睡眠を「感覚」から「数値」へ最適化する海外の新習慣",
     title_en: "Sleepmaxxing 101: How the World Stopped Guessing and Started Optimizing Sleep",
-    category: "health",
+    category: "lifestyle",
     publishedAt: "2026-06-29",
     thumbnail: "/images/posts/007/007-thumbnail.jpg",
     thumbnailAlt_ja: "完全遮光された静かな寝室と整えられたベッド",
