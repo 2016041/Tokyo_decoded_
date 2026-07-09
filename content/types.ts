@@ -49,6 +49,7 @@ export type Post = {
   readonly excerpt_ja: string;
   readonly excerpt_en: string;
   readonly body: PostBody;
+  readonly bodyHeadings?: PostBodyHeadings;
   readonly relatedToolSlug: string | null;
   readonly affiliateLinks: readonly AffiliateLink[];
   readonly tags_ja: readonly string[];
@@ -61,6 +62,15 @@ export type PostBody = {
   readonly explanation: LocalizedString;
   readonly practice: LocalizedString;
   readonly cta: LocalizedString;
+};
+
+// 本文セクションの可視見出し（SEO用・派生クエリを含む）。
+// hook はリード文のため見出しなし。未設定セクションは従来どおり sr-only 見出しで描画される。
+export type PostBodyHeadings = {
+  readonly data?: LocalizedString;
+  readonly explanation?: LocalizedString;
+  readonly practice?: LocalizedString;
+  readonly cta?: LocalizedString;
 };
 
 export type AffiliateLink = {

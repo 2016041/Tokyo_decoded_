@@ -33,17 +33,51 @@ function formatDate(date: string, locale: Locale) {
   }).format(new Date(`${date}T00:00:00`));
 }
 
+const STEP_MARKER = /[①②③④⑤⑥⑦⑧⑨⑩]/;
+
+// 本文内の「①②③…」手順を番号付きリストとして描画する。
+// マーカーが2つ未満の場合は従来どおり1段落で描画。
+function SectionContent({ content }: { content: string }) {
+  const paragraphClass = "text-base md:text-lg text-ink leading-[1.8] tracking-[0.03em]";
+  const markerCount = (content.match(new RegExp(STEP_MARKER, "g")) ?? []).length;
+
+  if (markerCount < 2) {
+    return <p className={paragraphClass}>{content}</p>;
+  }
+
+  const segments = content.split(new RegExp(`(?=${STEP_MARKER.source})`));
+  const intro = STEP_MARKER.test(segments[0]?.charAt(0) ?? "") ? null : segments.shift();
+  const items = segments.map((segment) =>
+    segment.replace(new RegExp(`^${STEP_MARKER.source}\\s*`), ""),
+  );
+
+  return (
+    <>
+      {intro ? <p className={paragraphClass}>{intro.trim()}</p> : null}
+      <ol className={`${paragraphClass} mt-4 list-decimal space-y-3 pl-6`}>
+        {items.map((item, index) => (
+          <li key={index}>{item.trim()}</li>
+        ))}
+      </ol>
+    </>
+  );
+}
+
 export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = null, nextPost = null }: PostBodyProps) {
   const title = getPostTitle(post, locale);
   const categoryLabel = getCategoryLabel(post.category, locale);
   const localePrefix = locale === "en" ? "/en" : "";
   const homeHref = localePrefix || "/";
   const bodySections = [
-    { id: "hook", content: post.body.hook[locale] },
-    { id: "data", content: post.body.data[locale] },
-    { id: "explanation", content: post.body.explanation[locale] },
-    { id: "practice", content: post.body.practice[locale] },
-    { id: "cta", content: post.body.cta[locale] },
+    { id: "hook", content: post.body.hook[locale], heading: null },
+    { id: "data", content: post.body.data[locale], heading: post.bodyHeadings?.data?.[locale] ?? null },
+    {
+      id: "explanation",
+      content: post.body.explanation[locale],
+      heading: post.bodyHeadings?.explanation?.[locale] ?? null,
+    },
+    { id: "practice", content: post.body.practice[locale], heading: post.bodyHeadings?.practice?.[locale] ?? null },
+    { id: "cta", content: post.body.cta[locale], heading: post.bodyHeadings?.cta?.[locale] ?? null },
   ] as const;
 
   return (
@@ -108,12 +142,19 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
               {bodySections.map((section, index) => (
                 <React.Fragment key={section.id}>
                   <section aria-labelledby={`post-${section.id}-heading`}>
-                    <h3 id={`post-${section.id}-heading`} className="sr-only">
-                      {section.id}
-                    </h3>
-                    <p className="text-base md:text-lg text-ink leading-[1.8] tracking-[0.03em]">
-                      {section.content}
-                    </p>
+                    {section.heading ? (
+                      <h3
+                        id={`post-${section.id}-heading`}
+                        className="font-jp font-black text-ink text-xl md:text-2xl leading-[1.5] mb-4"
+                      >
+                        {section.heading}
+                      </h3>
+                    ) : (
+                      <h3 id={`post-${section.id}-heading`} className="sr-only">
+                        {section.id}
+                      </h3>
+                    )}
+                    <SectionContent content={section.content} />
                   </section>
                   {/* dataセクション（index=1）の後：数字・データを視覚化 */}
                   {index === 1 && post.bodyImage1 && (
