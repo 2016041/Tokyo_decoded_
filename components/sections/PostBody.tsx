@@ -221,7 +221,7 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
                     {section.heading ? (
                       <h3
                         id={`post-${section.id}-heading`}
-                        className="font-jp font-black text-ink text-xl md:text-2xl leading-[1.5] mb-4"
+                        className="scroll-mt-24 font-jp font-black text-ink text-xl md:text-2xl leading-[1.5] mb-4"
                       >
                         {section.heading}
                       </h3>
