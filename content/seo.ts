@@ -125,6 +125,17 @@ export const pageMetadata = {
     canonicalPath: "/disclosure",
   },
 
+  editorialPolicy: {
+    title_ja: "編集ポリシー | Tokyo Decoded",
+    title_en: "Editorial Policy | Tokyo Decoded",
+    description_ja:
+      "Tokyo Decoded の編集ポリシー。出典と事実確認の基準・AIの活用と編集責任・紹介する商品の選定基準を明示しています。",
+    description_en:
+      "Tokyo Decoded Editorial Policy. Our standards for sourcing and fact-checking, our use of AI, and how we select the products we feature.",
+    ogImage: "/brand/ogp-1200x630.png",
+    canonicalPath: "/editorial-policy",
+  },
+
   contact: {
     title_ja: "お問い合わせ | Tokyo Decoded",
     title_en: "Contact | Tokyo Decoded",

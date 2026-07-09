@@ -95,6 +95,11 @@ export default function Footer() {
       label_ja: "アフィリエイト開示",
       label_en: "Disclosure",
     },
+    {
+      href: "/editorial-policy",
+      label_ja: "編集ポリシー",
+      label_en: "Editorial Policy",
+    },
   ];
   const localizeHref = (href: string) =>
     locale === "en" && href.startsWith("/") ? `/en${href}` : href;

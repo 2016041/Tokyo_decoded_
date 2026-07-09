@@ -42,6 +42,13 @@ const INLINE_LINK = /\[([^\]]+)\]\((\/[^\s)]+|https:\/\/[^\s)]+)\)/g;
 const inlineLinkClass =
   "underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent";
 
+// 本文中に置かれるアフィリエイトリンクのホスト。rel="sponsored" を付与する（景表法・Google推奨）。
+const AFFILIATE_HOSTS = ["hb.afl.rakuten.co.jp", "px.a8.net", "af.moshimo.com"];
+
+function isAffiliateHref(href: string) {
+  return AFFILIATE_HOSTS.some((host) => href.startsWith(`https://${host}/`));
+}
+
 function renderInline(text: string): React.ReactNode {
   const nodes: React.ReactNode[] = [];
   const pattern = new RegExp(INLINE_LINK.source, "g");
@@ -64,7 +71,7 @@ function renderInline(text: string): React.ReactNode {
           key={`${href}-${match.index}`}
           href={href}
           target="_blank"
-          rel="noopener noreferrer"
+          rel={isAffiliateHref(href) ? "sponsored noopener noreferrer" : "noopener noreferrer"}
           className={inlineLinkClass}
         >
           {label}
@@ -181,6 +188,28 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
             )}
           </header>
 
+          {bodySections.filter((section) => section.heading).length >= 2 && (
+            <nav
+              aria-label={locale === "ja" ? "目次" : "Table of contents"}
+              className="mt-10 border border-ink/15 p-6"
+            >
+              <p className="font-jp font-black text-ink">
+                {locale === "ja" ? "目次" : "Contents"}
+              </p>
+              <ol className="mt-3 list-decimal space-y-2 pl-5 text-ink">
+                {bodySections
+                  .filter((section) => section.heading)
+                  .map((section) => (
+                    <li key={section.id}>
+                      <a href={`#post-${section.id}-heading`} className={inlineLinkClass}>
+                        {section.heading}
+                      </a>
+                    </li>
+                  ))}
+              </ol>
+            </nav>
+          )}
+
           <section aria-labelledby="post-body-heading" className="mt-12">
             <h2 id="post-body-heading" className="sr-only">
               {title}
@@ -229,6 +258,24 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
               ))}
             </div>
           </section>
+
+          <aside
+            aria-label={locale === "ja" ? "この記事について" : "About this article"}
+            className="mt-12 border border-ink/15 p-6 text-sm"
+          >
+            <p className="font-jp font-bold text-ink">
+              {locale === "ja" ? "この記事について" : "About this article"}
+            </p>
+            <p className="mt-2 leading-[1.8] text-ink">
+              {locale === "ja"
+                ? "この記事は Tokyo Decoded 編集部が制作しました。出典の明記と事実確認、広告主が内容・評価に関与しない編集の独立を方針としています。詳しくは"
+                : "This article was produced by the Tokyo Decoded editorial team. We cite our sources, fact-check our claims, and keep editorial judgment independent from advertisers. Read more in our "}
+              <Link href={`${localePrefix}/editorial-policy`} className={inlineLinkClass}>
+                {locale === "ja" ? "編集ポリシー" : "Editorial Policy"}
+              </Link>
+              {locale === "ja" ? "をご覧ください。" : "."}
+            </p>
+          </aside>
 
           {post.affiliateLinks.length > 0 ? (
             <aside

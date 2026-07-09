@@ -163,4 +163,74 @@ export const legalContent = {
       },
     },
   },
+
+  editorialPolicy: {
+    pageTitle: {
+      ja: "編集ポリシー",
+      en: "Editorial Policy",
+    },
+    lastUpdated: "2026-07-09",
+    sections: {
+      mission: {
+        heading: {
+          ja: "編集方針",
+          en: "Our Editorial Mission",
+        },
+        body: {
+          ja: "Tokyo Decoded は「世界の今を翻訳して届ける」バイリンガル編集メディアです。海外で生まれつつあるトレンドを、日本の文脈・文化と接続しながら、日本語と英語の両方で解説します。流行を煽るのではなく、読者が自分の暮らしに取り入れるかどうかを自分で判断できる材料を提供することを編集の目的としています。",
+          en: "Tokyo Decoded is a bilingual editorial publication that translates emerging global trends for readers in Japan and abroad, connecting them with Japanese culture and context. Our goal is not to hype trends, but to give readers the material they need to decide for themselves whether a trend belongs in their life.",
+        },
+      },
+      sources: {
+        heading: {
+          ja: "出典と事実確認",
+          en: "Sources and Fact-Checking",
+        },
+        body: {
+          ja: "記事中の統計・調査データは、一次情報（調査元・研究機関・公的機関）を優先し、本文中に出典を明記します。確認できない数値は記事に使用しません。美容・健康分野では薬機法に基づき、効能効果を断定する表現を避け、「〜とされています」等の中立的な表現を用います。「No.1」「最安」等の優良誤認・有利誤認につながる表現は根拠なく使用しません。",
+          en: "Statistics and research data cited in our articles are sourced from primary sources (original surveys, research institutions, public agencies) and attributed in the text. We do not publish figures we cannot verify. In beauty and health topics, we comply with Japan's Pharmaceutical and Medical Device Act by avoiding definitive efficacy claims and using neutral language.",
+        },
+      },
+      ai: {
+        heading: {
+          ja: "AIの活用と編集責任",
+          en: "Our Use of AI and Editorial Responsibility",
+        },
+        body: {
+          ja: "当編集部は、リサーチ・翻訳・草稿作成・画像制作の工程でAIツールを積極的に活用しています。ただし、公開されるすべてのコンテンツは編集部による事実確認・編集・承認を経ており、内容に関する最終的な責任は編集部にあります。AIの出力をそのまま掲載することはありません。",
+          en: "We actively use AI tools in our research, translation, drafting, and image production workflows. However, every piece of published content passes through editorial fact-checking, editing, and approval, and final responsibility for all content rests with our editorial team. We never publish raw AI output as-is.",
+        },
+      },
+      productSelection: {
+        heading: {
+          ja: "紹介する商品・サービスの選定基準",
+          en: "How We Select Products and Services",
+        },
+        body: {
+          ja: "記事内で紹介する商品・サービスは、「その記事のテーマを実践するための解決策として、読者に自然に役立つか」を基準に編集部が選定します。テーマとの適合が不十分だと判断した商品は、報酬の有無にかかわらず紹介しません。アフィリエイト報酬が選定・評価に影響を与えないことは、アフィリエイト開示ページに定めるとおりです。",
+          en: "Products and services featured in our articles are selected by the editorial team based on one criterion: whether they genuinely help readers put the article's topic into practice. Products that do not fit the topic are not featured, regardless of potential commission. As stated in our Disclosure, affiliate compensation never influences selection or evaluation.",
+        },
+      },
+      tools: {
+        heading: {
+          ja: "Editor's Tools について",
+          en: "About Editor's Tools",
+        },
+        body: {
+          ja: "サイトで無償配布している Editor's Tools（Digital Kakebo 等）は、当編集部が実際の編集・リサーチ業務で使用しているテンプレートを一般公開したものです。私たち自身が日々使っている道具を公開することが、編集部の実務と誠実さの証明になると考えています。",
+          en: "The Editor's Tools we distribute for free (such as the Digital Kakebo) are the actual templates our team uses in day-to-day editorial and research work. We believe that sharing the tools we genuinely rely on is the best proof of how we work.",
+        },
+      },
+      corrections: {
+        heading: {
+          ja: "訂正について",
+          en: "Corrections",
+        },
+        body: {
+          ja: "記事内容に誤りを見つけた場合は、お問い合わせフォームまたは hello@tokyo-decoded.com までご連絡ください。事実確認のうえ、速やかに訂正します。",
+          en: "If you find an error in our content, please contact us via the contact form or at hello@tokyo-decoded.com. We will verify and correct it promptly.",
+        },
+      },
+    },
+  },
 } as const;
