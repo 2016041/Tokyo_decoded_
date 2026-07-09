@@ -35,6 +35,53 @@ function formatDate(date: string, locale: Locale) {
 
 const STEP_MARKER = /[①②③④⑤⑥⑦⑧⑨⑩]/;
 
+// 本文内の `[ラベル](URL)` 記法をリンクとして描画する。
+// 内部パス（/…）と https のみ許可。それ以外の記法はプレーンテキストのまま。
+const INLINE_LINK = /\[([^\]]+)\]\((\/[^\s)]+|https:\/\/[^\s)]+)\)/g;
+
+const inlineLinkClass =
+  "underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent";
+
+function renderInline(text: string): React.ReactNode {
+  const nodes: React.ReactNode[] = [];
+  const pattern = new RegExp(INLINE_LINK.source, "g");
+  let last = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > last) {
+      nodes.push(text.slice(last, match.index));
+    }
+    const [, label, href] = match;
+    if (href.startsWith("/")) {
+      nodes.push(
+        <Link key={`${href}-${match.index}`} href={href} className={inlineLinkClass}>
+          {label}
+        </Link>,
+      );
+    } else {
+      nodes.push(
+        <a
+          key={`${href}-${match.index}`}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={inlineLinkClass}
+        >
+          {label}
+        </a>,
+      );
+    }
+    last = pattern.lastIndex;
+  }
+  if (nodes.length === 0) {
+    return text;
+  }
+  if (last < text.length) {
+    nodes.push(text.slice(last));
+  }
+  return nodes;
+}
+
 // 本文内の「①②③…」手順を番号付きリストとして描画する。
 // マーカーが2つ未満の場合は従来どおり1段落で描画。
 function SectionContent({ content }: { content: string }) {
@@ -42,7 +89,7 @@ function SectionContent({ content }: { content: string }) {
   const markerCount = (content.match(new RegExp(STEP_MARKER, "g")) ?? []).length;
 
   if (markerCount < 2) {
-    return <p className={paragraphClass}>{content}</p>;
+    return <p className={paragraphClass}>{renderInline(content)}</p>;
   }
 
   const segments = content.split(new RegExp(`(?=${STEP_MARKER.source})`));
@@ -53,10 +100,10 @@ function SectionContent({ content }: { content: string }) {
 
   return (
     <>
-      {intro ? <p className={paragraphClass}>{intro.trim()}</p> : null}
+      {intro ? <p className={paragraphClass}>{renderInline(intro.trim())}</p> : null}
       <ol className={`${paragraphClass} mt-4 list-decimal space-y-3 pl-6`}>
         {items.map((item, index) => (
-          <li key={index}>{item.trim()}</li>
+          <li key={index}>{renderInline(item.trim())}</li>
         ))}
       </ol>
     </>
