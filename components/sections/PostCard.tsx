@@ -46,10 +46,10 @@ export function PostCard({
   const localePrefix = locale === "en" ? "/en" : "";
 
   return (
-    <article aria-labelledby={headingId}>
+    <article aria-labelledby={headingId} className="h-full">
       <Link
         href={`${localePrefix}/posts/${post.slug}`}
-        className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+        className="group flex h-full flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
       >
         <div className="overflow-hidden">
           <Image
@@ -63,7 +63,7 @@ export function PostCard({
             className="aspect-video w-full object-cover transition-transform duration-[700ms] ease-out group-hover:scale-105 motion-reduce:transition-none"
           />
         </div>
-        <div className="bg-cream border border-ink/10 p-6 md:p-8 shadow-[0_1px_4px_rgba(0,0,0,0.08)] transition-colors duration-[250ms] motion-reduce:transition-none group-hover:bg-ink group-hover:text-paper">
+        <div className="flex flex-1 flex-col bg-cream border border-ink/10 p-6 md:p-8 shadow-[0_1px_4px_rgba(0,0,0,0.08)] transition-colors duration-[250ms] motion-reduce:transition-none group-hover:bg-ink group-hover:text-paper">
           <p>
             <span className="sr-only">カテゴリ: </span>
             <Badge label={categoryLabel} />
@@ -74,7 +74,7 @@ export function PostCard({
           >
             {title}
           </h3>
-          <time dateTime={post.publishedAt} className="block mt-3 text-sm">
+          <time dateTime={post.publishedAt} className="mt-auto block pt-3 text-sm">
             {formatDate(post.publishedAt, locale)}
           </time>
         </div>

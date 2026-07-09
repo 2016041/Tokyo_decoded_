@@ -341,10 +341,10 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
                   const relatedCategoryLabel = getCategoryLabel(related.category, locale);
                   const relatedHref = `${localePrefix}/posts/${related.slug}`;
                   return (
-                    <li key={related.slug}>
+                    <li key={related.slug} className="h-full">
                       <Link
                         href={relatedHref}
-                        className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+                        className="group flex h-full flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                       >
                         <div className="overflow-hidden">
                           <img
@@ -354,7 +354,7 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
                             loading="lazy"
                           />
                         </div>
-                        <div className="border border-t-0 border-ink/10 p-4 transition-colors duration-[250ms] motion-reduce:transition-none group-hover:bg-ink group-hover:text-paper">
+                        <div className="flex flex-1 flex-col border border-t-0 border-ink/10 p-4 transition-colors duration-[250ms] motion-reduce:transition-none group-hover:bg-ink group-hover:text-paper">
                           <p>
                             <span className="sr-only">{locale === "ja" ? "カテゴリ: " : "Category: "}</span>
                             <Badge label={relatedCategoryLabel} />
@@ -362,7 +362,7 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
                           <h3 className="font-jp font-bold text-sm mt-2 leading-[1.5]">
                             {relatedTitle}
                           </h3>
-                          <time dateTime={related.publishedAt} className="block mt-2 text-xs text-muted group-hover:text-paper/70">
+                          <time dateTime={related.publishedAt} className="mt-auto block pt-2 text-xs text-muted group-hover:text-paper/70">
                             {formatDate(related.publishedAt, locale)}
                           </time>
                         </div>
