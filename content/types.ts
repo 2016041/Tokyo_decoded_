@@ -75,6 +75,8 @@ export type PostBodyHeadings = {
 
 export type AffiliateLink = {
   readonly label: string;
+  // 英語ページ用ラベル。未設定時は label（日本語）にフォールバック
+  readonly label_en?: string;
   readonly url: string;
   readonly note?: string;
 };

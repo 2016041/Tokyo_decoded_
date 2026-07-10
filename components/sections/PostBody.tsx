@@ -301,25 +301,33 @@ export function PostBody({ post, locale = "ja", relatedPosts = [], prevPost = nu
                 </Link>
               </p>
               <ul role="list" className="mt-6 grid gap-4 md:grid-cols-2">
-                {post.affiliateLinks.map((link) => (
+                {post.affiliateLinks.map((link) => {
+                  const linkLabel =
+                    locale === "en" && link.label_en ? link.label_en : link.label;
+                  return (
                   <li key={link.url}>
                     <a
                       href={link.url}
                       target="_blank"
                       rel="sponsored noopener noreferrer"
-                      aria-label={`${link.label}（外部サイト・PR）`}
+                      aria-label={
+                        locale === "ja"
+                          ? `${linkLabel}（外部サイト・PR）`
+                          : `${linkLabel} (external site, sponsored)`
+                      }
                       className="block h-full border border-ink/20 p-5 transition-colors duration-[150ms] motion-reduce:transition-none hover:bg-ink hover:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
                     >
                       <span className="block font-jp font-medium">
                         <Badge label="PR" aria-hidden className="mr-2" />
-                        {link.label}
+                        {linkLabel}
                       </span>
                       {link.note ? (
                         <span className="mt-2 block text-sm">{link.note}</span>
                       ) : null}
                     </a>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             </aside>
           ) : null}
