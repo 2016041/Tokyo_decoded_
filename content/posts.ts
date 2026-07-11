@@ -58,7 +58,24 @@ export const posts = [
     },
     bodyHeadings: {"data": {"ja": "Soft Saving（ソフトセービング）とは？Z世代73%のデータ", "en": "What is Soft Saving? Why 73% of Gen Z choose today"}, "explanation": {"ja": "なぜ広がる？Soft Savingと日本の積立・もったいない", "en": "Why it resonates: Soft Saving and Japan's saving wisdom"}, "practice": {"ja": "Soft Savingの始め方——3ステップ", "en": "How to start Soft Saving: 3 steps"}, "cta": {"ja": "まとめ：Soft Savingは我慢より「続く」を選ぶ", "en": "The takeaway: Soft Saving lasts because it's gentle"}},
     relatedToolSlug: "",
-    affiliateLinks: [{"label": "「DIE WITH ZERO 人生が豊かになりすぎる究極のルール」（ビル・パーキンス）", "label_en": "Die With Zero — Bill Perkins (Japanese edition)", "url": "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F16433838%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F20109362%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a"}, {"label": "「新版 『幸せをお金で買う』5つの授業」（エリザベス・ダン、マイケル・ノートン）", "label_en": "Happy Money: The Science of Happier Spending — Elizabeth Dunn & Michael Norton (Japanese edition)", "url": "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18531384%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F21871718%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a"}],
+    affiliateLinks: [
+      {
+        label: "「DIE WITH ZERO 人生が豊かになりすぎる究極のルール」（ビル・パーキンス）（楽天）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F16433838%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F20109362%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "「DIE WITH ZERO 人生が豊かになりすぎる究極のルール」（ビル・パーキンス）（Amazon）",
+        url: "https://www.amazon.co.jp/dp/4478109680?tag=tokyodecoded-22",
+      },
+      {
+        label: "「新版 『幸せをお金で買う』5つの授業」（エリザベス・ダン、マイケル・ノートン）（楽天）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18531384%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F21871718%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "「新版 『幸せをお金で買う』5つの授業」（エリザベス・ダン、マイケル・ノートン）（Amazon）",
+        url: "https://www.amazon.co.jp/dp/4048113550?tag=tokyodecoded-22",
+      },
+    ],
     tags_ja: ["Soft Saving", "ソフトセービング", "貯金", "節約", "メンタルヘルス", "海外トレンド"],
     tags_en: ["soft saving", "money", "saving", "mental health", "personal finance", "global trends"],
   },
@@ -88,7 +105,12 @@ export const posts = [
     },
     bodyHeadings: {"data": {"ja": "低速老化（Slow Aging）とは？世界で広がる数字", "en": "What is Slow Aging? The numbers behind the shift"}, "explanation": {"ja": "アンチエイジングとの違い——低速老化は生活習慣に投資する", "en": "Slow Aging vs. anti-aging: investing in daily habits"}, "practice": {"ja": "低速老化の始め方——生活習慣3つの土台", "en": "How to start Slow Aging: 3 lifestyle foundations"}, "cta": {"ja": "まとめ：低速老化は「老いと戦わず、向き合う」", "en": "The takeaway: facing age instead of fighting it"}},
     relatedToolSlug: "",
-    affiliateLinks: [{"label": "アネッサ パーフェクトUV スキンケアミルク NA（SPF50+・PA++++・60mL）", "label_en": "ANESSA Perfect UV Skincare Milk NA (SPF50+ / PA++++, 60mL)", "url": "https://hb.afl.rakuten.co.jp/hgc/g00t3lin.kll752db.g00t3lin.kll763d7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyayoi-cosme%2F14710%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fyayoi-cosme%2Fi%2F10011596%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a"}],
+    affiliateLinks: [
+      {
+        label: "アネッサ パーフェクトUV スキンケアミルク NA（SPF50+・PA++++・60mL）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00t3lin.kll752db.g00t3lin.kll763d7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyayoi-cosme%2F14710%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fyayoi-cosme%2Fi%2F10011596%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+    ],
     tags_ja: ["低速老化", "Slow Aging", "韓国美容", "予防美容", "スキンケア", "海外トレンド"],
     tags_en: ["slow aging", "k-beauty", "preventive beauty", "skincare", "lifestyle", "global trends"],
   },
@@ -118,7 +140,16 @@ export const posts = [
     },
     bodyHeadings: {"data": {"ja": "Loud Budgetingとは？1.4億回再生の背景データ", "en": "What is Loud Budgeting? The data behind 140M views"}, "explanation": {"ja": "なぜ効く？Loud Budgetingと日本の家計簿の共通点", "en": "Why it works: Loud Budgeting meets the Japanese kakeibo"}, "practice": {"ja": "Loud Budgetingのやり方——日本式3ステップ", "en": "How to start Loud Budgeting in Japan: 3 steps"}, "cta": {"ja": "まとめ：Loud Budgetingは宣言から始まる", "en": "The takeaway: Loud Budgeting starts with a declaration"}},
     relatedToolSlug: "",
-    affiliateLinks: [{"label": "「改訂版 本当の自由を手に入れる お金の大学」（両＠リベ大学長）", "label_en": "Okane no Daigaku (Money University), revised ed. — Japan's bestselling personal-finance guide (Japanese)", "url": "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18041936%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F21432338%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a"}],
+    affiliateLinks: [
+      {
+        label: "「改訂版 本当の自由を手に入れる お金の大学」（両＠リベ大学長）（楽天）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18041936%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F21432338%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "「改訂版 本当の自由を手に入れる お金の大学」（両＠リベ大学長）（Amazon）",
+        url: "https://www.amazon.co.jp/dp/4023323780?tag=tokyodecoded-22",
+      },
+    ],
     tags_ja: ["Loud Budgeting", "ラウドバジェティング", "節約", "家計管理", "海外トレンド", "ミレニアル"],
     tags_en: ["loud budgeting", "money", "budgeting", "personal finance", "global trends", "millennial"],
   },
@@ -147,7 +178,20 @@ export const posts = [
       cta:         { ja: "睡眠は、おそらく最もコストパフォーマンスの高い自己投資です。ジムやサプリやコスメよりも先に、整えるべきものがある。今夜できる最初の3歩は——部屋を完全に暗くする、寝る1時間前にスマホを置く、そして鼻で呼吸して眠る。背景の科学をもっと深く知りたい人には、睡眠研究の到達点をわかりやすくまとめた西野精治『スタンフォード式 最高の睡眠』が、最初の一冊として最適です。鼻呼吸の習慣づけに踏み込みたい人は、睡眠用のマウステープから試してみてください。小さな一つの変数を変えるだけで、明日の朝は確実に変わります。",  en: "Sleep may be the highest-return investment you can make in yourself—something to fix before the gym, the supplements, or the skincare. Three steps you can take tonight: make the room completely dark, put the phone down an hour before bed, and breathe through your nose as you fall asleep. If you want to understand the science behind it, Seiji Nishino's \"Stanford Method for Ultimate Sound Sleep\" is an ideal first book, distilling where sleep research stands today. And if you're ready to build the nasal-breathing habit, start with sleep mouth tape. Change one small variable, and tomorrow morning will already feel different."  },
     },
     relatedToolSlug: "",
-    affiliateLinks: [{"label": "「スタンフォード式 最高の睡眠」（西野精治）", "label_en": "The Stanford Method for Ultimate Sleep — Seiji Nishino (Japanese edition)", "url": "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14657717%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18352559%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a"}, {"label": "マウステープ（鼻呼吸サポート・睡眠用）", "label_en": "Mouth tape for sleep (nasal-breathing support)", "url": "https://hb.afl.rakuten.co.jp/hgc/g00tpuan.kll750e6.g00tpuan.kll76c4f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhidekistore%2Fcompass1637388394%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhidekistore%2Fi%2F10000037%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a"}],
+    affiliateLinks: [
+      {
+        label: "「スタンフォード式 最高の睡眠」（西野精治）（楽天）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14657717%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18352559%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "「スタンフォード式 最高の睡眠」（西野精治）（Amazon）",
+        url: "https://www.amazon.co.jp/dp/4763136011?tag=tokyodecoded-22",
+      },
+      {
+        label: "マウステープ（睡眠用・鼻呼吸サポート）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00thhwn.kll751fa.g00thhwn.kll7644d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fevo-inc%2Fm-tape%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fevo-inc%2Fi%2F10000127%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+    ],
     tags_ja: ["睡眠", "Sleepmaxxing", "海外トレンド", "健康習慣", "セルフケア"],
     tags_en: ["sleep", "sleepmaxxing", "wellness", "habits", "selfcare"],
   },
@@ -178,18 +222,19 @@ export const posts = [
     relatedToolSlug: null,
     affiliateLinks: [
       {
-        label: "「一汁一菜でよいという提案」（土井善晴）",
-        label_en: "Ichiju-Issai: The One-Soup-One-Dish Proposal — Yoshiharu Doi (Japanese)",
+        label: "「一汁一菜でよいという提案」（土井善晴）（楽天）",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14493019%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18221973%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
-        label: "つぐつぐ 金継ぎキット（家庭用・初心者向け）",
-        label_en: "TsuguTsugu kintsugi repair kit (beginner-friendly, for home use)",
+        label: "「一汁一菜でよいという提案」（土井善晴）（Amazon）",
+        url: "https://www.amazon.co.jp/dp/4101033811?tag=tokyodecoded-22",
+      },
+      {
+        label: "金継ぎキット（家庭用・初心者向け）",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00ttdhn.kll75cf7.g00ttdhn.kll76ad7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkintsugi%2Fkintsugi-goldsilver%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkintsugi%2Fi%2F10000004%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
-        label: "MDノート A5（ミドリ）",
-        label_en: "Midori MD Notebook A5",
+        label: "MDノート（ミドリ）",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00qm7tn.kll75521.g00qm7tn.kll76eae/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-youstyle%2Fmdr49360006%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-youstyle%2Fi%2F10060899%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
     ],
@@ -270,14 +315,20 @@ export const posts = [
     relatedToolSlug: null,
     affiliateLinks: [
       {
-        label: "「民藝とは何か」（柳宗悦）",
-        label_en: "What Is Mingei? — Sōetsu Yanagi (Japanese)",
+        label: "「民藝とは何か」（柳宗悦）（楽天）",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F4127068%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F11904142%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
-        label: "「トレンドよりも、似合うが最強！ 大草直子の“考えるおしゃれ”」（大草直子）",
-        label_en: "Thinking Wardrobe: What Suits You Beats Any Trend — stylist Naoko Okusa (Japanese)",
+        label: "「民藝とは何か」（柳宗悦）（Amazon）",
+        url: "https://www.amazon.co.jp/dp/4061597795?tag=tokyodecoded-22",
+      },
+      {
+        label: "「トレンドよりも、似合うが最強！ 大草直子の\"考えるおしゃれ\"」（大草直子）（楽天）",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F11416297%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F15620256%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "「トレンドよりも、似合うが最強！ 大草直子の\"考えるおしゃれ\"」（大草直子）（Amazon）",
+        url: "https://www.amazon.co.jp/dp/4062172453?tag=tokyodecoded-22",
       },
     ],
     tags_ja: ["クワイエットラグジュアリー", "オールドマネー", "ミニマルファッション", "無印良品", "カプセルワードローブ", "海外トレンド"],
@@ -319,9 +370,12 @@ export const posts = [
     relatedToolSlug: null,
     affiliateLinks: [
       {
-        label: "「世界のエリートがやっている 最高の休息法」（久賀谷亮）",
-        label_en: "The Best Rest: Brain Science × Mindfulness — Akira Kugaya (Japanese)",
+        label: "「世界のエリートがやっている 最高の休息法」（久賀谷亮）（楽天）",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14285231%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18062434%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "「世界のエリートがやっている 最高の休息法」（久賀谷亮）（Amazon）",
+        url: "https://www.amazon.co.jp/dp/4478068445?tag=tokyodecoded-22",
       },
     ],
     tags_ja: ["ベッドロッティング", "休息", "メンタルヘルス", "DMN", "Z世代", "生産性"],
@@ -363,9 +417,12 @@ export const posts = [
     relatedToolSlug: null,
     affiliateLinks: [
       {
-        label: "「予想どおりに不合理 行動経済学が明かす「あなたがそれを選ぶわけ」」（ダン・アリエリー）",
-        label_en: "Predictably Irrational — Dan Ariely (Japanese edition)",
+        label: "「予想どおりに不合理」（ダン・アリエリー）（楽天）",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F12402879%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F16530301%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "「予想どおりに不合理」（ダン・アリエリー）（Amazon）",
+        url: "https://www.amazon.co.jp/dp/4152091665?tag=tokyodecoded-22",
       },
     ],
     tags_ja: ["ディインフルエンシング", "SNS広告疲れ", "衝動買い", "消費者行動", "インフルエンサー", "海外トレンド"],
@@ -407,9 +464,12 @@ export const posts = [
     relatedToolSlug: null,
     affiliateLinks: [
       {
-        label: "「限りある時間の使い方」（オリバー・バークマン）",
-        label_en: "Four Thousand Weeks — Oliver Burkeman (Japanese edition)",
-        url: "https://hb.afl.rakuten.co.jp/hgc/g00rk0pn.kll75b92.g00rk0pn.kll76be4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbookfan%2Fbk-4761276150%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbookfan%2Fi%2F12698537%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+        label: "「限りある時間の使い方」（オリバー・バークマン）（楽天）",
+        url: "https://hb.afl.rakuten.co.jp/hgc/g00reb4n.kll75878.g00reb4n.kll76e96/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakutenkobo-ebooks%2F70bbdabb770d3e2fb338e9a40baf2615%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakutenkobo-ebooks%2Fi%2F21235991%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
+      },
+      {
+        label: "「限りある時間の使い方」（オリバー・バークマン）（Amazon）",
+        url: "https://www.amazon.co.jp/dp/4761276150?tag=tokyodecoded-22",
       },
     ],
     tags_ja: ["ソフトライフ", "ハッスルカルチャー", "バーンアウト", "ワークライフバランス", "Z世代", "海外トレンド"],
