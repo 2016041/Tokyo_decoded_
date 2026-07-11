@@ -61,18 +61,22 @@ export const posts = [
     affiliateLinks: [
       {
         label: "「DIE WITH ZERO 人生が豊かになりすぎる究極のルール」（ビル・パーキンス）（楽天）",
+        label_en: "Die With Zero — Bill Perkins (Japanese edition) (Rakuten)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F16433838%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F20109362%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "「DIE WITH ZERO 人生が豊かになりすぎる究極のルール」（ビル・パーキンス）（Amazon）",
+        label_en: "Die With Zero — Bill Perkins (Japanese edition) (Amazon)",
         url: "https://www.amazon.co.jp/dp/4478109680?tag=tokyodecoded-22",
       },
       {
         label: "「新版 『幸せをお金で買う』5つの授業」（エリザベス・ダン、マイケル・ノートン）（楽天）",
+        label_en: "Happy Money: The Science of Happier Spending — Elizabeth Dunn & Michael Norton (Japanese edition) (Rakuten)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18531384%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F21871718%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "「新版 『幸せをお金で買う』5つの授業」（エリザベス・ダン、マイケル・ノートン）（Amazon）",
+        label_en: "Happy Money: The Science of Happier Spending — Elizabeth Dunn & Michael Norton (Japanese edition) (Amazon)",
         url: "https://www.amazon.co.jp/dp/4048113550?tag=tokyodecoded-22",
       },
     ],
@@ -108,6 +112,7 @@ export const posts = [
     affiliateLinks: [
       {
         label: "アネッサ パーフェクトUV スキンケアミルク NA（SPF50+・PA++++・60mL）",
+        label_en: "ANESSA Perfect UV Skincare Milk NA (SPF50+ / PA++++, 60mL)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00t3lin.kll752db.g00t3lin.kll763d7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyayoi-cosme%2F14710%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fyayoi-cosme%2Fi%2F10011596%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
     ],
@@ -143,10 +148,12 @@ export const posts = [
     affiliateLinks: [
       {
         label: "「改訂版 本当の自由を手に入れる お金の大学」（両＠リベ大学長）（楽天）",
+        label_en: "Okane no Daigaku (Money University), revised ed. — Japan's bestselling personal-finance guide (Japanese) (Rakuten)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18041936%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F21432338%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "「改訂版 本当の自由を手に入れる お金の大学」（両＠リベ大学長）（Amazon）",
+        label_en: "Okane no Daigaku (Money University), revised ed. — Japan's bestselling personal-finance guide (Japanese) (Amazon)",
         url: "https://www.amazon.co.jp/dp/4023323780?tag=tokyodecoded-22",
       },
     ],
@@ -181,14 +188,17 @@ export const posts = [
     affiliateLinks: [
       {
         label: "「スタンフォード式 最高の睡眠」（西野精治）（楽天）",
+        label_en: "The Stanford Method for Ultimate Sleep — Seiji Nishino (Japanese edition) (Rakuten)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14657717%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18352559%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "「スタンフォード式 最高の睡眠」（西野精治）（Amazon）",
+        label_en: "The Stanford Method for Ultimate Sleep — Seiji Nishino (Japanese edition) (Amazon)",
         url: "https://www.amazon.co.jp/dp/4763136011?tag=tokyodecoded-22",
       },
       {
         label: "マウステープ（睡眠用・鼻呼吸サポート）",
+        label_en: "Mouth tape for sleep (nasal-breathing support)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00thhwn.kll751fa.g00thhwn.kll7644d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fevo-inc%2Fm-tape%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fevo-inc%2Fi%2F10000127%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
     ],
@@ -223,18 +233,22 @@ export const posts = [
     affiliateLinks: [
       {
         label: "「一汁一菜でよいという提案」（土井善晴）（楽天）",
+        label_en: "Ichiju-Issai: The One-Soup-One-Dish Proposal — Yoshiharu Doi (Japanese) (Rakuten)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14493019%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18221973%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "「一汁一菜でよいという提案」（土井善晴）（Amazon）",
+        label_en: "Ichiju-Issai: The One-Soup-One-Dish Proposal — Yoshiharu Doi (Japanese) (Amazon)",
         url: "https://www.amazon.co.jp/dp/4101033811?tag=tokyodecoded-22",
       },
       {
         label: "金継ぎキット（家庭用・初心者向け）",
+        label_en: "TsuguTsugu kintsugi repair kit (beginner-friendly, for home use)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00ttdhn.kll75cf7.g00ttdhn.kll76ad7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkintsugi%2Fkintsugi-goldsilver%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkintsugi%2Fi%2F10000004%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "MDノート（ミドリ）",
+        label_en: "Midori MD Notebook A5",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00qm7tn.kll75521.g00qm7tn.kll76eae/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-youstyle%2Fmdr49360006%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-youstyle%2Fi%2F10060899%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
     ],
@@ -316,18 +330,22 @@ export const posts = [
     affiliateLinks: [
       {
         label: "「民藝とは何か」（柳宗悦）（楽天）",
+        label_en: "What Is Mingei? — Sōetsu Yanagi (Japanese) (Rakuten)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F4127068%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F11904142%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "「民藝とは何か」（柳宗悦）（Amazon）",
+        label_en: "What Is Mingei? — Sōetsu Yanagi (Japanese) (Amazon)",
         url: "https://www.amazon.co.jp/dp/4061597795?tag=tokyodecoded-22",
       },
       {
         label: "「トレンドよりも、似合うが最強！ 大草直子の\"考えるおしゃれ\"」（大草直子）（楽天）",
+        label_en: "Thinking Wardrobe: What Suits You Beats Any Trend — stylist Naoko Okusa (Japanese) (Rakuten)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F11416297%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F15620256%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "「トレンドよりも、似合うが最強！ 大草直子の\"考えるおしゃれ\"」（大草直子）（Amazon）",
+        label_en: "Thinking Wardrobe: What Suits You Beats Any Trend — stylist Naoko Okusa (Japanese) (Amazon)",
         url: "https://www.amazon.co.jp/dp/4062172453?tag=tokyodecoded-22",
       },
     ],
@@ -371,10 +389,12 @@ export const posts = [
     affiliateLinks: [
       {
         label: "「世界のエリートがやっている 最高の休息法」（久賀谷亮）（楽天）",
+        label_en: "The Best Rest: Brain Science × Mindfulness — Akira Kugaya (Japanese) (Rakuten)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F14285231%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F18062434%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "「世界のエリートがやっている 最高の休息法」（久賀谷亮）（Amazon）",
+        label_en: "The Best Rest: Brain Science × Mindfulness — Akira Kugaya (Japanese) (Amazon)",
         url: "https://www.amazon.co.jp/dp/4478068445?tag=tokyodecoded-22",
       },
     ],
@@ -418,10 +438,12 @@ export const posts = [
     affiliateLinks: [
       {
         label: "「予想どおりに不合理」（ダン・アリエリー）（楽天）",
+        label_en: "Predictably Irrational — Dan Ariely (Japanese edition) (Rakuten)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00q072n.kll75f32.g00q072n.kll76c1e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F12402879%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F16530301%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "「予想どおりに不合理」（ダン・アリエリー）（Amazon）",
+        label_en: "Predictably Irrational — Dan Ariely (Japanese edition) (Amazon)",
         url: "https://www.amazon.co.jp/dp/4152091665?tag=tokyodecoded-22",
       },
     ],
@@ -465,10 +487,12 @@ export const posts = [
     affiliateLinks: [
       {
         label: "「限りある時間の使い方」（オリバー・バークマン）（楽天）",
+        label_en: "Four Thousand Weeks — Oliver Burkeman (Japanese edition) (Rakuten)",
         url: "https://hb.afl.rakuten.co.jp/hgc/g00reb4n.kll75878.g00reb4n.kll76e96/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakutenkobo-ebooks%2F70bbdabb770d3e2fb338e9a40baf2615%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Frakutenkobo-ebooks%2Fi%2F21235991%2F&rafcid=wsc_i_is_c18bf7b5-1871-492a-a3f5-afa07ce3dd0a",
       },
       {
         label: "「限りある時間の使い方」（オリバー・バークマン）（Amazon）",
+        label_en: "Four Thousand Weeks — Oliver Burkeman (Japanese edition) (Amazon)",
         url: "https://www.amazon.co.jp/dp/4761276150?tag=tokyodecoded-22",
       },
     ],
