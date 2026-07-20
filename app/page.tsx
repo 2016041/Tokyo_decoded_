@@ -1,37 +1,103 @@
 import type { Metadata } from "next";
-import { ScrollReveal } from "@/components/ScrollReveal";
-import { AboutMini } from "@/components/sections/AboutMini";
-import { ContactCTA } from "@/components/sections/ContactCTA";
-import { EditorsToolsForm } from "@/components/sections/EditorsToolsForm";
-import { Hero } from "@/components/sections/Hero";
-import { LatestPosts } from "@/components/sections/LatestPosts";
-import { posts } from "@/content/posts";
+import Link from "next/link";
+import CardTD from "@/components/redesign/CardTD";
+import type { Post } from "@/content/types";
+import {
+  sortedPosts, byCategory, categoryCounts, catClass, catLabel, kindLabel,
+  postHref, title, excerpt, fmtDot, fmtMd,
+} from "@/lib/td";
 import { metadataForPage } from "@/lib/i18n";
 
 export const dynamic = "force-static";
-
 export function generateMetadata(): Metadata {
   return metadataForPage("home", "ja");
 }
 
+const TAGS = [
+  "Loud Budgeting", "袋分け家計簿", "Z世代のお金", "Slow Aging", "Sleepmaxxing",
+  "リベンジ貯蓄", "Soft Saving", "マネーディスモルフィア", "低速老化",
+];
+
 export default function Home() {
+  const all = sortedPosts();
+  const money = byCategory("money-ai");
+  const lead = money[0] ?? all[0];
+  const subs = money.filter((p) => p.slug !== lead.slug).slice(0, 2);
+  const rail = money.slice(0, 5);
+  const counts = categoryCounts();
+  const guides = all.filter((p) => kindLabel(p) === "まとめ").length;
+  const gridPosts = all.filter((p) => p.slug !== lead.slug).slice(0, 6);
+  const cats: [string, string, string, number, string][] = [
+    ["お金・AI", "MONEY", "/posts?cat=money-ai", counts["money-ai"] ?? 0, "td-cm"],
+    ["暮らし", "LIFE", "/posts?cat=lifestyle", counts["lifestyle"] ?? 0, "td-cl"],
+    ["美容", "BEAUTY", "/posts?cat=beauty", counts["beauty"] ?? 0, "td-cb"],
+    ["まとめ・比較", "GUIDES", "/posts", guides, "td-cg"],
+  ];
+
   return (
-    <>
-      <ScrollReveal>
-        <Hero locale="ja" />
-      </ScrollReveal>
-      <ScrollReveal>
-        <AboutMini locale="ja" />
-      </ScrollReveal>
-      <ScrollReveal>
-        <LatestPosts locale="ja" items={posts} />
-      </ScrollReveal>
-      <ScrollReveal>
-        <EditorsToolsForm locale="ja" />
-      </ScrollReveal>
-      <ScrollReveal>
-        <ContactCTA locale="ja" />
-      </ScrollReveal>
-    </>
+    <div className="td-scope">
+      <div className="td-wrap">
+        <div className="td-catstrip">
+          {cats.map(([j, en, href, n, cc]) => (
+            <Link key={en} href={href} className={cc}>
+              <span className="td-cjp">{j}</span>
+              <span className="td-cen">{en}</span>
+              <span className="td-ccount">{n}本</span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="td-top">
+          <Link className="td-lead" href={postHref(lead, "ja")}>
+            <div className="td-ey">今週の特集 · <span className="td-en">THIS WEEK</span></div>
+            <h1>{title(lead, "ja")}</h1>
+            <p className="td-dek">{excerpt(lead, "ja")}</p>
+            <div className={`td-byline ${catClass(lead.category)}`}>
+              <span className="td-cat">{catLabel(lead.category, "ja")}</span>文 — Tokyo Decoded 編集部
+              <span className="td-dot">·</span>{fmtDot(lead.publishedAt)}
+              <span className="td-dot">·</span>読了 約5分
+              <span className="td-dot">·</span>出典3件
+            </div>
+            <div className="td-li" style={{ backgroundImage: `url(${lead.thumbnail})` }} />
+          </Link>
+
+          <aside className="td-aside">
+            <div className="td-asideh">次に読むべき</div>
+            {subs.map((p: Post) => (
+              <Link key={p.slug} className="td-sub" href={postHref(p, "ja")}>
+                <div className="td-subimg" style={{ backgroundImage: `url(${p.thumbnail})` }} />
+                <div className="td-subtxt">
+                  <div className={`td-k ${catClass(p.category)}`}>{catLabel(p.category, "ja")}</div>
+                  <h4>{title(p, "ja")}</h4>
+                </div>
+              </Link>
+            ))}
+            <div className="td-asideh" style={{ marginTop: 20 }}>お金クラスタ 最新</div>
+            <div className="td-rail">
+              {rail.map((p) => (
+                <Link key={p.slug} className="td-r" href={postHref(p, "ja")}>
+                  <span className="td-rn">{fmtMd(p.publishedAt)}</span>
+                  <span className="td-rt">{title(p, "ja")}</span>
+                </Link>
+              ))}
+            </div>
+          </aside>
+        </div>
+
+        <div className="td-tagsec">
+          <span className="td-tl">人気のトピック</span>
+          {TAGS.map((t) => (
+            <Link key={t} className="td-tag" href="/posts">#{t}</Link>
+          ))}
+        </div>
+
+        <div className="td-sec">
+          <div className="td-sech"><h2>最新記事</h2><Link href="/posts">すべての記事 →</Link></div>
+          <div className="td-grid">
+            {gridPosts.map((p) => <CardTD key={p.slug} post={p} locale="ja" />)}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

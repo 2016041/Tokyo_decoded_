@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Inter, Noto_Sans_JP, Space_Grotesk } from "next/font/google";
 import CookieBanner from "@/components/CookieBanner";
-import Footer from "@/components/Footer";
+import FooterTD from "@/components/redesign/FooterTD";
 import GoogleAnalytics from "@/components/common/GoogleAnalytics";
-import Header from "@/components/Header";
+import HeaderTD from "@/components/redesign/HeaderTD";
+import { buildSearchIndex } from "@/lib/td";
 import SkipLink from "@/components/SkipLink";
 import JsonLdOrganization from "@/components/seo/JsonLdOrganization";
 import JsonLdWebSite from "@/components/seo/JsonLdWebSite";
@@ -86,7 +87,7 @@ export default function RootLayout({
         <JsonLdWebSite />
         <JsonLdOrganization />
         <SkipLink />
-        <Header />
+        <HeaderTD indexJa={buildSearchIndex("ja")} indexEn={buildSearchIndex("en")} />
         <main
           id="main-content"
           tabIndex={-1}
@@ -94,7 +95,7 @@ export default function RootLayout({
         >
           {children}
         </main>
-        <Footer />
+        <FooterTD />
         <CookieBanner />
         <Suspense fallback={null}>
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ""} />
