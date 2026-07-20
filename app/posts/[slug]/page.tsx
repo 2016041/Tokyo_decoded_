@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import JsonLdArticle from "@/components/seo/JsonLdArticle";
 import { PostBody } from "@/components/sections/PostBody";
-import { postCategories, posts } from "@/content/posts";
+import { posts } from "@/content/posts";
 import { defaultMetadata, pageMetadata, structuredDataTemplates } from "@/content/seo";
 import { absoluteUrl } from "@/lib/i18n";
 import { getPostBySlug, getRelatedPosts, getPrevNextPosts } from "@/lib/posts";
@@ -28,9 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const meta = pageMetadata[key];
   const title = meta?.title_ja ?? post.title_ja;
   const description = meta?.description_ja ?? post.excerpt_ja;
-  const category =
-    postCategories.find((item) => item.slug === post.category)?.label_ja ?? post.category;
-  const ogUrl = `/api/og?title=${encodeURIComponent(post.title_ja)}&category=${encodeURIComponent(category)}`;
+  // OG画像は記事サムネイル実写真を使う（/api/og はフォント起因の500で機能していなかった。
+  // Google Discover 推奨も「テキストの多い画像を避け高品質写真を使う」）
+  const ogImage = absoluteUrl(post.thumbnail);
 
   return {
     title,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: absoluteUrl(`/posts/${post.slug}`),
-      images: [{ url: ogUrl, width: 1200, height: 630, alt: title }],
+      images: [{ url: ogImage, width: 1536, height: 1024, alt: title }],
       locale: "ja_JP",
       alternateLocale: "en_US",
       type: "article",

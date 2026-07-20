@@ -68,7 +68,8 @@ export const metadata: Metadata = {
       "en-US": `${defaultMetadata.siteUrl}/en`,
     },
   },
-  robots: { index: true, follow: true },
+  // max-image-preview:large は Google Discover 掲載の必須要件
+  robots: { index: true, follow: true, "max-image-preview": "large" },
 };
 
 export default function RootLayout({
