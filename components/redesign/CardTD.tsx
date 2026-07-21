@@ -11,7 +11,7 @@ export default function CardTD({ post, locale }: { post: Post; locale: Locale })
       <div className="td-ci" style={{ backgroundImage: `url(${post.thumbnail})` }} />
       <div className="td-cmeta">
         <span className={`td-ck ${catClass(post.category)}`}>{catLabel(post.category, locale)}</span>
-        <span className="td-ct">{kindLabel(post)}</span>
+        <span className="td-ct">{kindLabel(post, locale)}</span>
         <span className="td-cd">{fmtDot(post.publishedAt)}</span>
       </div>
       <h3>{title(post, locale)}</h3>

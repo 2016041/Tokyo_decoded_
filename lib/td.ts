@@ -20,11 +20,12 @@ export function catLabel(slug: string, locale: Locale): string {
 }
 
 // 記事種別ラベル（データに無いためタイトルからの表示用ヒューリスティック）
-export function kindLabel(post: Post): string {
+export function kindLabel(post: Post, locale: Locale = "ja"): string {
   const t = post.title_ja ?? "";
-  if (/(比較|ランキング|おすすめ)/.test(t)) return "比較";
-  if (/(大全|まとめ|事典|ガイド)/.test(t)) return "まとめ";
-  return "解説";
+  const en = locale === "en";
+  if (/(比較|ランキング|おすすめ)/.test(t)) return en ? "Comparison" : "比較";
+  if (/(大全|まとめ|事典|ガイド)/.test(t)) return en ? "Roundup" : "まとめ";
+  return en ? "Explainer" : "解説";
 }
 
 export function postHref(post: Post, locale: Locale): string {
@@ -71,7 +72,7 @@ export function buildSearchIndex(locale: Locale): SearchItem[] {
     t: title(p, locale),
     c: catLabel(p.category, locale),
     u: postHref(p, locale),
-    k: kindLabel(p),
+    k: kindLabel(p, locale),
     cc: catClass(p.category),
   }));
 }

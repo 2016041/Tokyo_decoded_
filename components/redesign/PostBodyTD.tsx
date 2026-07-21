@@ -77,7 +77,7 @@ export default function PostBodyTD({
         <div className={`td-ahead ${catClass(post.category)}`}>
           <div className="td-chips">
             <span className="td-ck">{catLabel(post.category, locale)}</span>
-            <span className="td-ct">{kindLabel(post)}</span>
+            <span className="td-ct">{kindLabel(post, locale)}</span>
           </div>
           <h1>{title(post, locale)}</h1>
           <p className="td-dek">{excerpt(post, locale)}</p>
