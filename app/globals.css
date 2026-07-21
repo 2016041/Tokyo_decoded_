@@ -367,7 +367,7 @@ html[data-theme="dark"] .td-logo :is(.st0,[fill="#0f1115"]){fill:var(--td-fg);}
 .td-dtag:hover{background:var(--td-red);color:#fff;}
 .td-related{border-top:2px solid var(--td-lineS);margin-top:52px;padding-top:8px;}
 .td-related h2{font-size:20px;font-weight:900;margin:18px 0 22px;}
-@media(max-width:900px){.td-layout{grid-template-columns:1fr;gap:8px;}.td-toc{position:static;border-top:none;border-bottom:2px solid var(--td-lineF);padding-bottom:16px;margin-bottom:6px;}}
+@media(max-width:900px){.td-layout{grid-template-columns:1fr;gap:8px;}.td-toc{order:-1;position:static;border-top:none;border-bottom:2px solid var(--td-lineF);padding-bottom:16px;margin-bottom:6px;}.td-article{order:0;}}
 
 /* ---- フッター（主要メニューと補足ページを分離・ロゴ入り） ---- */
 .td-fmain{display:flex;justify-content:space-between;gap:44px 60px;flex-wrap:wrap;padding:46px 0 30px;}
