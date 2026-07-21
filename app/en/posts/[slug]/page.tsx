@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import JsonLdArticle from "@/components/seo/JsonLdArticle";
-import { PostBody } from "@/components/sections/PostBody";
+import PostBodyTD from "@/components/redesign/PostBodyTD";
 import { posts } from "@/content/posts";
 import { defaultMetadata, pageMetadata, structuredDataTemplates } from "@/content/seo";
 import { absoluteUrl } from "@/lib/i18n";
-import { getPostBySlug, getRelatedPosts, getPrevNextPosts } from "@/lib/posts";
+import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -78,12 +78,11 @@ export default async function EnPostPage({ params }: Props) {
   };
 
   const relatedPosts = getRelatedPosts(post);
-  const { prev, next } = getPrevNextPosts(post.slug);
 
   return (
     <>
       <JsonLdArticle data={articleData} />
-      <PostBody post={post} locale="en" relatedPosts={relatedPosts} prevPost={prev} nextPost={next} />
+      <PostBodyTD post={post} locale="en" relatedPosts={relatedPosts} />
     </>
   );
 }
