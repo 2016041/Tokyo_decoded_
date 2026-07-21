@@ -182,7 +182,6 @@ export default function HeaderTD({ indexJa, indexEn }: { indexJa: SearchItem[]; 
                 results.map((a) => (
                   <Link key={a.u} className="td-sr" href={a.u} onClick={() => setOpen(false)}>
                     <span className={`td-src ${a.cc}`}>{a.c}</span>
-                    <span className="td-srk">{a.k}</span>
                     <span className="td-srt">{a.t}</span>
                   </Link>
                 ))
