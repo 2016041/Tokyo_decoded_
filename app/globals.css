@@ -364,3 +364,20 @@ html[data-theme="dark"] .td-logo :is(.st0,[fill="#0f1115"]){fill:var(--td-fg);}
 .td-fcopy{font-size:12px;color:var(--td-muted);}
 .td-fbottom .td-en{font-size:11px;letter-spacing:.14em;color:var(--td-muted);}
 @media(max-width:640px){.td-fmain{flex-direction:column;gap:32px;}.td-fbottom{flex-direction:column;align-items:flex-start;}}
+
+/* ---- Editor's Tools ページ ---- */
+.td-toolsnote{display:flex;align-items:flex-start;gap:12px;background:var(--td-chip);padding:16px 20px;margin:22px 0 30px;font-size:14px;line-height:1.75;color:var(--td-leadp);}
+.td-toolsnote .td-nicon{flex:none;font-family:var(--font-display);font-weight:800;font-size:12px;color:#fff;background:var(--td-fg);padding:3px 9px;letter-spacing:.04em;}
+.td-tools{display:flex;flex-direction:column;gap:26px;}
+.td-toolcard{display:grid;grid-template-columns:300px 1fr;gap:28px;border:1px solid var(--td-lineF);background:var(--td-bg);}
+.td-toolimg{background-size:cover;background-position:center;min-height:200px;background-color:var(--td-chip);}
+.td-toolbody{padding:26px 28px 26px 0;display:flex;flex-direction:column;}
+.td-toolmeta{display:flex;align-items:center;gap:9px;margin-bottom:10px;flex-wrap:wrap;}
+.td-toolcat{font-weight:800;font-size:11px;color:#fff;background:var(--c,var(--td-red));padding:2px 8px;}
+.td-notion{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:var(--td-fg);border:1px solid var(--td-lineS);padding:2px 9px;}
+.td-notion::before{content:"◆";font-size:9px;}
+.td-toolname{font-size:21px;font-weight:900;line-height:1.4;margin:0 0 10px;}
+.td-tooldesc{font-size:14px;line-height:1.85;color:var(--td-cardp);margin:0 0 18px;}
+.td-toolcta{margin-top:auto;align-self:flex-start;background:var(--td-red);color:#fff;font-weight:800;font-size:14px;padding:12px 24px;}
+.td-toolcta:hover{background:var(--td-red2);}
+@media(max-width:720px){.td-toolcard{grid-template-columns:1fr;}.td-toolimg{min-height:180px;}.td-toolbody{padding:0 22px 24px;}}

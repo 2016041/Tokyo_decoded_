@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { EditorsToolsForm } from "@/components/sections/EditorsToolsForm";
-import { ToolsList } from "@/components/sections/ToolsList";
+import ToolsListTD from "@/components/redesign/ToolsListTD";
 import { tools } from "@/content/tools";
 import { metadataForPage } from "@/lib/i18n";
 
@@ -13,8 +13,10 @@ export function generateMetadata(): Metadata {
 export default function ToolsPage() {
   return (
     <>
-      <ToolsList locale="ja" items={tools} />
-      <EditorsToolsForm locale="ja" />
+      <ToolsListTD locale="ja" items={tools} />
+      <div className="td-scope" id="tools-form">
+        <EditorsToolsForm locale="ja" />
+      </div>
     </>
   );
 }
