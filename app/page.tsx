@@ -3,7 +3,7 @@ import Link from "next/link";
 import CardTD from "@/components/redesign/CardTD";
 import type { Post } from "@/content/types";
 import {
-  sortedPosts, byCategory, categoryCounts, catClass, catLabel, kindLabel,
+  sortedPosts, byCategory, catClass, catLabel,
   postHref, title, excerpt, fmtDot, fmtMd,
 } from "@/lib/td";
 import { metadataForPage } from "@/lib/i18n";
@@ -24,25 +24,22 @@ export default function Home() {
   const lead = money[0] ?? all[0];
   const subs = money.filter((p) => p.slug !== lead.slug).slice(0, 2);
   const rail = money.slice(0, 5);
-  const counts = categoryCounts();
-  const guides = all.filter((p) => kindLabel(p) === "まとめ").length;
   const gridPosts = all.filter((p) => p.slug !== lead.slug).slice(0, 6);
-  const cats: [string, string, string, number, string][] = [
-    ["お金・AI", "MONEY", "/posts?cat=money-ai", counts["money-ai"] ?? 0, "td-cm"],
-    ["暮らし", "LIFE", "/posts?cat=lifestyle", counts["lifestyle"] ?? 0, "td-cl"],
-    ["美容", "BEAUTY", "/posts?cat=beauty", counts["beauty"] ?? 0, "td-cb"],
-    ["まとめ・比較", "GUIDES", "/posts", guides, "td-cg"],
+  const cats: [string, string, string, string][] = [
+    ["お金・AI", "MONEY", "/posts?cat=money-ai", "td-cm"],
+    ["暮らし", "LIFE", "/posts?cat=lifestyle", "td-cl"],
+    ["美容", "BEAUTY", "/posts?cat=beauty", "td-cb"],
+    ["まとめ・比較", "GUIDES", "/posts", "td-cg"],
   ];
 
   return (
     <div className="td-scope">
       <div className="td-wrap">
         <div className="td-catstrip">
-          {cats.map(([j, en, href, n, cc]) => (
+          {cats.map(([j, en, href, cc]) => (
             <Link key={en} href={href} className={cc}>
               <span className="td-cjp">{j}</span>
               <span className="td-cen">{en}</span>
-              <span className="td-ccount">{n}本</span>
             </Link>
           ))}
         </div>
