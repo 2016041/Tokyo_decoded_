@@ -65,6 +65,13 @@ export default function HeaderTD({ indexJa, indexEn }: { indexJa: SearchItem[]; 
   // ルート遷移でモバイルメニューを閉じる
   useEffect(() => { setMenu(false); }, [pathname]);
 
+  // デスクトップ幅に広げたらメニューを閉じる
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth > 820) setMenu(false); };
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";

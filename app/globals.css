@@ -201,6 +201,8 @@ html[data-theme="dark"] .td-logo :is(.st0,[fill="#0f1115"]){fill:var(--td-fg);}
 .td-mmitem:hover{background:var(--td-fg);color:var(--td-bg);}
 .td-mmlang{border:1.5px solid var(--td-lineS);font-size:13px;font-weight:700;display:flex;}
 .td-mmlang a{padding:9px 13px;color:var(--td-fg);}.td-mmlang .td-on{background:var(--td-fg);color:var(--td-bg);}
+/* デスクトップ幅ではモバイルメニューを出さない（開いたまま拡幅した場合の保険） */
+@media(min-width:821px){.td-mmenu{display:none;}}
 .td-mnav{display:flex;gap:24px;font-size:14px;font-weight:600;color:var(--td-fg);margin-right:10px;}
 .td-mnav a:hover{color:var(--td-red);}
 .td-tbtn{width:34px;height:34px;border:1.5px solid var(--td-lineS);background-color:transparent;color:var(--td-fg);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background-color .18s,color .18s;}
