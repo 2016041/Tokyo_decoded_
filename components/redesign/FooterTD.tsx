@@ -42,9 +42,11 @@ export default function FooterTD() {
               <Image className="td-logo" src="/brand/logo-horizontal.svg" alt="Tokyo Decoded" width={230} height={30} />
             </Link>
             <p className="td-ftag">
-              {ja
-                ? "東京拠点のバイリンガル編集部。海外⇄日本のトレンドを、データと出典で読み解いて届けています。"
-                : "A Tokyo-based bilingual editorial team, decoding global trends for Japan with data and sources."}
+              {ja ? (
+                <>東京拠点のバイリンガル編集部。海外⇄日本のトレンドを、<br />データと出典で読み解いて届けています。</>
+              ) : (
+                "A Tokyo-based bilingual editorial team, decoding global trends for Japan with data and sources."
+              )}
             </p>
           </div>
           <nav className="td-fnav" aria-label={ja ? "フッター主要メニュー" : "Footer menu"}>
