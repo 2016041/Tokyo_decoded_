@@ -251,7 +251,7 @@ html[data-theme="dark"] .td-logo :is(.st0,[fill="#0f1115"]){fill:var(--td-fg);}
 .td-tag:hover{background:var(--td-red);color:#fff;}
 
 /* section + cards */
-.td-sec{padding:28px 0;}
+.td-sec{padding:52px 0 28px;}
 .td-sech{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--td-lineS);padding-bottom:9px;margin-bottom:22px;}
 .td-sech h2{font-size:20px;font-weight:900;margin:0;letter-spacing:.02em;}
 .td-sech a{font-size:12px;font-weight:700;color:var(--td-red);letter-spacing:.06em;}
