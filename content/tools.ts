@@ -13,9 +13,9 @@ export const tools = [
     },
     category: "money-ai",
     description_ja:
-      "ChatGPTまたはClaudeで動く家計簿テンプレート。100年以上の歴史を持つ日本の「家計簿（Kakeibo）」をデジタル化し、Loud Budgeting・Soft Saving の考え方を組み込んだ月次レビューシートです。月に1度、4つの問いに答えるだけでお金の流れが見えてきます。",
+      "Notion で使える家計簿テンプレート。100年以上の歴史を持つ日本の「家計簿（Kakeibo）」をデジタル化し、Loud Budgeting・Soft Saving の考え方を組み込んだ月次レビューシートです。月に1度、4つの問いに答えるだけでお金の流れが見えてきます。",
     description_en:
-      "A budgeting template that runs on ChatGPT or Claude. We've digitized the Japanese Kakeibo method — over a century old — and built in Loud Budgeting and Soft Saving principles. Answer four questions once a month and your money habits start to clarify.",
+      "A budgeting template for Notion. We've digitized the Japanese Kakeibo method — over a century old — and built in Loud Budgeting and Soft Saving principles. Answer four questions once a month and your money habits start to clarify.",
     preview: "/images/tools/digital-kakeibo-preview.webp",
     previewAlt_ja:
       "Digital Kakebo テンプレートのプレビュー画像。月次レビューシートと4カテゴリの支出分類表",
