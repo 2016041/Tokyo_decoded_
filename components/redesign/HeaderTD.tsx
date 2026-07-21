@@ -1,5 +1,5 @@
 "use client";
-// components/redesign/HeaderTD.tsx — REDESIGN 固定ヘッダー（テーマ切替・日付行畳み・検索オーバーレイ）
+// components/redesign/HeaderTD.tsx — REDESIGN 固定ヘッダー（テーマ切替・日付行畳み・検索オーバーレイ・モバイルはハンバーガー集約）
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -17,6 +17,12 @@ const Moon = (
 const SearchIcon = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" /></svg>
 );
+const Burger = (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
+);
+const Close = (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+);
 
 const NAV = [
   { ja: "お金・AI", en: "Money & AI", href: "money-ai" },
@@ -31,13 +37,13 @@ export default function HeaderTD({ indexJa, indexEn }: { indexJa: SearchItem[]; 
   const searchIndex = locale === "en" ? indexEn : indexJa;
   const [dark, setDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);   // 検索オーバーレイ
+  const [menu, setMenu] = useState(false);   // モバイルメニュー
   const [q, setQ] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const base = locale === "ja" ? "" : "/en";
   const postsBase = locale === "ja" ? "/posts" : "/en/posts";
 
-  // ライト既定・トグルでダーク（data-theme）
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", "light");
   }, []);
@@ -56,6 +62,9 @@ export default function HeaderTD({ indexJa, indexEn }: { indexJa: SearchItem[]; 
     return () => window.removeEventListener("scroll", on);
   }, []);
 
+  // ルート遷移でモバイルメニューを閉じる
+  useEffect(() => { setMenu(false); }, [pathname]);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -66,7 +75,9 @@ export default function HeaderTD({ indexJa, indexEn }: { indexJa: SearchItem[]; 
   }, [open]);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { setOpen(false); setMenu(false); }
+    };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
@@ -75,6 +86,15 @@ export default function HeaderTD({ indexJa, indexEn }: { indexJa: SearchItem[]; 
   const results = ql
     ? searchIndex.filter((a) => a.t.toLowerCase().includes(ql) || a.c.toLowerCase().includes(ql))
     : searchIndex;
+
+  const navHref = (h: string) => (h === "guides" ? postsBase : `${postsBase}?cat=${h}`);
+
+  function pathForLocale(l: Locale): string {
+    if (typeof window === "undefined") return l === "ja" ? "/" : "/en";
+    const p = window.location.pathname;
+    if (l === "en") return p.startsWith("/en") ? p : `/en${p === "/" ? "" : p}`;
+    return p.startsWith("/en") ? p.slice(3) || "/" : p;
+  }
 
   return (
     <>
@@ -85,26 +105,52 @@ export default function HeaderTD({ indexJa, indexEn }: { indexJa: SearchItem[]; 
               <Image className="td-logo" src="/brand/logo-horizontal.svg" alt="Tokyo Decoded" width={230} height={30} priority />
             </Link>
             <div className="td-rightc">
-              <nav className="td-mnav" aria-label={locale === "ja" ? "カテゴリ" : "Categories"}>
-                {NAV.map((n) => (
-                  <Link key={n.href} href={n.href === "guides" ? postsBase : `${postsBase}?cat=${n.href}`}>
-                    {locale === "ja" ? n.ja : n.en}
-                  </Link>
-                ))}
-              </nav>
-              <button className="td-tbtn" type="button" aria-label={locale === "ja" ? "記事を検索" : "Search"} onClick={() => setOpen(true)}>{SearchIcon}</button>
-              <button className="td-tbtn" type="button" aria-label={locale === "ja" ? "ダークモード切り替え" : "Toggle dark mode"} onClick={toggleTheme}>{dark ? Sun : Moon}</button>
-              <div className="td-lang">
-                <Link href={pathForLocale("ja")} className={locale === "ja" ? "td-on" : ""}>JP</Link>
-                <Link href={pathForLocale("en")} className={locale === "en" ? "td-on" : ""}>EN</Link>
+              <div className="td-dactions">
+                <nav className="td-mnav" aria-label={locale === "ja" ? "カテゴリ" : "Categories"}>
+                  {NAV.map((n) => (
+                    <Link key={n.href} href={navHref(n.href)}>{locale === "ja" ? n.ja : n.en}</Link>
+                  ))}
+                </nav>
+                <button className="td-tbtn" type="button" aria-label={locale === "ja" ? "記事を検索" : "Search"} onClick={() => setOpen(true)}>{SearchIcon}</button>
+                <button className="td-tbtn" type="button" aria-label={locale === "ja" ? "ダークモード切り替え" : "Toggle dark mode"} onClick={toggleTheme}>{dark ? Sun : Moon}</button>
+                <div className="td-lang">
+                  <Link href={pathForLocale("ja")} className={locale === "ja" ? "td-on" : ""}>JP</Link>
+                  <Link href={pathForLocale("en")} className={locale === "en" ? "td-on" : ""}>EN</Link>
+                </div>
               </div>
+              <button className="td-burger" type="button" aria-label={locale === "ja" ? "メニュー" : "Menu"} aria-expanded={menu} onClick={() => setMenu((v) => !v)}>
+                {menu ? Close : Burger}
+              </button>
             </div>
           </div>
           <div className="td-dateline">
             <span>{locale === "ja" ? "東京発・海外⇄日本のトレンドを翻訳する編集部" : "Decoding global trends from Tokyo"}</span>
-            <span>{locale === "ja" ? "海外⇄日本のトレンド翻訳" : "Bilingual editorial"}</span>
           </div>
         </div>
+
+        {menu && (
+          <div className="td-mmenu">
+            <div className="td-wrap">
+              <nav className="td-mmnav" aria-label={locale === "ja" ? "カテゴリ" : "Categories"}>
+                {NAV.map((n) => (
+                  <Link key={n.href} href={navHref(n.href)} onClick={() => setMenu(false)}>{locale === "ja" ? n.ja : n.en}</Link>
+                ))}
+              </nav>
+              <div className="td-mmact">
+                <button className="td-mmitem" type="button" onClick={() => { setMenu(false); setOpen(true); }}>
+                  {SearchIcon}<span>{locale === "ja" ? "記事を検索" : "Search"}</span>
+                </button>
+                <button className="td-mmitem" type="button" onClick={toggleTheme}>
+                  {dark ? Sun : Moon}<span>{dark ? (locale === "ja" ? "ライトモード" : "Light mode") : (locale === "ja" ? "ダークモード" : "Dark mode")}</span>
+                </button>
+                <div className="td-mmlang">
+                  <Link href={pathForLocale("ja")} className={locale === "ja" ? "td-on" : ""}>JP</Link>
+                  <Link href={pathForLocale("en")} className={locale === "en" ? "td-on" : ""}>EN</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
       {open && (
@@ -136,11 +182,4 @@ export default function HeaderTD({ indexJa, indexEn }: { indexJa: SearchItem[]; 
       )}
     </>
   );
-
-  function pathForLocale(l: Locale): string {
-    if (typeof window === "undefined") return l === "ja" ? "/" : "/en";
-    const p = window.location.pathname;
-    if (l === "en") return p.startsWith("/en") ? p : `/en${p === "/" ? "" : p}`;
-    return p.startsWith("/en") ? p.slice(3) || "/" : p;
-  }
 }
