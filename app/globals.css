@@ -310,6 +310,8 @@ html[data-theme="dark"] .td-logo :is(.st0,[fill="#0f1115"]){fill:var(--td-fg);}
 .td-fpill:hover{border-color:var(--c,var(--td-fg));}
 .td-fpill.td-on{background:var(--c,var(--td-fg));color:#fff;border-color:var(--c,var(--td-fg));}
 .td-fpill.td-on .td-fc{color:rgba(255,255,255,.85);}
+.td-fpill.td-fdisabled{opacity:.4;cursor:not-allowed;border-style:dashed;pointer-events:none;}
+.td-fpill.td-fdisabled:hover{border-color:var(--td-lineF);}
 .td-sortsel{display:inline-flex;align-items:center;gap:2px;border:1.5px solid var(--td-lineF);padding:4px;font-size:13px;font-weight:700;color:var(--td-fg);white-space:nowrap;}
 .td-sortsel svg{width:13px;height:13px;margin:0 6px;color:var(--td-muted);}
 .td-sortlink{padding:5px 12px;color:var(--td-fg);}

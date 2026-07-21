@@ -14,8 +14,9 @@ const FILTERS: [string, string][] = [
   ["お金・AI", "money-ai"],
   ["暮らし", "lifestyle"],
   ["美容", "beauty"],
+  ["まとめ・比較", "guides"],
 ];
-const CC: Record<string, string> = { all: "", "money-ai": "td-cm", lifestyle: "td-cl", beauty: "td-cb" };
+const CC: Record<string, string> = { all: "", "money-ai": "td-cm", lifestyle: "td-cl", beauty: "td-cb", guides: "td-cg" };
 
 function buildHref(cat: string, sort: string): string {
   const p = new URLSearchParams();
@@ -48,16 +49,25 @@ export default async function PostsPage({
         </div>
         <div className="td-filterbar">
           <div className="td-fpills">
-            {FILTERS.map(([j, slug]) => (
-              <Link
-                key={slug}
-                href={buildHref(slug, sort)}
-                className={`td-fpill ${CC[slug]} ${active === slug ? "td-on" : ""}`}
-              >
-                <span>{j}</span>
-                <span className="td-fc">{slug === "all" ? all.length : counts[slug] ?? 0}</span>
-              </Link>
-            ))}
+            {FILTERS.map(([j, slug]) => {
+              const n = slug === "all" ? all.length : counts[slug] ?? 0;
+              const cls = `td-fpill ${CC[slug]} ${active === slug ? "td-on" : ""}`;
+              // 該当記事が0本のカテゴリはクリック不可（記事ができたら自動でリンク化）
+              if (slug !== "all" && n === 0) {
+                return (
+                  <span key={slug} className={`${cls} td-fdisabled`} aria-disabled="true" title="準備中（該当記事がまだありません）">
+                    <span>{j}</span>
+                    <span className="td-fc">{n}</span>
+                  </span>
+                );
+              }
+              return (
+                <Link key={slug} href={buildHref(slug, sort)} className={cls}>
+                  <span>{j}</span>
+                  <span className="td-fc">{n}</span>
+                </Link>
+              );
+            })}
           </div>
           <div className="td-sortsel" role="group" aria-label="並び替え">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 6h18M6 12h12M10 18h4" /></svg>
