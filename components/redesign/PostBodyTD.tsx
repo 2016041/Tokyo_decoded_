@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import type { Locale, Post } from "@/content/types";
 import CardTD from "@/components/redesign/CardTD";
-import { catClass, catLabel, kindLabel, title, excerpt, fmtDot } from "@/lib/td";
+import { catClass, catLabel, title, excerpt, fmtDot } from "@/lib/td";
 
 const STEP_MARKER = /[①②③④⑤⑥⑦⑧⑨⑩]/;
 const INLINE_LINK = /\[([^\]]+)\]\((\/[^\s)]+|https:\/\/[^\s)]+)\)/g;
@@ -77,7 +77,6 @@ export default function PostBodyTD({
         <div className={`td-ahead ${catClass(post.category)}`}>
           <div className="td-chips">
             <span className="td-ck">{catLabel(post.category, locale)}</span>
-            <span className="td-ct">{kindLabel(post, locale)}</span>
           </div>
           <h1>{title(post, locale)}</h1>
           <p className="td-dek">{excerpt(post, locale)}</p>
