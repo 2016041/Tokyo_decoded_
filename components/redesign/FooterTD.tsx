@@ -25,6 +25,7 @@ export default function FooterTD() {
           <span>
             © 2026 Tokyo Decoded —{" "}
             <Link href={`${b}/about`}>{ja ? "編集部について" : "About"}</Link> /{" "}
+            <Link href={`${b}/contact`}>{ja ? "お問い合わせ" : "Contact"}</Link> /{" "}
             <Link href={`${b}/editorial-policy`}>{ja ? "編集ポリシー" : "Editorial Policy"}</Link> /{" "}
             <Link href={`${b}/disclosure`}>{ja ? "開示" : "Disclosure"}</Link> /{" "}
             <Link href={`${b}/privacy`}>{ja ? "プライバシー" : "Privacy"}</Link> /{" "}
