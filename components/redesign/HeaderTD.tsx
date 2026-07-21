@@ -59,7 +59,7 @@ export default function HeaderTD({ indexJa, indexEn }: { indexJa: SearchItem[]; 
     // ヒステリシス：畳む閾値(90px)と戻す閾値(20px)を離し、閾値付近の振動（ブルブル）を防ぐ
     const on = () => {
       const y = window.scrollY || 0;
-      setScrolled((prev) => (prev ? y > 20 : y > 90));
+      setScrolled((prev) => (prev ? y > 8 : y > 64));
     };
     window.addEventListener("scroll", on, { passive: true });
     on();
