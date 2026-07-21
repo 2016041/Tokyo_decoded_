@@ -68,13 +68,6 @@ export default async function PostsPage({
         <div className="td-grid">
           {items.map((p) => <CardTD key={p.slug} post={p} locale="ja" />)}
         </div>
-        {active === "all" && all.length > 9 ? (
-          <div className="td-pager">
-            <span className="td-cur">1</span>
-            <Link href="#">2</Link>
-            <Link className="td-nx" href="#">次へ →</Link>
-          </div>
-        ) : null}
       </div>
     </div>
   );
