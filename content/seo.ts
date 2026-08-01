@@ -21,7 +21,10 @@ export const defaultMetadata = {
   defaultDescription:
     "東京発バイリンガル編集部。海外トレンドをデータで読み解き、日本のミレニアル世代に届けます。お金・暮らし・美容の最新情報を日本語と英語で発信。",
   defaultOgImage: "/brand/ogp-1200x630.png",
-  siteUrl: "https://tokyo-decoded.com",
+  // www 付きが正。www なしは 308 で www へリダイレクトされ、Google も www を正規URLとして
+  // 選んでいる（URL検査API の googleCanonical で確認済み）。ここが www なしだと
+  // canonical・sitemap・robots.txt がすべて「リダイレクトするURL」を指してしまう。
+  siteUrl: "https://www.tokyo-decoded.com",
   locale: "ja_JP",
   alternateLocale: "en_US",
   twitterSite: "@Tokyo_decoded_",
@@ -183,13 +186,13 @@ export const structuredDataTemplates = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Tokyo Decoded",
-    url: "https://tokyo-decoded.com",
+    url: "https://www.tokyo-decoded.com",
     description:
       "A Tokyo-based bilingual editorial team decoding global trends for Japan and translating Japan's wisdom for the world.",
     inLanguage: ["ja", "en"],
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://tokyo-decoded.com/posts?q={search_term_string}",
+      target: "https://www.tokyo-decoded.com/posts?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   } satisfies StructuredDataWebSite,
@@ -198,8 +201,8 @@ export const structuredDataTemplates = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Tokyo Decoded",
-    url: "https://tokyo-decoded.com",
-    logo: "https://tokyo-decoded.com/brand/logo-mark-red.svg",
+    url: "https://www.tokyo-decoded.com",
+    logo: "https://www.tokyo-decoded.com/brand/logo-mark-red.svg",
     description:
       "A Tokyo-based bilingual editorial team. We decode global trends for Japan and translate Japan's wisdom for the world.",
     contactPoint: {
@@ -231,14 +234,14 @@ export const structuredDataTemplates = {
     author: {
       "@type": "Organization",
       name: "Tokyo Decoded編集部",
-      url: "https://tokyo-decoded.com/about",
+      url: "https://www.tokyo-decoded.com/about",
     },
     publisher: {
       "@type": "Organization",
       name: "Tokyo Decoded",
       logo: {
         "@type": "ImageObject",
-        url: "https://tokyo-decoded.com/brand/logo-mark-red.svg",
+        url: "https://www.tokyo-decoded.com/brand/logo-mark-red.svg",
       },
     },
     inLanguage: "ja",
@@ -253,7 +256,7 @@ export const structuredDataTemplates = {
         "@type": "ListItem",
         position: 1,
         name: "Tokyo Decoded",
-        item: "https://tokyo-decoded.com",
+        item: "https://www.tokyo-decoded.com",
       },
     ],
   } satisfies StructuredDataBreadcrumb,

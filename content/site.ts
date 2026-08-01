@@ -7,8 +7,8 @@ import type { NavItem, SocialAccount } from "./types";
 export const siteContent = {
   name: "東京デコード",
   nameEn: "Tokyo Decoded",
-  domain: "tokyo-decoded.com",
-  siteUrl: "https://tokyo-decoded.com",
+  domain: "tokyo-decoded.com",  // 表示用のドメイン名。URLとしては使わない
+  siteUrl: "https://www.tokyo-decoded.com",  // 実配信は www（www なしは308でここへ飛ぶ）
   contactEmail: "hello@tokyo-decoded.com",
 
   description: {
