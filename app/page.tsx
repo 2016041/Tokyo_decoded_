@@ -29,7 +29,7 @@ export default function Home() {
     ["お金・AI", "MONEY", "/posts?cat=money-ai", "td-cm"],
     ["暮らし", "LIFE", "/posts?cat=lifestyle", "td-cl"],
     ["美容", "BEAUTY", "/posts?cat=beauty", "td-cb"],
-    ["まとめ・比較", "GUIDES", "/posts", "td-cg"],
+    ["まとめ・比較", "GUIDES", "/posts?cat=guides", "td-cg"],
   ];
 
   return (

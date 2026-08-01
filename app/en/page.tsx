@@ -29,7 +29,7 @@ export default function EnHome() {
     ["Money & AI", "MONEY", "/en/posts?cat=money-ai", "td-cm"],
     ["Lifestyle", "LIFE", "/en/posts?cat=lifestyle", "td-cl"],
     ["Beauty", "BEAUTY", "/en/posts?cat=beauty", "td-cb"],
-    ["Guides", "GUIDES", "/en/posts", "td-cg"],
+    ["Guides", "GUIDES", "/en/posts?cat=guides", "td-cg"],
   ];
 
   return (

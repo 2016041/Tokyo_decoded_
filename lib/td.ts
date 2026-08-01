@@ -4,11 +4,12 @@ import type { Post } from "@/content/types";
 
 type Locale = "ja" | "en";
 
-// カテゴリ slug → 色クラス（td-cm/cl/cb）。posts.ts は変更せずCSS駆動で色分け
+// カテゴリ slug → 色クラス（td-cm/cl/cb/cg）。posts.ts は変更せずCSS駆動で色分け
 export const CAT_CLASS: Record<string, string> = {
   "money-ai": "td-cm",
   lifestyle: "td-cl",
   beauty: "td-cb",
+  guides: "td-cg",
 };
 export function catClass(slug: string): string {
   return CAT_CLASS[slug] ?? "";
@@ -19,12 +20,28 @@ export function catLabel(slug: string, locale: Locale): string {
   return c ? (locale === "ja" ? c.label_ja : c.label_en) : slug;
 }
 
-// 記事種別ラベル（データに無いためタイトルからの表示用ヒューリスティック）
+// 記事の「型」判定（話題カテゴリとは別軸）。データに無いためタイトルから判定する。
+//
+// 「まとめ・比較」はヘッダーに並ぶ他の3つ（お金・暮らし・美容）と違い、**話題ではなく型**。
+// そのため post.category には入れず、ここで横断的に判定する。
+// こうすると1本の記事が「お金・AI」と「まとめ・比較」の両方に出られる
+// （category は単一値なので、付け替えると話題カテゴリから消えてしまう）。
+//
+// 「ガイド」は入れない：020「〜実践ガイド」のような解説記事まで拾ってしまうため。
+// まとめ・比較記事は 比較 / ランキング / N選 / 大全 / 事典 / まとめ のいずれかを必ず含む。
+const RE_COMPARISON = /(比較|ランキング|おすすめ|\d+選)/;
+const RE_ROUNDUP = /(大全|まとめ|事典)/;
+
+export function isGuide(post: Post): boolean {
+  const t = post.title_ja ?? "";
+  return RE_COMPARISON.test(t) || RE_ROUNDUP.test(t);
+}
+
 export function kindLabel(post: Post, locale: Locale = "ja"): string {
   const t = post.title_ja ?? "";
   const en = locale === "en";
-  if (/(比較|ランキング|おすすめ)/.test(t)) return en ? "Comparison" : "比較";
-  if (/(大全|まとめ|事典|ガイド)/.test(t)) return en ? "Roundup" : "まとめ";
+  if (RE_COMPARISON.test(t)) return en ? "Comparison" : "比較";
+  if (RE_ROUNDUP.test(t)) return en ? "Roundup" : "まとめ";
   return en ? "Explainer" : "解説";
 }
 
@@ -51,7 +68,9 @@ export function sortedPosts(): Post[] {
   return [...posts].sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""));
 }
 
+// 話題カテゴリでの絞り込み。"guides" だけは型での絞り込みになる（isGuide 参照）
 export function byCategory(slug: string): Post[] {
+  if (slug === "guides") return sortedPosts().filter(isGuide);
   return sortedPosts().filter((p) => p.category === slug);
 }
 
@@ -62,6 +81,7 @@ export function categoryCounts(): Record<string, number> {
     if (c.slug === "all") continue;
     out[c.slug] = posts.filter((p) => p.category === c.slug).length;
   }
+  out.guides = posts.filter(isGuide).length;
   return out;
 }
 

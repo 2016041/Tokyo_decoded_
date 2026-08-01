@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CardTD from "@/components/redesign/CardTD";
-import { sortedPosts, categoryCounts } from "@/lib/td";
+import { sortedPosts, categoryCounts, byCategory } from "@/lib/td";
 import { metadataForPage } from "@/lib/i18n";
 
 export const revalidate = 3600;
@@ -35,7 +35,8 @@ export default async function PostsPage({
   const active = sp.cat && CC[sp.cat] !== undefined ? sp.cat : "all";
   const sort = sp.sort === "old" ? "old" : "new";
   const all = sortedPosts(); // 公開日 降順（新着順）
-  const filtered = active === "all" ? all : all.filter((p) => p.category === active);
+  // guides は話題ではなく「型」なので byCategory 側で横断判定する
+  const filtered = active === "all" ? all : byCategory(active);
   const items = sort === "old" ? [...filtered].reverse() : filtered;
   const counts = categoryCounts();
 
