@@ -21,10 +21,13 @@ const TAGS = [
 export default function EnHome() {
   const all = sortedPosts();
   const money = byCategory("money-ai");
-  const lead = money[0] ?? all[0];
-  const subs = money.filter((p) => p.slug !== lead.slug).slice(0, 2);
+  // 日本語版と同じ理由でリードを公開日順にする（app/page.tsx のコメント参照）。
+  // money[0] 固定だと 2026-08-09 時点でトップが 019（7/31）で止まっていた。
+  const lead = all[0];
+  const subs = all.filter((p) => p.slug !== lead.slug).slice(0, 2);
   const rail = money.slice(0, 5);
-  const gridPosts = all.filter((p) => p.slug !== lead.slug).slice(0, 6);
+  const featured = new Set([lead.slug, ...subs.map((p) => p.slug)]);
+  const gridPosts = all.filter((p) => !featured.has(p.slug)).slice(0, 6);
   const cats: [string, string, string, string][] = [
     ["Money & AI", "MONEY", "/en/posts?cat=money-ai", "td-cm"],
     ["Lifestyle", "LIFE", "/en/posts?cat=lifestyle", "td-cl"],

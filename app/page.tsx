@@ -21,10 +21,16 @@ const TAGS = [
 export default function Home() {
   const all = sortedPosts();
   const money = byCategory("money-ai");
-  const lead = money[0] ?? all[0];
-  const subs = money.filter((p) => p.slug !== lead.slug).slice(0, 2);
+  // リード（今週の特集）と「次に読むべき」は**カテゴリを問わず公開日順**にする。
+  // 以前は money[0] 固定だったため、2026-07-27決定3で記事の軸を美容・生活系へ移した後、
+  // トップに出るのが「お金・AIの最新」＝019（7/31）のままになり、
+  // 8/3・8/5・8/7 に3本公開してもサイトが更新停止に見えていた（2026-08-09に発覚）。
+  // 「お金クラスタ 最新」レールはラベルどおり money のまま残し、収益カテゴリの導線は維持する。
+  const lead = all[0];
+  const subs = all.filter((p) => p.slug !== lead.slug).slice(0, 2);
   const rail = money.slice(0, 5);
-  const gridPosts = all.filter((p) => p.slug !== lead.slug).slice(0, 6);
+  const featured = new Set([lead.slug, ...subs.map((p) => p.slug)]);
+  const gridPosts = all.filter((p) => !featured.has(p.slug)).slice(0, 6);
   const cats: [string, string, string, string][] = [
     ["お金・AI", "MONEY", "/posts?cat=money-ai", "td-cm"],
     ["暮らし", "LIFE", "/posts?cat=lifestyle", "td-cl"],
