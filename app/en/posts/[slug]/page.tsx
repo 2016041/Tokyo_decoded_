@@ -40,6 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         ja: absoluteUrl(`/posts/${post.slug}`),
         en: absoluteUrl(`/en/posts/${post.slug}`),
+        "x-default": absoluteUrl(`/posts/${post.slug}`),
       },
     },
     openGraph: {

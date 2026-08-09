@@ -7,6 +7,28 @@ type ChangeFrequency = NonNullable<
   MetadataRoute.Sitemap[number]["changeFrequency"]
 >;
 
+/**
+ * 固定ページの実際の最終更新日。
+ *
+ * 以前は `new Date()` を入れていたため、中身が変わっていない7ページ×日英が
+ * サイトマップを生成するたび「今日更新した」と申告していた。
+ * 実態と食い違う lastmod はサイトマップ全体の信頼を落とし、
+ * Google の「検出 - インデックス未登録」を長引かせる要因になる
+ * （2026-08-09 の定例で、公開22本中11本が未クロールと判明した際に発見）。
+ *
+ * **ページの内容を変更したら、この日付も更新すること。**
+ * 値は各ページの最終コミット日（`git log -1 --date=short -- app/<page>`）。
+ */
+const STATIC_PAGE_LAST_MODIFIED: Record<string, string> = {
+  "": "2026-08-01",
+  "/about": "2026-06-07",
+  "/posts": "2026-08-01",
+  "/tools": "2026-07-21",
+  "/contact": "2026-06-11",
+  "/privacy": "2026-06-07",
+  "/disclosure": "2026-06-07",
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = defaultMetadata.siteUrl;
   const staticPaths: Array<{
@@ -23,16 +45,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/disclosure", key: "/disclosure", freq: "yearly" },
   ];
 
+  // 記事一覧とトップは新着記事で実際に変わるため、最新記事の公開日を採用する
+  const latestPost = posts
+    .map((p) => new Date(p.publishedAt).getTime())
+    .reduce((a, b) => Math.max(a, b), 0);
+
+  const staticLastModified = (path: string): Date => {
+    if (path === "" || path === "/posts") {
+      return latestPost ? new Date(latestPost) : new Date(STATIC_PAGE_LAST_MODIFIED[path]);
+    }
+    return new Date(STATIC_PAGE_LAST_MODIFIED[path]);
+  };
+
   const staticPages: MetadataRoute.Sitemap = staticPaths.flatMap((page) => [
     {
       url: `${base}${page.path}`,
-      lastModified: new Date(),
+      lastModified: staticLastModified(page.path),
       changeFrequency: page.freq,
       priority: robotsPolicy.sitemapPriorities[page.key],
     },
     {
       url: `${base}/en${page.path}`,
-      lastModified: new Date(),
+      lastModified: staticLastModified(page.path),
       changeFrequency: page.freq,
       priority: robotsPolicy.sitemapPriorities[page.key],
     },

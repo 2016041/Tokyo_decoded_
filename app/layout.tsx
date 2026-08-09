@@ -67,6 +67,8 @@ export const metadata: Metadata = {
     languages: {
       "ja-JP": defaultMetadata.siteUrl,
       "en-US": `${defaultMetadata.siteUrl}/en`,
+      // 対応言語に一致しない検索に対する既定（日本語版を既定にする）
+      "x-default": defaultMetadata.siteUrl,
     },
   },
   // max-image-preview:large は Google Discover 掲載の必須要件
